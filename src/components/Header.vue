@@ -32,6 +32,15 @@
 					<input type="text" class="form-control" placeholder="Search menu..." />
 				</div>
 			</form>
+            <!--language-->
+            <b-dropdown class="menu-item set-lang" right toggle-tag="a" variant="link" :no-caret="true" toggle-class="menu-link border-0">
+                <template v-slot:button-content>
+                    <div class="menu-text"> {{lang }} <i class="fa fa-angle-down"></i></div>
+                </template>
+                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('en')">EN</b-dropdown-item>
+                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('zh-cn')">繁體</b-dropdown-item>
+            </b-dropdown>
+            <!--message-->
 			<b-dropdown class="menu-item" right  toggle-tag="a" variant="link" :no-caret="true" toggle-class="menu-link" menu-class="dropdown-notification">
 				<template v-slot:button-content>
 					<div class="menu-icon"><i class="fa fa-bell"></i></div>
@@ -62,6 +71,7 @@
 					<a href="#" class="text-gray-800 text-decoration-none">See all</a>
 				</div>
 			</b-dropdown>
+            <!--user info-->
 			<b-dropdown class="menu-item" right toggle-tag="a" variant="link" :no-caret="true" toggle-class="menu-link border-0">
 				<template v-slot:button-content>
 					<div class="menu-img online">
@@ -101,9 +111,18 @@ export default {
   data() {
 		return {
 			appOptions: AppOptions,
-			notificationData: []
+			notificationData: [],
+            lang:'EN'
 		}
   },
+    computed:{
+        // I18N
+        // getCurrentLocaleData() {
+        //     const locale = this.lang;
+        //     if (locale === "en") return {flag: "us", lang: 'English'}
+        //     else if (locale === "zh-cn") return {flag: "br", lang: '繁體'}
+        // },
+    },
 	methods: {
 		toggleAppSidebarMobile() {
 			this.appOptions.appSidebarMobileToggled = !this.appOptions.appSidebarMobileToggled;
@@ -114,7 +133,15 @@ export default {
 		checkForm: function(e) {
 			e.preventDefault();
 			this.$router.push({ path: '/extra/search' })
-		}
+		},
+        updateLocale(locale) {  //set language
+            if (locale === "en") {
+                this.lang = 'EN';
+            }
+            else if (locale === "zh-cn"){
+                this.lang = '繁體'
+            }
+        },
 	}
 }
 </script>

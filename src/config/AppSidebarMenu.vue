@@ -16,7 +16,13 @@
             url: '/standard',
             icon: 'fa fa-home',
             text: 'Standard'
-        }];
+        },
+        {
+            url: '/student',
+            icon: 'fa fa-user',
+            text: 'Student'
+        }
+    ];
 
     export default appSidebarMenu;
 </script>
