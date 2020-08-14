@@ -31,6 +31,8 @@ import 'vue2-daterange-picker/dist/vue2-daterange-picker.css'
 import 'vue-wysiwyg/dist/vueWysiwyg.css'
 import './scss/styles.scss'
 
+import axios from 'axios';
+Vue.prototype.$axios = axios //全局注册，使用方法为:this.$axios
 
 Vue.config.productionTip = false
 

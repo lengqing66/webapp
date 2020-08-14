@@ -1,23 +1,28 @@
 <script>
-    import i18n from '../common/plugins/vue-i18n'
     const appSidebarMenu = [{
-        text: i18n.t('GENERAL.Navigation'),
+        text: 'Navigation',
         is_header: true
     },
-        {
-            url: '/home',
-            icon: 'fa fa-home',
-            text: i18n.t('GENERAL.Home')
-        },{
+    {
+        url: '/home',
+        icon: 'fa fa-home',
+        text: 'Home'
+    },{
             url: '/home2',
             icon: 'fa fa-home',
-            text: i18n.t('GENERAL.Home2')
+            text: 'Home2'
         },
         {
             url: '/standard',
             icon: 'fa fa-home',
-            text: i18n.t('GENERAL.Standard')
-        }];
+            text: 'Standard'
+        },
+        {
+            url: '/student',
+            icon: 'fa fa-user',
+            text: 'Student'
+        }
+    ];
 
     export default appSidebarMenu;
 </script>
