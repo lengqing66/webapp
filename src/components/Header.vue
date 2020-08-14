@@ -35,10 +35,11 @@
             <!--language-->
             <b-dropdown class="menu-item set-lang" right toggle-tag="a" variant="link" :no-caret="true" toggle-class="menu-link border-0">
                 <template v-slot:button-content>
-                    <div class="menu-text"> {{lang }} <i class="fa fa-angle-down"></i></div>
+                    <div class="menu-text"> {{getCurrentLocaleData.lang }} <i class="fa fa-angle-down"></i></div>
                 </template>
                 <b-dropdown-item style="min-width: 5rem" @click="updateLocale('en')">EN</b-dropdown-item>
-                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('zh-cn')">繁體</b-dropdown-item>
+                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('tw')">繁體</b-dropdown-item>
+                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('cn')">简体</b-dropdown-item>
             </b-dropdown>
             <!--message-->
 			<b-dropdown class="menu-item" right  toggle-tag="a" variant="link" :no-caret="true" toggle-class="menu-link" menu-class="dropdown-notification">
@@ -117,11 +118,12 @@ export default {
   },
     computed:{
         // I18N
-        // getCurrentLocaleData() {
-        //     const locale = this.lang;
-        //     if (locale === "en") return {flag: "us", lang: 'English'}
-        //     else if (locale === "zh-cn") return {flag: "br", lang: '繁體'}
-        // },
+        getCurrentLocaleData() {
+            const locale = this.$i18n.locale;
+            if (locale === "en") return {lang: 'EN'}
+            else if (locale === "tw") return {lang: '繁體'}
+            else return{lang:'简体'}
+        },
     },
 	methods: {
 		toggleAppSidebarMobile() {
@@ -135,12 +137,12 @@ export default {
 			this.$router.push({ path: '/extra/search' })
 		},
         updateLocale(locale) {  //set language
-            if (locale === "en") {
-                this.lang = 'EN';
-            }
-            else if (locale === "zh-cn"){
-                this.lang = '繁體'
-            }
+            this.$i18n.locale=locale
+            this.setActiveLanguage(locale)
+            return history.go(0)
+        },
+        setActiveLanguage(lang) {
+            localStorage.setItem('language', lang)
         },
 	}
 }

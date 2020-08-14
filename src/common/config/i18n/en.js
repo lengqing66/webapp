@@ -18,5 +18,6 @@ export const locale = {
       Notifications:'Notifications',
       NoRecordFound:'No record found',
       SeeAll:'See all',
+      Student:'Student',
   },
 }

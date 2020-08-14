@@ -25,7 +25,7 @@
 
 <script>
     import {AgGridVue} from "ag-grid-vue";
-    import i18n from '../../common/plugins/vue-i18n'
+    import i18n from '../../common/plugins/vue-i18n';
     export default {
         name: 'Standard',
         data() {
