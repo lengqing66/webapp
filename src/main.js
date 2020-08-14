@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import i18n from './common/plugins/vue-i18n'
 import routes from './config/AppRoutes'
 import store from './components/store/index';
 // plugins
@@ -32,6 +33,8 @@ import './scss/styles.scss'
 
 import axios from 'axios';
 Vue.prototype.$axios = axios //全局注册，使用方法为:this.$axios
+import Multiselect from 'vue-multiselect'  //select
+Vue.component('multiselect', Multiselect)
 
 Vue.config.productionTip = false
 
@@ -64,6 +67,7 @@ const router = new VueRouter({
 })
 
 new Vue({
+    i18n,
   render: h => h(App),
   router,
     store

@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
 	<div id="header" class="app-header">
 		<!-- BEGIN mobile-toggler -->
 		<div class="mobile-toggler">
@@ -29,16 +29,17 @@
 			<form class="menu-search" name="header_search_form" v-on:submit="checkForm">
 				<div class="menu-search-icon"><i class="fa fa-search"></i></div>
 				<div class="menu-search-input">
-					<input type="text" class="form-control" placeholder="Search menu..." />
+					<input type="text" class="form-control" :placeholder="$t('GENERAL.SearchMenu')" />
 				</div>
 			</form>
             <!--language-->
             <b-dropdown class="menu-item set-lang" right toggle-tag="a" variant="link" :no-caret="true" toggle-class="menu-link border-0">
                 <template v-slot:button-content>
-                    <div class="menu-text"> {{lang }} <i class="fa fa-angle-down"></i></div>
+                    <div class="menu-text"> {{ getCurrentLocaleData.lang }} <i class="fa fa-angle-down"></i></div>
                 </template>
                 <b-dropdown-item style="min-width: 5rem" @click="updateLocale('en')">EN</b-dropdown-item>
-                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('zh-cn')">繁體</b-dropdown-item>
+                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('tw')">繁體</b-dropdown-item>
+                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('cn')">简体</b-dropdown-item>
             </b-dropdown>
             <!--message-->
 			<b-dropdown class="menu-item" right  toggle-tag="a" variant="link" :no-caret="true" toggle-class="menu-link" menu-class="dropdown-notification">
@@ -46,7 +47,7 @@
 					<div class="menu-icon"><i class="fa fa-bell"></i></div>
 					<div class="menu-label">{{ notificationData.length }}</div>
 				</template>
-				<h6 class="dropdown-header text-gray-900 mb-1">Notifications</h6>
+				<h6 class="dropdown-header text-gray-900 mb-1">{{ $t('GENERAL.Notifications') }}</h6>
 				<template v-if="notificationData && notificationData.length > 0">
 					<a href="#" class="dropdown-notification-item" v-for="(notification, index) in notificationData" v-bind:key="index">
 						<div class="dropdown-notification-icon">
@@ -55,7 +56,7 @@
 						</div>
 						<div class="dropdown-notification-info">
 							<div class="title">{{ notification.title }}</div>
-							<div class="time">{{ notification.time }}</div>
+                            <div class="time">{{ notification.time }}</div>
 						</div>
 						<div class="dropdown-notification-arrow">
 							<i class="fa fa-chevron-right"></i>
@@ -64,11 +65,11 @@
 				</template>
 				<template v-else>
 					<div class="dropdown-notification-item bg-white">
-						No record found
+                        {{ $t('GENERAL.NoRecordFound') }}
 					</div>
 				</template>
 				<div class="p-2 text-center mb-n1">
-					<a href="#" class="text-gray-800 text-decoration-none">See all</a>
+					<a href="#" class="text-gray-800 text-decoration-none">{{ $t('GENERAL.SeeAll') }}</a>
 				</div>
 			</b-dropdown>
             <!--user info-->
@@ -82,21 +83,21 @@
 					<div class="menu-text">username@account.com</div>
 				</template>
 				<b-dropdown-item link-class="d-flex align-items-center" href="#">
-					Edit Profile <i class="fa fa-user-circle fa-fw ml-auto text-gray-400 f-s-16"></i>
-				</b-dropdown-item>
-				<b-dropdown-item link-class="d-flex align-items-center" href="#">
-					Inbox <i class="fa fa-envelope fa-fw ml-auto text-gray-400 f-s-16"></i>
-				</b-dropdown-item>
-				<b-dropdown-item link-class="d-flex align-items-center" href="#">
-					Calendar <i class="fa fa-calendar-alt fa-fw ml-auto text-gray-400 f-s-16"></i>
-				</b-dropdown-item>
-				<b-dropdown-item link-class="d-flex align-items-center" href="#">
-					Setting <i class="fa fa-wrench fa-fw ml-auto text-gray-400 f-s-16"></i>
-				</b-dropdown-item>
-				<b-dropdown-divider />
-				<b-dropdown-item link-class="d-flex align-items-center" href="#">
-					Log Out <i class="fa fa-toggle-off fa-fw ml-auto text-gray-400 f-s-16"></i>
-				</b-dropdown-item>
+                    {{ $t('GENERAL.EditProfile') }}<i class="fa fa-user-circle fa-fw ml-auto text-gray-400 f-s-16"></i>
+                </b-dropdown-item>
+                <b-dropdown-item link-class="d-flex align-items-center" href="#">
+                    {{ $t('GENERAL.Inbox') }} <i class="fa fa-envelope fa-fw ml-auto text-gray-400 f-s-16"></i>
+                </b-dropdown-item>
+                <b-dropdown-item link-class="d-flex align-items-center" href="#">
+                    {{ $t('GENERAL.Calendar') }} <i class="fa fa-calendar-alt fa-fw ml-auto text-gray-400 f-s-16"></i>
+                </b-dropdown-item>
+                <b-dropdown-item link-class="d-flex align-items-center" href="#">
+                    {{ $t('GENERAL.Setting') }} <i class="fa fa-wrench fa-fw ml-auto text-gray-400 f-s-16"></i>
+                </b-dropdown-item>
+                <b-dropdown-divider />
+                <b-dropdown-item link-class="d-flex align-items-center" href="#">
+                    {{ $t('GENERAL.LogOut') }} <i class="fa fa-toggle-off fa-fw ml-auto text-gray-400 f-s-16"></i>
+                </b-dropdown-item>
 			</b-dropdown>
 		</div>
 		<!-- END menu -->
@@ -112,16 +113,17 @@ export default {
 		return {
 			appOptions: AppOptions,
 			notificationData: [],
-            lang:'EN'
+            // lang:'EN'
 		}
   },
     computed:{
         // I18N
-        // getCurrentLocaleData() {
-        //     const locale = this.lang;
-        //     if (locale === "en") return {flag: "us", lang: 'English'}
-        //     else if (locale === "zh-cn") return {flag: "br", lang: '繁體'}
-        // },
+        getCurrentLocaleData() {
+            const locale = this.$i18n.locale;
+            if (locale === "en") return {lang: 'EN'}
+            else if (locale === "tw") return {lang: '繁體'}
+            else return {lang: '简体'}
+        },
     },
 	methods: {
 		toggleAppSidebarMobile() {
@@ -135,12 +137,7 @@ export default {
 			this.$router.push({ path: '/extra/search' })
 		},
         updateLocale(locale) {  //set language
-            if (locale === "en") {
-                this.lang = 'EN';
-            }
-            else if (locale === "zh-cn"){
-                this.lang = '繁體'
-            }
+            this.$i18n.locale = locale;
         },
 	}
 }
