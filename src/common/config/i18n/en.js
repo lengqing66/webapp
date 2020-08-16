@@ -20,4 +20,10 @@ export const locale = {
       SeeAll:'See all',
       Student:'Student',
   },
+    STUDENT:{
+      Student:'Student',
+        StudentNo:'Student No',
+        Center:'Center',
+        Telephone:'Telephone'
+    }
 }

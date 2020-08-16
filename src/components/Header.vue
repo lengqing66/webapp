@@ -113,7 +113,7 @@ export default {
 		return {
 			appOptions: AppOptions,
 			notificationData: [],
-            lang:'EN'
+            // lang:'EN'
 		}
   },
     computed:{
@@ -122,7 +122,7 @@ export default {
             const locale = this.$i18n.locale;
             if (locale === "en") return {lang: 'EN'}
             else if (locale === "tw") return {lang: '繁體'}
-            else return{lang:'简体'}
+            else return {lang:'简体'}
         },
     },
 	methods: {

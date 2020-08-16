@@ -16,12 +16,17 @@
         {
             url: '/standard',
             icon: 'fa fa-home',
-            text: i18n.t("GENERAL.Standard")
+
+            text: i18n.t('GENERAL.Standard')
         },
         {
             url: '/student',
             icon: 'fa fa-user',
             text: i18n.t("GENERAL.Student")
+        },{
+            url: '/test',
+            icon: 'fa fa-home',
+            text: 'test'
         }
     ];
 

@@ -33,6 +33,8 @@ import './scss/styles.scss'
 
 import axios from 'axios';
 Vue.prototype.$axios = axios //全局注册，使用方法为:this.$axios
+import Multiselect from 'vue-multiselect'  //select
+Vue.component('multiselect', Multiselect)
 
 Vue.config.productionTip = false
 

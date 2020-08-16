@@ -19,4 +19,10 @@ export const locale = {
       SeeAll:'查看全部',
       Student:'学生',
   },
+    STUDENT:{
+        Student:'学生',
+        StudentNo:'学生编号',
+        Center:'中心',
+        Telephone:'电话号码'
+    }
 }
