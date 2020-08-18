@@ -1,14 +1,5 @@
 <template>
     <div id="content" class="app-content p-1 bg-white">
-
-        <b-button v-b-modal.modal-scrollable>Launch scrolling modal</b-button>
-
-        <b-modal id="modal-scrollable" scrollable title="Scrollable Content" size="lg">
-
-              <ParentSelect></ParentSelect>
-
-        </b-modal>
-
         <div>
             <b-tabs card content-class="pt-1" ref="theTab"   v-model="tabIndex">
                 <b-tab title="Main"  active >

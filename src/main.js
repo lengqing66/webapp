@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import i18n from './common/plugins/vue-i18n'
 import routes from './config/AppRoutes'
 import store from './components/store/index';
 // plugins
@@ -62,6 +63,7 @@ const router = new VueRouter({
 })
 
 new Vue({
+    i18n,
   render: h => h(App),
   router,
     store
