@@ -17,7 +17,13 @@
             url: '/standard',
             icon: 'fa fa-home',
             text: i18n.t('GENERAL.Standard')
-        }];
+        },
+        {
+            url: '/student',
+            icon: 'fa fa-user',
+            text: 'Student'
+        }
+    ];
 
     export default appSidebarMenu;
 </script>

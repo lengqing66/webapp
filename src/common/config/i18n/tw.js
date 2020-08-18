@@ -18,4 +18,10 @@ export const locale = {
       NoRecordFound:'找不到記錄',
       SeeAll:'查看全部',
   },
+    STUDENT:{
+        Student:'學生',
+        StudentNo:'學生編號',
+        Center:'中心',
+        Telephone:'電話號碼'
+    }
 }

@@ -1,6 +1,6 @@
 .app {
 	padding-top: rem($app-header-height);
-	
+
 	@include media-breakpoint-down(md) {
 		padding-top: rem($app-header-height);
 	}
@@ -8,7 +8,7 @@
 		&.app-boxed-layout {
 			background: $body-bg;
 			min-height: 100%;
-			
+
 			&,
 			& .app-header {
 				max-width: rem(1280px);
@@ -39,4 +39,10 @@
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 	}
+}
+.set-lang{
+    .dropdown-menu{
+        min-width: 5rem;
+        max-width: 6rem;
+    }
 }

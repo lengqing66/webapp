@@ -19,4 +19,10 @@ export const locale = {
       NoRecordFound:'No record found',
       SeeAll:'See all',
   },
+    STUDENT:{
+      Student:'Student',
+        StudentNo:'Student No',
+        Center:'Center',
+        Telephone:'Telephone'
+    }
 }
