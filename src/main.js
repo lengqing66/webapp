@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import i18n from './common/plugins/vue-i18n'
+import i18n from './common/plugins/vue-i18n';
 import routes from './config/AppRoutes'
 import store from './components/store/index';
 // plugins
@@ -32,11 +32,10 @@ import 'vue-wysiwyg/dist/vueWysiwyg.css'
 import './scss/styles.scss'
 
 import axios from 'axios';
-Vue.prototype.$axios = axios //全局注册，使用方法为:this.$axios
+Vue.prototype.$axios = axios ;//全局注册，使用方法为:this.$axios
 import Multiselect from 'vue-multiselect'  //select
-Vue.component('multiselect', Multiselect)
-
-Vue.config.productionTip = false
+Vue.component('multiselect', Multiselect);
+Vue.config.productionTip = false;
 
 Vue.use(wysiwyg, { maxHeight: '300px'})
 Vue.use(VueRouter)
@@ -62,13 +61,16 @@ Vue.component('vue-color-picker', VueColorPicker)
 Vue.component('vue-masked-input', VueMaskedInput)
 Vue.component(VueCountdown.name, VueCountdown);
 
+App.mpType = 'app'
+Vue.prototype._i18n = i18n;
+
 const router = new VueRouter({
 	routes
 })
 
 new Vue({
     i18n,
-  render: h => h(App),
-  router,
-    store
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

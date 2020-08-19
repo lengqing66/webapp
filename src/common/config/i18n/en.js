@@ -4,6 +4,7 @@ export const locale = {
       Home:'Home',
       Home2:'Home2',
       Standard:'Standard',
+      Student:'Student',
       Main:'Main',
       Make:'Make',
       Model:'Model',
@@ -21,8 +22,35 @@ export const locale = {
   },
     STUDENT:{
       Student:'Student',
-        StudentNo:'Student No',
-        Center:'Center',
-        Telephone:'Telephone'
-    }
+      StudentNo:'Student No',
+      LastName:'LastName',
+      Gender:'Gender',
+      CenterName:'CenterName',
+      Phone:'Phone(Home)',
+      Mobile:'Mobile',
+      Center:'Center',
+      Telephone:'Telephone',
+      Age:'age',
+    },
+
+    FullName:'Full Name',
+    Color:'Color',
+    Student:'Student',
+    StudentNo:'Student No',
+    LastName:'LastName',
+    Gender:'Gender',
+    CenterName:'CenterName',
+    Phone:'Phone(Home)',
+    Mobile:'Mobile',
+    Center:'Center',
+    Telephone:'Telephone',
+    Age:'age',
+
+    Save:'Save',
+    Search:'Search',
+    Reset:'Reset',
+    Select:'Select',
+    Add:'Add',
+    Remove:'Remove'
+
 }

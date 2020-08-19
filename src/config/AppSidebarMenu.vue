@@ -21,7 +21,7 @@
         {
             url: '/student',
             icon: 'fa fa-user',
-            text: 'Student'
+            text: i18n.t('GENERAL.Student')
         }
     ];
 

@@ -4,6 +4,7 @@ export const locale = {
       Home:'主頁',
       Home2:'主頁2',
       Standard:'標準',
+      Student:'學生',
       Main:'主要',
       Make:'製造商',
       Model:'型號',
@@ -21,7 +22,33 @@ export const locale = {
     STUDENT:{
         Student:'學生',
         StudentNo:'學生編號',
+        LastName:'姓名',
+        Gender:'性別',
+        CenterName:'中心',
+        Phone:'手機號碼',
+        Mobile:'電話號碼',
         Center:'中心',
-        Telephone:'電話號碼'
-    }
+        Telephone:'電話號碼',
+        Age:'年齡',
+    },
+
+    FullName:'學生姓名',
+    Color:'顔色',
+    Student:'學生',
+    StudentNo:'學生編號',
+    LastName:'姓名',
+    Gender:'性別',
+    CenterName:'中心',
+    Phone:'手機號碼',
+    Mobile:'電話號碼',
+    Center:'中心',
+    Telephone:'電話號碼',
+    Age:'年齡',
+
+    Save:'保存',
+    Search:'搜索',
+    Reset:'重置',
+    Select:'下拉',
+    Add:'添加',
+    Remove:'刪除'
 }
