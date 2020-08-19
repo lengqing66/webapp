@@ -155,9 +155,12 @@
             //     this.searchModel.input4 = '';
             // },
             generateFormData() {
-                this.topSearch.forEach((obj) => {
-                    this.$set(this.formData, obj.name, '');
-                });
+                for (var i = 0; i < this.topSearch.length; i++){
+                    this.$set(this.formData, i.name, '');
+                }
+                // this.topSearch.forEach((obj) => {
+                //     this.$set(this.formData, obj.name, '');
+                // });
             },
 
             onSubmit(evt) {
