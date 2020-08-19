@@ -1,4 +1,4 @@
-<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<template>
     <div id="content" class="app-content p-1 bg-white">
         <div>
             <b-tabs card content-class="pt-1" ref="theTab"   v-model="tabIndex">
@@ -25,7 +25,7 @@
 
 <script>
     import {AgGridVue} from "ag-grid-vue";
-    import i18n from '../../common/plugins/vue-i18n'
+    import ParentSelect from '../../pages/standard/ParentSelect.vue';
     export default {
         name: 'Standard',
         data() {
@@ -36,13 +36,14 @@
             }
         },
         components: {
-            AgGridVue
+            AgGridVue,
+            ParentSelect
         },
         beforeMount() {
             this.columnDefs = [
-                {headerName: i18n.t('GENERAL.Make'), field: 'make', sortable: true, filter: true,  },
-                {headerName: i18n.t('GENERAL.Model'), field: 'model', sortable: true, filter: true },
-                {headerName: i18n.t('GENERAL.Price'), field: 'price', sortable: true, filter: true }
+                {headerName: 'Make', field: 'make', sortable: true, filter: true,  },
+                {headerName: 'Model', field: 'model', sortable: true, filter: true },
+                {headerName: 'Price', field: 'price', sortable: true, filter: true }
             ];
 
             this.rowData = [
