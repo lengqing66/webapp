@@ -113,7 +113,6 @@ export default {
 		return {
 			appOptions: AppOptions,
 			notificationData: [],
-            // lang:'EN'
 		}
   },
     computed:{
@@ -138,7 +137,11 @@ export default {
 		},
         updateLocale(locale) {  //set language
             this.$i18n.locale = locale;
+            const lang = locale;
+            this.setActiveLanguage(lang);
+            return history.go(0)
         },
+        setActiveLanguage(lang){localStorage.setItem('language',lang)}
 	}
 }
 </script>

@@ -1,20 +1,37 @@
 {
   "topSearch": [
+      {
+          "name": "Student",
+          "label": "Student",
+          "type": "text"
+      },
+      {
+          "name": "StudentNo",
+          "label": "StudentNo",
+          "type": "text"
+      },
+      {
+          "name": "Center",
+          "label": "Center",
+          "type": "select"
+      },
+      {
+          "name": "Telephone",
+          "label": "Telephone",
+          "type": "number"
+      }
+  ],
+  "testJson": [
     {
-      "label1":"Student",
-      "type1":"text",
-      "value1": "",
-      "label2":"StudentNo",
-      "type2":"text",
-      "value2": ""
-    },
-    {
-      "label1":"Center",
-      "type1":"multiselect",
-      "value1": "",
-      "label2":"Telephone",
-      "type2":"number",
-      "source":"standardOption.json"
+        "label1":"Student",
+        "type1":"text",
+        "label2":"StudentNo",
+        "type2":"text",
+        "label3":"Center",
+        "type3":"multiselect",
+        "source":"standardOption.json",
+        "label4":"Telephone",
+        "type4":"number"
     }
   ],
   "studentData": [
@@ -504,14 +521,14 @@
   ],
   "columnDefs": [
     {
-      "headerName": "Student No",
+      "headerName": "StudentNo",
       "field": "studentNo",
       "filter": true,
       "width": 150,
         "sortable": true
     },
     {
-      "headerName": "Last Name",
+      "headerName": "LastName",
       "field": "name",
       "filter": true,
       "width": 150,
@@ -536,7 +553,7 @@
       "filter": true
     },
     {
-      "headerName": "Phone(Home)",
+      "headerName": "Phone",
       "field": "phoneHome",
       "filter": true,
       "width": 150
