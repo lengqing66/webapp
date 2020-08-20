@@ -2,13 +2,13 @@ import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 
 import { locale as en } from '@/common/config/i18n/en'
-import { locale as tw } from '@/common/config/i18n/tw'
+import {locale as tc} from '@/common/config/i18n/tc'
 import { locale as cn } from '@/common/config/i18n/cn'
 
 Vue.use(VueI18n)
 
 let messages = {}
-messages = { ...messages, en, tw, cn }
+messages = {...messages, en, tc, cn}
 
 const lang = localStorage.getItem('language') || 'en'
 

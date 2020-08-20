@@ -1,5 +1,6 @@
 export const locale = {
-  GENERAL: {
+    language: 'en',
+    GENERAL: {
       Navigation:'Navigation',
       Home:'Home',
       Home2:'Home2',
@@ -13,17 +14,27 @@ export const locale = {
       Calendar:'Calendar',
       Setting:'Setting',
       LogOut:'Log Out',
-      test:'test',
       SearchMenu:'Search Menu',
       Notifications:'Notifications',
       NoRecordFound:'No record found',
       SeeAll:'See all',
       Student:'Student',
-  },
+    },
     STUDENT:{
       Student:'Student',
         StudentNo:'Student No',
         Center:'Center',
         Telephone:'Telephone'
-    }
+    },
+    HOME: {
+        name: 'name',
+        gender: 'gender',
+        center: 'center',
+        selectTwo: 'selectTwo',
+        email: 'email',
+        birthday: 'birthday',
+        date: 'date',
+        Male: 'Male',
+        Female: 'Female',
+    },
 }

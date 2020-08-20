@@ -23,11 +23,7 @@
             url: '/student',
             icon: 'fa fa-user',
             text: i18n.t("GENERAL.Student")
-        },{
-            url: '/test',
-            icon: 'fa fa-home',
-            text: 'test'
-        }
+        },
     ];
 
     export default appSidebarMenu;

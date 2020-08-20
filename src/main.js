@@ -30,10 +30,8 @@ import 'vue-hljs/dist/vue-hljs.min.css'
 import 'vue2-daterange-picker/dist/vue2-daterange-picker.css'
 import 'vue-wysiwyg/dist/vueWysiwyg.css'
 import './scss/styles.scss'
-
-import axios from 'axios';
-Vue.prototype.$axios = axios //全局注册，使用方法为:this.$axios
 import Multiselect from 'vue-multiselect'  //select
+
 Vue.component('multiselect', Multiselect)
 
 Vue.config.productionTip = false
@@ -61,6 +59,8 @@ Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 Vue.component('vue-color-picker', VueColorPicker)
 Vue.component('vue-masked-input', VueMaskedInput)
 Vue.component(VueCountdown.name, VueCountdown);
+App.mpType = 'app'
+Vue.prototype._i18n = i18n;
 
 const router = new VueRouter({
 	routes

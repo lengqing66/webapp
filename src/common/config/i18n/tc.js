@@ -1,5 +1,6 @@
 export const locale = {
-  GENERAL: {
+    language: 'tc',
+    GENERAL: {
       Navigation:'導航',
       Home:'主頁',
       Home2:'主頁2',
@@ -18,11 +19,22 @@ export const locale = {
       NoRecordFound:'找不到記錄',
       SeeAll:'查看全部',
       Student:'學生',
-  },
+    },
     STUDENT:{
         Student:'學生',
         StudentNo:'學生編號',
         Center:'中心',
         Telephone:'電話號碼'
-    }
+    },
+    HOME: {
+        name: '姓名',
+        gender: '性別',
+        center: '中心',
+        selectTwo: '第二選擇',
+        email: '郵箱',
+        birthday: '生日',
+        date: '日期',
+        Male: '男',
+        Female: '女',
+    },
 }

@@ -3,7 +3,6 @@ import Home from '../pages/Home.vue'
 import Standard from '../pages/standard/Standard.vue'
 import Student from '../pages/student/Student.vue'
 import i18n from '../common/plugins/vue-i18n'
-import test from '../pages/test.vue'
 
 const routes = [
   { path: '*', redirect: '/standard' },
@@ -11,7 +10,6 @@ const routes = [
     {path:'/standard', component: Standard, name:i18n.t("GENERAL.Standard")},
     {path:'/home2', component: Home, name:i18n.t("GENERAL.Home2")},
     {path:'/student', component: Student, name:i18n.t("GENERAL.Student")},
-    {path:'/test', component: test, name:'test'},
 ]
 
 export default routes;
