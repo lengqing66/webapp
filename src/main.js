@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import i18n from './common/plugins/vue-i18n'
+import i18n from './common/plugins/vue-i18n';
 import routes from './config/AppRoutes'
 import store from './components/store/index';
 // plugins
@@ -59,6 +59,7 @@ Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 Vue.component('vue-color-picker', VueColorPicker)
 Vue.component('vue-masked-input', VueMaskedInput)
 Vue.component(VueCountdown.name, VueCountdown);
+
 App.mpType = 'app'
 Vue.prototype._i18n = i18n;
 
@@ -68,7 +69,7 @@ const router = new VueRouter({
 
 new Vue({
     i18n,
-  render: h => h(App),
-  router,
-    store
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

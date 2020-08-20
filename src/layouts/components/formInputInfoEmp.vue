@@ -66,29 +66,49 @@
                 </div>
             </div>
         </b-row>
-        <!--<b-row v-if="!studentInfo">-->
-            <!--<b-col cols="12" class="text-center">-->
-                <!--<b-button variant="success" class="mr-2">{{$t('Save')}}</b-button>-->
-                <!--<b-button variant="secondary">{{$t('Reset')}}</b-button>-->
-            <!--</b-col>-->
-        <!--</b-row>-->
+        <b-row>
+            <b-col cols="12" class="text-center">
+                <b-button @click="saveStudent" variant="success" class="mr-2">{{$t('Save')}}</b-button>
+                <b-button @click="resetForm" variant="secondary">{{$t('Reset')}}</b-button>
+            </b-col>
+        </b-row>
     </b-container>
 </template>
 
 <script>
     export default {
         name: "formInputInfo",
-        props:{
-            studentInfo:{}
+        data(){
+            return{
+                addStudentInfo:{
+                    age:'',
+                    centerName:'',
+                    gender:'',
+                    name:'',
+                    mobile:'',
+                    genderColor:'',
+                    phoneHome:'',
+                    studentNo:'',
+                }
+            }
         },
         methods:{
-            // saveStudent(){
-            //     console.log(this.studentInfo)
-            // },
-            // resetForm(){
-            //     this.studentInfo = ''
-            //     console.log(this.studentInfo)
-            // }
+            saveStudent(){
+                console.log(this.addStudentInfo)
+            },
+            resetForm(){
+                this.addStudentInfo = {
+                    age:'',
+                    centerName:'',
+                    gender:'',
+                    name:'',
+                    mobile:'',
+                    genderColor:'',
+                    phoneHome:'',
+                    studentNo:'',
+                };
+                console.log(this.addStudentInfo)
+            }
         }
     }
 </script>
