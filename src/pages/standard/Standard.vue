@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <div id="content" class="app-content p-1 bg-white">
         <div>
             <b-tabs card content-class="pt-1" ref="theTab"   v-model="tabIndex">
@@ -25,7 +25,7 @@
 
 <script>
     import {AgGridVue} from "ag-grid-vue";
-    import ParentSelect from '../../pages/standard/ParentSelect.vue';
+    //import ParentSelect from '../../pages/standard/ParentSelect.vue';
     export default {
         name: 'Standard',
         data() {
@@ -37,7 +37,7 @@
         },
         components: {
             AgGridVue,
-            ParentSelect
+            //ParentSelect
         },
         beforeMount() {
             this.columnDefs = [
@@ -63,7 +63,8 @@
                         this.tabs.splice(i, 1)
                     }
                 }
-            }
+            },
+
         }
 
     }

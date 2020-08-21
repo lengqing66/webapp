@@ -5,6 +5,7 @@ export const locale = {
       Home2:'Home2',
       Standard:'Standard',
       Student:'Student',
+      Case:'Case',
       Main:'Main',
       Make:'Make',
       Model:'Model',

@@ -5,6 +5,7 @@ export const locale = {
         Home2:'主页2',
         Standard:'标准',
         Student:'学生',
+        Case:'案例',
         Main:'主要',
         Make:'制造商',
         Model:'型号',

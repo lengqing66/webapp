@@ -37,6 +37,32 @@ import Multiselect from 'vue-multiselect'  //select
 Vue.component('multiselect', Multiselect);
 Vue.config.productionTip = false;
 
+//import iView from 'iview';
+//import 'iview/dist/styles/iview.css'
+//Vue.use(iView);
+
+//axios拦截器
+//定义一个请求拦截器
+// axios.interceptors.request.use(
+//     config =>{
+//         store.state.isShow = true;
+//         return config
+//     },
+//     error => {
+//      return Promise.reject(error);
+//    }
+// );
+// //定义一个响应拦截器
+// axios.interceptors.response.use(
+//     config =>{
+//        store.state.isShow = false;
+//     },
+//     error => {
+//         return Promise.reject(error);
+//     }
+// );
+
+
 Vue.use(wysiwyg, { maxHeight: '300px'})
 Vue.use(VueRouter)
 Vue.use(VueBootstrap)
@@ -51,7 +77,7 @@ Vue.use(VueGoogleMaps, {
     key: '',
     libraries: 'places'
   }
-})
+});
 
 Vue.component('vue-custom-scrollbar', VueCustomScrollbar)
 Vue.component('apexchart', VueApexCharts)

@@ -95,7 +95,7 @@
                     {{ $t('GENERAL.Setting') }} <i class="fa fa-wrench fa-fw ml-auto text-gray-400 f-s-16"></i>
                 </b-dropdown-item>
                 <b-dropdown-divider />
-                <b-dropdown-item link-class="d-flex align-items-center" href="#">
+                <b-dropdown-item link-class="d-flex align-items-center"  @click="logOut">
                     {{ $t('GENERAL.LogOut') }} <i class="fa fa-toggle-off fa-fw ml-auto text-gray-400 f-s-16"></i>
                 </b-dropdown-item>
 			</b-dropdown>
@@ -141,7 +141,10 @@ export default {
             this.setActiveLanguage(lang);
             return history.go(0)
         },
-        setActiveLanguage(lang){localStorage.setItem('language',lang)}
+        setActiveLanguage(lang){localStorage.setItem('language',lang)},
+        logOut(){ //退出
+            this.$router.push({ path: '/login' })
+        }
 	}
 }
 </script>

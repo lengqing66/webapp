@@ -33,7 +33,7 @@
     import AgGridForm01 from "../../layouts/components/AgGridForm"
     import FormInputInfo from "../../layouts/components/formInputInfo"
     export default {
-        name: "Student",
+        name: "Case",
         components: {
             FormInputInfo,
             AgGridForm01
@@ -73,7 +73,7 @@
             },
         },
         mounted() {
-            this.$axios.get("./studentlist.json").then(response => {
+            this.$axios.get("./caselist.json").then(response => {
                 this.topSearch = response.data.topSearch;
                 this.studentData = response.data.studentData;
                 this.columnDefs = response.data.columnDefs;
