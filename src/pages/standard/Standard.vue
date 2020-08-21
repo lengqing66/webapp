@@ -25,8 +25,7 @@
 
 <script>
     import {AgGridVue} from "ag-grid-vue";
-    import ParentSelect from '../../pages/standard/ParentSelect.vue';
-    import i18n from '../../common/plugins/vue-i18n'
+    //import ParentSelect from '../../pages/standard/ParentSelect.vue';
     export default {
         name: 'Standard',
         data() {
@@ -38,13 +37,13 @@
         },
         components: {
             AgGridVue,
-            ParentSelect
+            //ParentSelect
         },
         beforeMount() {
             this.columnDefs = [
-                {headerName: i18n.t("GENERAL.Make"), field: 'make', sortable: true, filter: true,},
-                {headerName: i18n.t("GENERAL.Model"), field: 'model', sortable: true, filter: true},
-                {headerName: i18n.t("GENERAL.Price"), field: 'price', sortable: true, filter: true}
+                {headerName: 'Make', field: 'make', sortable: true, filter: true,},
+                {headerName: 'Model', field: 'model', sortable: true, filter: true},
+                {headerName: 'Price', field: 'price', sortable: true, filter: true}
             ];
 
             this.rowData = [
@@ -64,7 +63,8 @@
                         this.tabs.splice(i, 1)
                     }
                 }
-            }
+            },
+
         }
 
     }

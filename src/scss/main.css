@@ -1,4 +1,65 @@
+/*slider*/
+.app-sidebar {
+    background-color: #fff
+}
+
+#app .tabs > .card-header {
+    background-color: rgba(0, 0, 0, .03) !important;
+}
+
+#app .tab-content .card-header {
+    background-color: #f8f8f8 !important;
+}
+
+#app .tab-content .card-header .nav-tabs .nav-link {
+    border-radius: 0
+}
+
+.card-header:first-child {
+    border-radius: 0 !important;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #4d6593;
+    background-color: #f8f8f8 !important;
+    border-color: #c9d2e3 #c9d2e3 #fff !important;
+}
+
+.box .card {
+    border: 0;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, .1);
+    -webkit-transition: all .3s ease-in-out;
+    padding: 15px;
+}
+
+.ag-theme-alpine .ag-root-wrapper {
+    border: 0;
+    border-radius: 0;
+}
+
+.nav-tabs .nav-link {
+    padding: 0.3rem 0.8rem
+}
+
+.nav-tabs .nav-link a:hover {
+    color: #000
+}
+
 .multiselect__tags {
     border: 1px solid #c9d2e3;
     border-radius: 6px;
+}
+
+.radio-label-sty {
+    padding-left: 3px;
+    margin-right: 10px;
+    top: -1px;
+    position: relative;
+    margin-bottom: 0
+}
+
+.bv-no-focus-ring {
+    margin: auto
 }

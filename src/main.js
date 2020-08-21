@@ -30,11 +30,41 @@ import 'vue-hljs/dist/vue-hljs.min.css'
 import 'vue2-daterange-picker/dist/vue2-daterange-picker.css'
 import 'vue-wysiwyg/dist/vueWysiwyg.css'
 import './scss/styles.scss'
+
+import axios from 'axios';
+
+Vue.prototype.$axios = axios;//全局注册，使用方法为:this.$axios
 import Multiselect from 'vue-multiselect'  //select
 
 Vue.component('multiselect', Multiselect)
 
 Vue.config.productionTip = false
+
+//import iView from 'iview';
+//import 'iview/dist/styles/iview.css'
+//Vue.use(iView);
+
+//axios拦截器
+//定义一个请求拦截器
+// axios.interceptors.request.use(
+//     config =>{
+//         store.state.isShow = true;
+//         return config
+//     },
+//     error => {
+//      return Promise.reject(error);
+//    }
+// );
+// //定义一个响应拦截器
+// axios.interceptors.response.use(
+//     config =>{
+//        store.state.isShow = false;
+//     },
+//     error => {
+//         return Promise.reject(error);
+//     }
+// );
+
 
 Vue.use(wysiwyg, { maxHeight: '300px'})
 Vue.use(VueRouter)
@@ -50,7 +80,7 @@ Vue.use(VueGoogleMaps, {
     key: '',
     libraries: 'places'
   }
-})
+});
 
 Vue.component('vue-custom-scrollbar', VueCustomScrollbar)
 Vue.component('apexchart', VueApexCharts)

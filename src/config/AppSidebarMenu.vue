@@ -8,25 +8,26 @@
             url: '/home',
             icon: 'fa fa-home',
             text: i18n.t('GENERAL.Home')
-        }, {
-            url: '/home2',
-            icon: 'fa fa-home',
-            text: i18n.t('GENERAL.Home2')
         },
+        // {
+        //     url: '/home2',
+        //     icon: 'fa fa-home',
+        //     text: i18n.t('GENERAL.Home2')
+        // },
         {
             url: '/standard',
             icon: 'fa fa-home',
             text: i18n.t('GENERAL.Standard')
         },
+        // {
+        //     url: '/student',
+        //     icon: 'fa fa-user',
+        //     text: i18n.t('GENERAL.Student')
+        // },
         {
-            url: '/student',
+            url: '/case',
             icon: 'fa fa-user',
-            text: i18n.t('STUDENT.Student')
-        },
-        {
-            url: '/test',
-            icon: 'fa fa-user',
-            text: 'test'
+            text: i18n.t('GENERAL.Case')
         }
     ];
 

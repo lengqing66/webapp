@@ -21,18 +21,42 @@
           "type": "number"
       }
   ],
-    "testJson": [
+    "addStudentEmpty": [
         {
-            "label1": "Student",
-            "type1": "text",
-            "label2": "StudentNo",
-            "type2": "text",
-            "label3": "Center",
-            "type3": "multiselect",
-            "source": "standardOption.json",
-            "label4": "Telephone",
-            "type4": "number"
-    }
+            "label": "Name",
+            "type": "text",
+            "value": ""
+        },
+        {
+            "label": "Age",
+            "type": "text",
+            "value": ""
+        },
+        {
+            "label": "Gender",
+            "type": "radio",
+            "value": ""
+        },
+        {
+            "label": "Birthday",
+            "type": "date",
+            "value": ""
+        },
+        {
+            "label": "Telephone",
+            "type": "number",
+            "value": ""
+        },
+        {
+            "label": "Email",
+            "type": "email",
+            "value": ""
+        },
+        {
+            "label": "Center",
+            "type": "select",
+            "value": ""
+        }
   ],
   "studentData": [
     {
