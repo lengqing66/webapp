@@ -9,7 +9,7 @@ const routes = [
   { path: '/home', component: Home, name:i18n.t("GENERAL.Home") },
     {path:'/standard', component: Standard, name:i18n.t("GENERAL.Standard")},
     {path:'/home2', component: Home, name:i18n.t("GENERAL.Home2")},
-    {path:'/student', component: Student, name:i18n.t("STUDENT.Student")},
+    {path: '/student', component: Student, name: i18n.t("STUDENT.Student")},
 ]
 
 export default routes;

@@ -21,17 +21,17 @@
           "type": "number"
       }
   ],
-  "testJson": [
-    {
-        "label1":"Student",
-        "type1":"text",
-        "label2":"StudentNo",
-        "type2":"text",
-        "label3":"Center",
-        "type3":"multiselect",
-        "source":"standardOption.json",
-        "label4":"Telephone",
-        "type4":"number"
+    "testJson": [
+        {
+            "label1": "Student",
+            "type1": "text",
+            "label2": "StudentNo",
+            "type2": "text",
+            "label3": "Center",
+            "type3": "multiselect",
+            "source": "standardOption.json",
+            "label4": "Telephone",
+            "type4": "number"
     }
   ],
   "studentData": [
@@ -521,14 +521,14 @@
   ],
   "columnDefs": [
     {
-      "headerName": "StudentNo",
+        "headerName": "StudentNo",
       "field": "studentNo",
       "filter": true,
       "width": 150,
         "sortable": true
     },
     {
-      "headerName": "LastName",
+        "headerName": "LastName",
       "field": "name",
       "filter": true,
       "width": 150,
@@ -553,7 +553,7 @@
       "filter": true
     },
     {
-      "headerName": "Phone",
+        "headerName": "Phone",
       "field": "phoneHome",
       "filter": true,
       "width": 150

@@ -47,12 +47,12 @@
 
                 topSearch: '',
                 topOption:[],
-                searchModel:{},
+                searchModel: {},
                 gridOptions:{},
                 rowSelection:null,
                 gridApi:null,
                 currentPageStudent:'',
-                studentInfo:'',
+                studentInfo: '',
             }
         },
         beforeMount() {
@@ -61,7 +61,7 @@
             this.rowSelection = "multiple";
         },
         methods:{
-            getData(val){  //点击单元格获取值
+            getData(val) {  //点击单元格获取值
                 this.studentInfo = val;
             },
             tabClose:function(x){

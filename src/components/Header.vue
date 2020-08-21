@@ -141,7 +141,9 @@ export default {
             this.setActiveLanguage(lang);
             return history.go(0)
         },
-        setActiveLanguage(lang){localStorage.setItem('language',lang)}
+        setActiveLanguage(lang) {
+            localStorage.setItem('language', lang)
+        }
 	}
 }
 </script>

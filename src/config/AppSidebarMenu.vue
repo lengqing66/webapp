@@ -8,7 +8,7 @@
             url: '/home',
             icon: 'fa fa-home',
             text: i18n.t('GENERAL.Home')
-        },{
+        }, {
             url: '/home2',
             icon: 'fa fa-home',
             text: i18n.t('GENERAL.Home2')

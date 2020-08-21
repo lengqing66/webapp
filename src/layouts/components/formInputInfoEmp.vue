@@ -1,11 +1,11 @@
 <template>
     <b-container class="p-2">
-        <b-row >
-            <b-col  md="6">
+        <b-row>
+            <b-col md="6">
                 <div class="row">
                     <div class="col-md-3"><label class="col-form-label">{{$t('Age')}} :</label></div>
                     <div class="col-md-9">
-                        <input  type="text" class="form-control" v-model="studentInfo.age" >
+                        <input type="text" class="form-control" v-model="studentInfo.age">
                     </div>
                 </div>
             </b-col>
@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-md-3"><label class="col-form-label">{{$t('Center')}} :</label></div>
                     <div class="col-md-9">
-                        <input  type="text" class="form-control" v-model="studentInfo.centerName" >
+                        <input type="text" class="form-control" v-model="studentInfo.centerName">
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-md-3"><label class="col-form-label">{{$t('Gender')}} :</label></div>
                     <div class="col-md-9">
-                        <input  type="text" class="form-control" v-model="studentInfo.gender" >
+                        <input type="text" class="form-control" v-model="studentInfo.gender">
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-md-3"><label class="col-form-label">{{$t('Mobile')}} :</label></div>
                     <div class="col-md-9">
-                        <input  type="text" class="form-control" v-model="studentInfo.mobile" >
+                        <input type="text" class="form-control" v-model="studentInfo.mobile">
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-md-3"><label class="col-form-label">{{$t('Name')}} :</label></div>
                     <div class="col-md-9">
-                        <input  type="text" class="form-control" v-model="studentInfo.name" >
+                        <input type="text" class="form-control" v-model="studentInfo.name">
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="col-md-3"><label class="col-form-label">{{$t('Color')}} :</label></div>
                     <div class="col-md-9">
-                        <input  type="text" class="form-control" v-model="studentInfo.genderColor" >
+                        <input type="text" class="form-control" v-model="studentInfo.genderColor">
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col-md-3"><label class="col-form-label">{{$t('Phone')}} :</label></div>
                     <div class="col-md-9">
-                        <input  type="text" class="form-control" v-model="studentInfo.phoneHome" >
+                        <input type="text" class="form-control" v-model="studentInfo.phoneHome">
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                 <div class="row">
                     <div class="col-md-3"><label class="col-form-label">{{$t('FullName')}}:</label></div>
                     <div class="col-md-9">
-                        <input  type="text" class="form-control" v-model="studentInfo.studentNo" >
+                        <input type="text" class="form-control" v-model="studentInfo.studentNo">
                     </div>
                 </div>
             </div>
@@ -78,34 +78,34 @@
 <script>
     export default {
         name: "formInputInfo",
-        data(){
-            return{
-                addStudentInfo:{
-                    age:'',
-                    centerName:'',
-                    gender:'',
-                    name:'',
-                    mobile:'',
-                    genderColor:'',
-                    phoneHome:'',
-                    studentNo:'',
+        data() {
+            return {
+                addStudentInfo: {
+                    age: '',
+                    centerName: '',
+                    gender: '',
+                    name: '',
+                    mobile: '',
+                    genderColor: '',
+                    phoneHome: '',
+                    studentNo: '',
                 }
             }
         },
-        methods:{
-            saveStudent(){
+        methods: {
+            saveStudent() {
                 console.log(this.addStudentInfo)
             },
-            resetForm(){
+            resetForm() {
                 this.addStudentInfo = {
-                    age:'',
-                    centerName:'',
-                    gender:'',
-                    name:'',
-                    mobile:'',
-                    genderColor:'',
-                    phoneHome:'',
-                    studentNo:'',
+                    age: '',
+                    centerName: '',
+                    gender: '',
+                    name: '',
+                    mobile: '',
+                    genderColor: '',
+                    phoneHome: '',
+                    studentNo: '',
                 };
                 console.log(this.addStudentInfo)
             }

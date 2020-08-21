@@ -1,7 +1,7 @@
 <template>
     <b-container class="p-2">
-        <b-row >
-            <b-col  md="6">
+        <b-row>
+            <b-col md="6">
                 <div class="row">
                     <div class="col-md-3"><label class="col-form-label">{{$t('Age')}} :</label></div>
                     <div class="col-md-9">
@@ -67,10 +67,10 @@
             </div>
         </b-row>
         <!--<b-row v-if="!studentInfo">-->
-            <!--<b-col cols="12" class="text-center">-->
-                <!--<b-button variant="success" class="mr-2">{{$t('Save')}}</b-button>-->
-                <!--<b-button variant="secondary">{{$t('Reset')}}</b-button>-->
-            <!--</b-col>-->
+        <!--<b-col cols="12" class="text-center">-->
+        <!--<b-button variant="success" class="mr-2">{{$t('Save')}}</b-button>-->
+        <!--<b-button variant="secondary">{{$t('Reset')}}</b-button>-->
+        <!--</b-col>-->
         <!--</b-row>-->
     </b-container>
 </template>
@@ -81,7 +81,7 @@
         props:{
             studentInfo:{}
         },
-        methods:{
+        methods: {
             // saveStudent(){
             //     console.log(this.studentInfo)
             // },
