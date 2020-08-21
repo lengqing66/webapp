@@ -38,7 +38,7 @@
                     <div class="menu-text"> {{ getCurrentLocaleData.lang }} <i class="fa fa-angle-down"></i></div>
                 </template>
                 <b-dropdown-item style="min-width: 5rem" @click="updateLocale('en')">EN</b-dropdown-item>
-                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('tw')">繁體</b-dropdown-item>
+                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('tc')">繁體</b-dropdown-item>
                 <b-dropdown-item style="min-width: 5rem" @click="updateLocale('cn')">简体</b-dropdown-item>
             </b-dropdown>
             <!--message-->
