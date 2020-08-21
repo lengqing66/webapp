@@ -22,6 +22,11 @@
             url: '/student',
             icon: 'fa fa-user',
             text: i18n.t('STUDENT.Student')
+        },
+        {
+            url: '/test',
+            icon: 'fa fa-user',
+            text: 'test'
         }
     ];
 

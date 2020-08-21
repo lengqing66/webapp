@@ -111,7 +111,7 @@
         mounted() {
             this.getDefaultData2();
             // this.getDefaultData();
-        }
+        },
     }
 
 </script>
