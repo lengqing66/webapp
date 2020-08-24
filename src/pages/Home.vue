@@ -1,13 +1,16 @@
 <template>
-    <hiddenChange></hiddenChange>
+    <!--<hiddenChange></hiddenChange>-->
+    <ASelect></ASelect>
 </template>
 
 <script>
-    import hiddenChange from '../layouts/components/hiddenChange';
+    // import hiddenChange from '../layouts/components/hiddenChange';
+    import ASelect from '../layouts/components/ASelect';
 
     export default {
         components: {
-            hiddenChange
+            ASelect,
+            // hiddenChange
         }
     }
 

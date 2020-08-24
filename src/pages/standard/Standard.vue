@@ -13,7 +13,8 @@
                 </b-tab>
                 <b-tab title="Data" v-for="tab in this.tabs" :key=tab.length  ref="'Tab' + tab.i"  active>
                     <template v-slot:title>
-                        <strong>{{tab.title + tab.i}}</strong> <a v-on:click="tabClose(tab.i)"><i class="fa fa-times-circle" ></i></a>
+                        <strong>{{tab.title + tab.i}}</strong> <a v-on:click="tabClose(tab.i)"><i
+                        class="fa fa-times-circle"></i></a>
                     </template>
                 </b-tab>
         </b-tabs>

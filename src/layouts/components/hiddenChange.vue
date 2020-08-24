@@ -39,7 +39,8 @@
             </b-row>
             <b-row class="p-2">
                 <b-col cols="12" class="text-center">
-                    <b-button @click="newadd" type="submit" variant="success" class="mr-2">Submit</b-button>
+                    <b-button @click="newadd" type="submit" variant="success" class="mr-2">{{ $t('HOME.Submit') }}
+                    </b-button>
                 </b-col>
             </b-row>
         </div>

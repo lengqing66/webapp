@@ -40,6 +40,7 @@ export const locale = {
         locale: 'cn',
         Male: '男',
         Female: '女',
+        Submit: '提交',
     },
     FullName: '学生姓名',
     Color: '颜色',

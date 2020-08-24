@@ -28,6 +28,7 @@ export const locale = {
         locale: 'tw',
         Male: '男',
         Female: '女',
+        Submit: '提交',
     },
     STUDENT: {
         Student: '學生',

@@ -41,6 +41,7 @@ export const locale = {
         locale: 'en',
         Male: 'Male',
         Female: 'Female',
+        Submit: 'Submit',
     },
 
     FullName: 'Full Name',
