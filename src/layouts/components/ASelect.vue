@@ -6,23 +6,32 @@
 
         <b-modal ref="ASelect" id="ASelect" title="ASelect" hide-footer>
             <template>
+                <div class="nav">
+                    <div style="float:left;width: 250px">
+                        <b-breadcrumb>navigation：
+                            <b-breadcrumb-item v-for="item of items2" :key="item.key" @click="click(item.key)">
+                                {{item.name}}
+                            </b-breadcrumb-item>
+                        </b-breadcrumb>
+                    </div>
+                    <div style="float:right;width: 200px">
+                        <b-nav-form>
+                            <b-form-input v-model="selectData" @keydown="onSearch()"></b-form-input>
+                        </b-nav-form>
+                    </div>
+                </div>
                 <b-form @submit="submit">
-                    <b-breadcrumb>您的位置：
-                        <b-breadcrumb-item :to="{path: item.path}" v-for="item of items" :key="item.path">
-                            {{item.name}}
-                        </b-breadcrumb-item>
-                    </b-breadcrumb>
-                    <ag-grid-vue v-if="this.items2.length===1" style="width: 450px; height: 500px;"
+                    <ag-grid-vue v-if="count==='1'" style="width: 450px; height: 500px;"
                                  class="ag-theme-alpine"
                                  :columnDefs="columnDefs"
                                  :rowData="rowData" @cellClicked="cellClicked($event)">
                     </ag-grid-vue>
-                    <ag-grid-vue v-else style="width: 450px; height: 500px;"
+                    <ag-grid-vue v-else-if="count==='2'" style="width: 450px; height: 500px;"
                                  class="ag-theme-alpine"
                                  :columnDefs="columnDefs"
                                  :rowData="rowData3" @cellClicked="cellClicked2($event)">
                     </ag-grid-vue>
-                    <b-row v-if="this.items2.length!==1" class="p-2">
+                    <b-row v-if="count==='2'" class="p-2">
                         <b-col cols="12" class="text-center">
                             <b-button type="submit" variant="success" class="mr-2">save</b-button>
                         </b-col>
@@ -45,60 +54,66 @@
             return {
                 abc: '',//保存结果
                 abcd: '',//临时选择结果
-                //导航
+                //全部导航
                 items: [
                     {
-                        path: '',
-                        name: '/home'
+                        key: '1',
+                        name: 'home'
                     },
                     {
-                        path: '',
-                        name: '二级'
+                        key: '2',
+                        name: 'home2',
+                        disabled: true,
                     },
                 ],
-                //临时导航
+                //当前导航
                 items2: [],
+                selectData: '',
+
+                count: '1',//计数
             }
         },
         beforeMount() { //data
             this.columnDefs = [
-                {headerName: 'Make', field: 'make', sortable: true, filter: true,},
-                {headerName: 'Model', field: 'model', sortable: true, filter: true},
-                {headerName: 'Price', field: 'price', sortable: true, filter: true},
+                {headerName: 'Number', field: 'number', sortable: true, filter: true,},
+                {headerName: 'Name', field: 'name', sortable: true, filter: true},
+                {headerName: 'Detailed', field: 'detailed', sortable: true, filter: true},
             ];
 
             this.rowData = [
-                {make: 'Toyota', model: 'Celica', price: 35000},
-                {make: 'Ford', model: 'Mondeo', price: 32000},
-                {make: 'Porsche', model: 'Boxter', price: 72000},
+                {number: '1', name: 'Celica', detailed: 'detailed1'},
+                {number: '2', name: 'Mondeo', detailed: 'detailed2'},
+                {number: '3', name: 'Boxter', detailed: 'detailed3'},
             ];
 
             this.rowData2 = [
-                {make: 'Toyota', model: 'Celica', price: 35000},
-                {make: 'Toyota', model: 'Mondeo', price: 35000},
-                {make: 'Toyota', model: 'Boxter', price: 35000},
-                {make: 'Ford', model: 'Celica', price: 35000},
-                {make: 'Ford', model: 'Mondeo', price: 35000},
-                {make: 'Ford', model: 'Boxter', price: 35000},
-                {make: 'Porsche', model: 'Celica', price: 35000},
-                {make: 'Porsche', model: 'Mondeo', price: 35000},
-                {make: 'Porsche', model: 'Boxter', price: 35000},
+                {number: '1', name: 'Celica1', detailed: 'detailed11'},
+                {number: '1', name: 'Mondeo1', detailed: 'detailed12'},
+                {number: '1', name: 'Boxter1', detailed: 'detailed13'},
+                {number: '2', name: 'Celica2', detailed: 'detailed21'},
+                {number: '2', name: 'Mondeo2', detailed: 'detailed22'},
+                {number: '2', name: 'Boxter2', detailed: 'detailed23'},
+                {number: '3', name: 'Celica3', detailed: 'detailed31'},
+                {number: '3', name: 'Mondeo3', detailed: 'detailed32'},
+                {number: '3', name: 'Boxter3', detailed: 'detailed33'},
             ];
             this.rowData3 = [];//筛选后的二级数据
         },
         methods: {
             //第一次选择
-            cellClicked(a) {
+            cellClicked(e) {
                 for (let i = 0; i < this.rowData2.length; i++) {
-                    if (a.data.make === this.rowData2[i].make) {
+                    if (e.data.number === this.rowData2[i].number) {
                         this.rowData3.push(this.rowData2[i]);
                     }
                 }
-                this.items2.push({path: '', name: a.data.model});
+                this.items2.push(this.items[1]);
+                this.items2[1].name = e.data.name;
+                this.count = '2';
             },
             //第二次选择
-            cellClicked2(a) {
-                this.abcd = this.items2[1].name + '/' + a.data.model;
+            cellClicked2(e) {
+                this.abcd = this.items2[1].name + '/' + e.data.name;
                 alert(this.abcd);
             },
             //提交
@@ -106,6 +121,23 @@
                 evt.preventDefault();
                 this.abc = this.abcd;
                 this.$refs['ASelect'].hide();
+            },
+            //查找
+            select(e) {
+                var evt = window.event || e;
+                if (evt.keyCode == 13) {
+
+                }
+            },
+            //点击导航
+            click(a) {
+                this.rowData3 = [];
+                this.items2 = [];
+                this.items2.push(this.items[0]);
+            },
+            //查找
+            onSearch() {
+
             }
         },
         mounted() {
