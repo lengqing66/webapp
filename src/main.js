@@ -32,7 +32,8 @@ import 'vue-wysiwyg/dist/vueWysiwyg.css'
 import './scss/styles.scss'
 
 import axios from 'axios';
-Vue.prototype.$axios = axios ;//全局注册，使用方法为:this.$axios
+
+Vue.prototype.$axios = axios;//全局注册，使用方法为:this.$axios
 import Multiselect from 'vue-multiselect'  //select
 Vue.component('multiselect', Multiselect);
 import Loading from 'vue-loading-overlay';    //loading

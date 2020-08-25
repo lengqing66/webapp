@@ -21,42 +21,42 @@
           "type": "number"
       }
   ],
-  "addStudentEmpty": [
-      {
-          "label": "Name",
-          "type": "text",
-          "value": ""
-      },
-      {
-          "label": "Age",
-          "type": "text",
-          "value": ""
-      },
-      {
-          "label": "Gender",
-          "type": "radio",
-          "value": ""
-      },
-      {
-          "label": "Birthday",
-          "type": "date",
-          "value": ""
-      },
-      {
-          "label": "Telephone",
-          "type": "number",
-          "value": ""
-      },
-      {
-          "label": "Email",
-          "type": "email",
-          "value": ""
-      },
-      {
-          "label": "Center",
-          "type": "select",
-          "value": ""
-      }
+    "addStudentEmpty": [
+        {
+            "label": "Name",
+            "type": "text",
+            "value": ""
+        },
+        {
+            "label": "Age",
+            "type": "text",
+            "value": ""
+        },
+        {
+            "label": "Gender",
+            "type": "radio",
+            "value": ""
+        },
+        {
+            "label": "Birthday",
+            "type": "date",
+            "value": ""
+        },
+        {
+            "label": "Telephone",
+            "type": "number",
+            "value": ""
+        },
+        {
+            "label": "Email",
+            "type": "email",
+            "value": ""
+        },
+        {
+            "label": "Center",
+            "type": "select",
+            "value": ""
+        }
   ],
   "studentData": [
     {
@@ -545,14 +545,14 @@
   ],
   "columnDefs": [
     {
-      "headerName": "StudentNo",
+        "headerName": "StudentNo",
       "field": "studentNo",
       "filter": true,
       "width": 150,
         "sortable": true
     },
     {
-      "headerName": "LastName",
+        "headerName": "LastName",
       "field": "name",
       "filter": true,
       "width": 150,
@@ -577,7 +577,7 @@
       "filter": true
     },
     {
-      "headerName": "Phone",
+        "headerName": "Phone",
       "field": "phoneHome",
       "filter": true,
       "width": 150

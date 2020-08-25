@@ -1,8 +1,8 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <div id="content" class="app-content p-1" style="background-color: #f8f8f8">
         <div>
-            <b-tabs card content-class="pt-2 pl-3 pr-3" ref="theTab"   v-model="tabIndex">
-                <b-tab title="Main"  active >
+            <b-tabs card content-class="pt-2 pl-3 pr-3" ref="theTab" v-model="tabIndex">
+                <b-tab title="Main" active>
                     <template>
                         <AgGridForm01 :topSearch="topSearch"
                                       :topOption="topOption"
@@ -16,9 +16,10 @@
                         </AgGridForm01>
                     </template>
                 </b-tab>
-                <b-tab title="Data" v-for="tab in this.tabs" :key=tab.length  ref="'Tab' + tab.i"  active>
+                <b-tab title="Data" v-for="tab in this.tabs" :key=tab.length ref="'Tab' + tab.i" active>
                     <template v-slot:title>
-                        <strong>{{tab.title}}</strong> <a v-on:click="tabClose(tab.i)"><i class="fa fa-times-circle" ></i></a>
+                        <strong>{{tab.title}}</strong> <a v-on:click="tabClose(tab.i)"><i
+                        class="fa fa-times-circle"></i></a>
                     </template>
                     <template>
                         <formInputInfo :studentInfo="studentInfo"></formInputInfo>
@@ -32,27 +33,28 @@
 <script>
     import AgGridForm01 from "../../layouts/components/AgGridForm"
     import FormInputInfo from "../../layouts/components/formInputInfo"
+
     export default {
         name: "Case",
         components: {
             FormInputInfo,
-            AgGridForm01
+            AgGridForm01,
         },
         data() {
             return {
                 tabs: [],
                 tabCounter: 0,
-                tabIndex:0,
+                tabIndex: 0,
 
                 topSearch: '',
-                topOption:[],
-                searchModel:{},
-                gridOptions:{},
-                rowSelection:null,
-                gridApi:null,
-                currentPageStudent:'',
-                studentInfo:'',
-                addStudentEmpty:''
+                topOption: [],
+                searchModel: {},
+                gridOptions: {},
+                rowSelection: null,
+                gridApi: null,
+                currentPageStudent: '',
+                studentInfo: '',
+                addStudentEmpty: ''
             }
         },
         beforeMount() {
@@ -60,11 +62,11 @@
             this.studentData = [];
             this.rowSelection = "multiple";
         },
-        methods:{
-            getData(val){  //点击单元格获取值
+        methods: {
+            getData(val) {  //点击单元格获取值
                 this.studentInfo = val;
             },
-            tabClose:function(x){
+            tabClose: function (x) {
                 for (let i = 0; i < this.tabs.length; i++) {
                     if (this.tabs[i].i === x) {
                         this.tabs.splice(i, 1)

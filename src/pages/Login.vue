@@ -31,7 +31,7 @@
                                 class="mb-3" @keyup.enter="login"></b-form-input>
                             <span style="display: none"></span>
                             <div class=" text-center mb-2">
-                                <b-button type="submit" variant="success"  @click="signIn">Login</b-button>
+                                <b-button type="submit" variant="success" @click="signIn">Login</b-button>
                             </div>
                         </div>
 
@@ -46,26 +46,26 @@
     import AppOptions from '../config/AppOptions.vue'
 
     export default {
-        data(){
-          return{
-              loginForm: {
-                  login: "",
-                  password: ""
-              },
-          }
+        data() {
+            return {
+                loginForm: {
+                    login: "",
+                    password: ""
+                },
+            }
         },
-        methods:{
-          signIn(){
-              console.log(this.loginForm);
-              this.$router.push({ path: '/home' })
-          },
+        methods: {
+            signIn() {
+                console.log(this.loginForm);
+                this.$router.push({path: '/home'})
+            },
         },
         mounted() {
             AppOptions.appWithoutSidebar = true;
             AppOptions.appWithoutHeader = true;
             AppOptions.appContentFullWidth = true;
         },
-        beforeRouteLeave (to, from, next) {
+        beforeRouteLeave(to, from, next) {
             AppOptions.appWithoutSidebar = false;
             AppOptions.appWithoutHeader = false;
             AppOptions.appContentFullWidth = false;

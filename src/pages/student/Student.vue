@@ -1,7 +1,7 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <div id="content" class="app-content p-1 bg-f8">
         <div>
-            <b-tabs card content-class="pt-2 pl-3 pr-3" ref="theTab"   v-model="tabIndex">
+            <b-tabs card content-class="pt-2 pl-3 pr-3" ref="theTab" v-model="tabIndex">
                 <b-tab title="Main"  active >
                     <template>
                         <AgGridForm01 :topSearch="topSearch"
@@ -46,13 +46,13 @@
 
                 topSearch: '',
                 topOption:[],
-                searchModel:{},
+                searchModel: {},
                 gridOptions:{},
                 rowSelection:null,
                 gridApi:null,
                 currentPageStudent:'',
-                studentInfo:'',
-                addStudentEmpty:''
+                studentInfo: '',
+                addStudentEmpty: ''
             }
         },
         beforeMount() {
@@ -61,7 +61,7 @@
             this.rowSelection = "multiple";
         },
         methods:{
-            getData(val){  //点击单元格获取值
+            getData(val) {  //点击单元格获取值
                 this.studentInfo = val;
             },
             tabClose:function(x){

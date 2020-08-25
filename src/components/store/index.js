@@ -15,7 +15,7 @@ const store = new Vuex.Store({
         //保存用戶信息
         userInfo: null,
     },
-    getters:{
+    getters: {
         //獲取變量的值
         getUserInfo: (state) => {
             return state.userInfo;
@@ -33,7 +33,7 @@ const store = new Vuex.Store({
             }
         },
         // 修改token，并将token存入localStorage
-        changeLogin (state, user) {
+        changeLogin(state, user) {
             state.Authorization = user.Authorization;
             localStorage.setItem('Authorization', user.Authorization);
         },
@@ -42,9 +42,9 @@ const store = new Vuex.Store({
             state.userInfo = userInfo;
         },
     },
-    actions:{
+    actions: {
         //包含任意异步操作，这里面的方法是用来异步触发mutations里面的方法
-        updateUserData(context, userInfo){
+        updateUserData(context, userInfo) {
             console.log(userInfo)
             context.commit('updateUserData', userInfo)
         }

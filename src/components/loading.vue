@@ -17,6 +17,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
     }
+
     .loading {
         width: 100px;
         height: 100px;
@@ -25,6 +26,7 @@
         border-right-color: #87CEEB;
         animation: loading 1s linear infinite;
     }
+
     @keyframes loading {
         0% {
             transform: rotate(0deg);

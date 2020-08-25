@@ -38,7 +38,7 @@
                     <div class="menu-text"> {{ getCurrentLocaleData.lang }} <i class="fa fa-angle-down"></i></div>
                 </template>
                 <b-dropdown-item style="min-width: 5rem" @click="updateLocale('en')">EN</b-dropdown-item>
-                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('tc')">繁體</b-dropdown-item>
+                <b-dropdown-item style="min-width: 5rem" @click="updateLocale('tw')">繁體</b-dropdown-item>
                 <b-dropdown-item style="min-width: 5rem" @click="updateLocale('cn')">简体</b-dropdown-item>
             </b-dropdown>
             <!--message-->
@@ -95,7 +95,7 @@
                     {{ $t('GENERAL.Setting') }} <i class="fa fa-wrench fa-fw ml-auto text-gray-400 f-s-16"></i>
                 </b-dropdown-item>
                 <b-dropdown-divider />
-                <b-dropdown-item link-class="d-flex align-items-center"  @click="logOut">
+                <b-dropdown-item link-class="d-flex align-items-center" @click="logOut">
                     {{ $t('GENERAL.LogOut') }} <i class="fa fa-toggle-off fa-fw ml-auto text-gray-400 f-s-16"></i>
                 </b-dropdown-item>
 			</b-dropdown>
@@ -141,9 +141,11 @@ export default {
             this.setActiveLanguage(lang);
             return history.go(0)
         },
-        setActiveLanguage(lang){localStorage.setItem('language',lang)},
-        logOut(){ //退出
-            this.$router.push({ path: '/login' })
+        setActiveLanguage(lang) {
+            localStorage.setItem('language', lang)
+        },
+        logOut() { //退出
+            this.$router.push({path: '/login'})
         }
 	}
 }

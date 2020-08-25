@@ -3,13 +3,16 @@
 </template>
 
 <script>
-    import hiddenChange from '../layouts/components/hiddenChange';
+    import hiddenChange from './Home';
 
     export default {
+        name: "test",
         components: {
             hiddenChange
         }
     }
-
 </script>
 
+<style scoped>
+
+</style>
