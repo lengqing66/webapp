@@ -1,0 +1,75 @@
+<template>
+    <div class="login" style="padding-top: 200px">
+        <b-container>
+            <b-row class="justify-content-center items-center">
+
+                <b-col cols="12" md="4" class="bg-white p-0">
+                    <img src="../assets/images/login.png" alt="login" class="mw-100 h-100">
+                </b-col>
+
+                <b-col cols="12" md="4" class="bg-white p-3">
+                    <div class="p-8 login-tabs-container">
+
+                        <div class="mb-3">
+                            <h4 class="mb-1">Login</h4>
+                            <p>Welcome back, please login to your account.</p>
+                        </div>
+
+                        <div>
+                            <b-form-input
+                                type="text"
+                                name="login"
+                                placeholder="Login"
+                                v-model="loginForm.login"
+                                class=" mb-3"></b-form-input>
+                            <span class="text-danger text-sm" style="display: none"></span>
+                            <b-form-input
+                                type="password"
+                                name="password"
+                                placeholder="Password"
+                                v-model="loginForm.password"
+                                class="mb-3" @keyup.enter="login"></b-form-input>
+                            <span style="display: none"></span>
+                            <div class=" text-center mb-2">
+                                <b-button type="submit" variant="success" @click="signIn">Login</b-button>
+                            </div>
+                        </div>
+
+                    </div>
+                </b-col>
+            </b-row>
+        </b-container>
+    </div>
+</template>
+
+<script>
+    import AppOptions from '../config/AppOptions.vue'
+
+    export default {
+        data() {
+            return {
+                loginForm: {
+                    login: "",
+                    password: ""
+                },
+            }
+        },
+        methods: {
+            signIn() {
+                console.log(this.loginForm);
+                this.$router.push({path: '/home'})
+            },
+        },
+        mounted() {
+            AppOptions.appWithoutSidebar = true;
+            AppOptions.appWithoutHeader = true;
+            AppOptions.appContentFullWidth = true;
+        },
+        beforeRouteLeave(to, from, next) {
+            AppOptions.appWithoutSidebar = false;
+            AppOptions.appWithoutHeader = false;
+            AppOptions.appContentFullWidth = false;
+            next();
+        },
+    }
+</script>

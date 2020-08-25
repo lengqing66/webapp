@@ -13,7 +13,8 @@
                 </b-tab>
                 <b-tab title="Data" v-for="tab in this.tabs" :key=tab.length  ref="'Tab' + tab.i"  active>
                     <template v-slot:title>
-                        <strong>{{tab.title + tab.i}}</strong> <a v-on:click="tabClose(tab.i)"><i class="fa fa-times-circle" ></i></a>
+                        <strong>{{tab.title + tab.i}}</strong> <a v-on:click="tabClose(tab.i)"><i
+                        class="fa fa-times-circle"></i></a>
                     </template>
                 </b-tab>
         </b-tabs>
@@ -25,7 +26,7 @@
 
 <script>
     import {AgGridVue} from "ag-grid-vue";
-    import i18n from '../../common/plugins/vue-i18n';
+    //import ParentSelect from '../../pages/standard/ParentSelect.vue';
     export default {
         name: 'Standard',
         data() {
@@ -36,13 +37,14 @@
             }
         },
         components: {
-            AgGridVue
+            AgGridVue,
+            //ParentSelect
         },
         beforeMount() {
             this.columnDefs = [
-                {headerName: i18n.t('GENERAL.Make'), field: 'make', sortable: true, filter: true,  },
-                {headerName: i18n.t('GENERAL.Model'), field: 'model', sortable: true, filter: true },
-                {headerName: i18n.t('GENERAL.Price'), field: 'price', sortable: true, filter: true }
+                {headerName: 'Make', field: 'make', sortable: true, filter: true,},
+                {headerName: 'Model', field: 'model', sortable: true, filter: true},
+                {headerName: 'Price', field: 'price', sortable: true, filter: true}
             ];
 
             this.rowData = [
@@ -62,7 +64,8 @@
                         this.tabs.splice(i, 1)
                     }
                 }
-            }
+            },
+
         }
 
     }

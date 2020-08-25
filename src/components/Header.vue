@@ -35,7 +35,7 @@
             <!--language-->
             <b-dropdown class="menu-item set-lang" right toggle-tag="a" variant="link" :no-caret="true" toggle-class="menu-link border-0">
                 <template v-slot:button-content>
-                    <div class="menu-text"> {{getCurrentLocaleData.lang }} <i class="fa fa-angle-down"></i></div>
+                    <div class="menu-text"> {{ getCurrentLocaleData.lang }} <i class="fa fa-angle-down"></i></div>
                 </template>
                 <b-dropdown-item style="min-width: 5rem" @click="updateLocale('en')">EN</b-dropdown-item>
                 <b-dropdown-item style="min-width: 5rem" @click="updateLocale('tw')">繁體</b-dropdown-item>
@@ -95,7 +95,7 @@
                     {{ $t('GENERAL.Setting') }} <i class="fa fa-wrench fa-fw ml-auto text-gray-400 f-s-16"></i>
                 </b-dropdown-item>
                 <b-dropdown-divider />
-                <b-dropdown-item link-class="d-flex align-items-center" href="#">
+                <b-dropdown-item link-class="d-flex align-items-center" @click="logOut">
                     {{ $t('GENERAL.LogOut') }} <i class="fa fa-toggle-off fa-fw ml-auto text-gray-400 f-s-16"></i>
                 </b-dropdown-item>
 			</b-dropdown>
@@ -113,7 +113,6 @@ export default {
 		return {
 			appOptions: AppOptions,
 			notificationData: [],
-            // lang:'EN'
 		}
   },
     computed:{
@@ -122,7 +121,7 @@ export default {
             const locale = this.$i18n.locale;
             if (locale === "en") return {lang: 'EN'}
             else if (locale === "tw") return {lang: '繁體'}
-            else return {lang:'简体'}
+            else return {lang: '简体'}
         },
     },
 	methods: {
@@ -137,13 +136,17 @@ export default {
 			this.$router.push({ path: '/extra/search' })
 		},
         updateLocale(locale) {  //set language
-            this.$i18n.locale=locale
-            this.setActiveLanguage(locale)
+            this.$i18n.locale = locale;
+            const lang = locale;
+            this.setActiveLanguage(lang);
             return history.go(0)
         },
         setActiveLanguage(lang) {
             localStorage.setItem('language', lang)
         },
+        logOut() { //退出
+            this.$router.push({path: '/login'})
+        }
 	}
 }
 </script>
