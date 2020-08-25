@@ -6,23 +6,23 @@
 
         <b-modal ref="ASelect" id="ASelect" title="ASelect" hide-footer>
             <template>
+                <b-breadcrumb>您的位置：
+                    <b-breadcrumb-item v-for="item of items2" :key="item.key" @click="click(item.key)">
+                        {{item.name}}
+                    </b-breadcrumb-item>
+                </b-breadcrumb>
                 <b-form @submit="submit">
-                    <b-breadcrumb>您的位置：
-                        <b-breadcrumb-item :to="{path: item.path}" v-for="item of items2" :key="item.path">
-                            {{item.name}}
-                        </b-breadcrumb-item>
-                    </b-breadcrumb>
-                    <ag-grid-vue v-if="this.items2.length===1" style="width: 450px; height: 500px;"
+                    <ag-grid-vue v-if="innerpath==='1'" style="width: 450px; height: 500px;"
                                  class="ag-theme-alpine"
                                  :columnDefs="columnDefs"
                                  :rowData="rowData" @cellClicked="cellClicked($event)">
                     </ag-grid-vue>
-                    <ag-grid-vue v-else style="width: 450px; height: 500px;"
+                    <ag-grid-vue v-else-if="innerpath==='2'" style="width: 450px; height: 500px;"
                                  class="ag-theme-alpine"
                                  :columnDefs="columnDefs"
                                  :rowData="rowData3" @cellClicked="cellClicked2($event)">
                     </ag-grid-vue>
-                    <b-row v-if="this.items2.length!==1" class="p-2">
+                    <b-row v-if="innerpath==='2'" class="p-2">
                         <b-col cols="12" class="text-center">
                             <b-button type="submit" variant="success" class="mr-2">save</b-button>
                         </b-col>
@@ -45,19 +45,22 @@
             return {
                 abc: '',//保存结果
                 abcd: '',//临时选择结果
-                //导航
+                innerpath: '1',//更改显示
+                //全部导航
                 items: [
                     {
-                        path: '',
-                        name: '/home'
+                        key: '1',
+                        name: 'home'
                     },
                     {
-                        path: '',
-                        name: '二级'
+                        key: '2',
+                        name: 'home2',
+                        disabled: true,
                     },
                 ],
-                //临时导航
+                //当前导航
                 items2: [],
+                selectData: '',
             }
         },
         beforeMount() { //data
@@ -68,21 +71,21 @@
             ];
 
             this.rowData = [
-                {make: 'Toyota', model: 'Celica', price: 35000},
-                {make: 'Ford', model: 'Mondeo', price: 32000},
-                {make: 'Porsche', model: 'Boxter', price: 72000},
+                {make: 'Toyota', model: 'Celica', price: '35000'},
+                {make: 'Ford', model: 'Ford', price: '32000'},
+                {make: 'Porsche', model: 'Boxter', price: '72000'},
             ];
 
             this.rowData2 = [
-                {make: 'Toyota', model: 'Celica', price: 35000},
-                {make: 'Toyota', model: 'Mondeo', price: 35000},
-                {make: 'Toyota', model: 'Boxter', price: 35000},
-                {make: 'Ford', model: 'Celica', price: 35000},
-                {make: 'Ford', model: 'Mondeo', price: 35000},
-                {make: 'Ford', model: 'Boxter', price: 35000},
-                {make: 'Porsche', model: 'Celica', price: 35000},
-                {make: 'Porsche', model: 'Mondeo', price: 35000},
-                {make: 'Porsche', model: 'Boxter', price: 35000},
+                {make: 'Toyota', model: 'Celica', price: '35000'},
+                {make: 'Toyota', model: 'Mondeo', price: '32000'},
+                {make: 'Toyota', model: 'Boxter', price: '72000'},
+                {make: 'Ford', model: 'Celica', price: '35000'},
+                {make: 'Ford', model: 'Mondeo', price: '32000'},
+                {make: 'Ford', model: 'Boxter', price: '72000'},
+                {make: 'Porsche', model: 'Celica', price: '35000'},
+                {make: 'Porsche', model: 'Mondeo', price: '32000'},
+                {make: 'Porsche', model: 'Boxter', price: '72000'},
             ];
             this.rowData3 = [];//筛选后的二级数据
         },
@@ -94,7 +97,9 @@
                         this.rowData3.push(this.rowData2[i]);
                     }
                 }
-                this.items2.push({path: '', name: a.data.model});
+                this.items2.push(this.items[1]);
+                this.items2[1].name = a.data.model;
+                this.innerpath = '2';
             },
             //第二次选择
             cellClicked2(a) {
@@ -106,6 +111,20 @@
                 evt.preventDefault();
                 this.abc = this.abcd;
                 this.$refs['ASelect'].hide();
+            },
+            //查找
+            select(e) {
+                var evt = window.event || e;
+                if (evt.keyCode == 13) {
+
+                }
+            },
+            //点击导航
+            click(a) {
+                this.rowData3 = [];
+                this.items2 = [];
+                this.items2.push(this.items[0]);
+                this.innerpath = a;
             }
         },
         mounted() {
