@@ -75,14 +75,17 @@
             },
         },
         mounted() {
+            let loader = this.$loading.show({});
             this.$axios.get("./caselist.json").then(response => {
                 this.topSearch = response.data.topSearch;
                 this.studentData = response.data.studentData;
                 this.columnDefs = response.data.columnDefs;
                 this.addStudentEmpty = response.data.addStudentEmpty;
+                loader.hide();
             });
             this.$axios.get("./standardOption.json").then(response => {
                 this.topOption = response.data.topOption;
+                loader.hide();
             });
         }
 
