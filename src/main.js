@@ -32,7 +32,6 @@ import 'vue-wysiwyg/dist/vueWysiwyg.css'
 import './scss/styles.scss'
 
 import axios from 'axios';
-
 Vue.prototype.$axios = axios;//全局注册，使用方法为:this.$axios
 import Multiselect from 'vue-multiselect'  //select
 Vue.component('multiselect', Multiselect);
@@ -48,6 +47,8 @@ Vue.use(Loading, {
     opacity: 0.5,
     zIndex: 999999,
 });
+// this.$Loading.show({});
+// this.$Loading.hide({});
 Vue.config.productionTip = false;
 
 //axios拦截器

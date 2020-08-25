@@ -1,10 +1,9 @@
 <template >
-    <div class="box mb-3">
-
+    <div class="box">
         <!--top search-->
-        <b-card title="Search" v-show="myToggle" class="mt-3">
+        <b-card title="Search" v-show="myToggle">
             <b-form @submit="onSubmit" @reset="onReset">
-                <b-container class="p-2">
+                <b-container>
                     <b-row >
                         <b-col cols="12" md="6" :key="index" v-for="(item,index) in topSearch">
                             <b-form-group label-cols="4" label-cols-lg="3" :label="item.label+':'" >
@@ -53,7 +52,7 @@
                 </b-container>
             </b-form>
         </b-card>
-        <b-card title="Case" class="mt-3">
+        <b-card title="Case">
             <!--top button-->
             <div class="top-btn mb-3 p-1">
                 <b-button  v-b-modal.modalAddStud variant="outline-primary" size="sm" class="mr-2"><i class="fa fa-plus"></i> Add</b-button>

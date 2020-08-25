@@ -19,11 +19,11 @@
             icon: 'fa fa-home',
             text: i18n.t('GENERAL.Standard')
         },
-        // {
-        //     url: '/student',
-        //     icon: 'fa fa-user',
-        //     text: i18n.t('GENERAL.Student')
-        // },
+        {
+            url: '/student',
+            icon: 'fa fa-user',
+            text: i18n.t('GENERAL.Student')
+        },
         {
             url: '/case',
             icon: 'fa fa-user',

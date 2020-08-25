@@ -1,9 +1,10 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <div id="content" class="app-content p-1 bg-f8">
+    <div id="content" class="app-content">
         <div>
-            <b-tabs card content-class="pt-2 pl-3 pr-3" ref="theTab" v-model="tabIndex">
+            <b-tabs card content-class="" ref="theTab" v-model="tabIndex">
                 <b-tab title="Main"  active >
                     <template>
+                        <!--content-->
                         <AgGridForm01 :topSearch="topSearch"
                                       :topOption="topOption"
                                       :searchModel="searchModel"
@@ -21,6 +22,7 @@
                         <strong>{{tab.title}}</strong> <a v-on:click="tabClose(tab.i)"><i class="fa fa-times-circle" ></i></a>
                     </template>
                     <template>
+                        <!--content-->
                         <formInputInfo :studentInfo="studentInfo"></formInputInfo>
                     </template>
                 </b-tab>
@@ -73,23 +75,17 @@
             },
         },
         mounted() {
-            this.$Loading.show({});
             this.$axios.get("./studentlist.json").then(response => {
                 this.topSearch = response.data.topSearch;
                 this.studentData = response.data.studentData;
                 this.columnDefs = response.data.columnDefs;
                 this.addStudentEmpty = response.data.addStudentEmpty;
-                this.$Loading.hide();
             });
             this.$axios.get("./standardOption.json").then(response => {
                 this.topOption = response.data.topOption;
-                this.$Loading.hide();
             });
         }
 
     }
 </script>
 
-
-<style scoped>
-</style>

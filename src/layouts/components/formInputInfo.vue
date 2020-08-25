@@ -1,7 +1,7 @@
 <template>
     <div class="box">
-        <b-card class="mt-3">
-            <b-container class="p-2">
+        <b-card>
+            <b-container>
                 <!--<b-row >-->
                     <!--<b-col  md="6">-->
                         <!--<div class="row">-->

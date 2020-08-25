@@ -1,7 +1,7 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <div id="content" class="app-content p-1" style="background-color: #f8f8f8">
+    <div id="content" class="app-content" style="background-color: #f8f8f8">
         <div>
-            <b-tabs card content-class="pt-2 pl-3 pr-3" ref="theTab" v-model="tabIndex">
+            <b-tabs card content-class="" ref="theTab" v-model="tabIndex">
                 <b-tab title="Main" active>
                     <template>
                         <AgGridForm01 :topSearch="topSearch"

@@ -1,48 +1,50 @@
 <template>
-    <div id="content" class="app-content">
-        <div>
-            <b-row>
-                <b-col cols="12" :key="index" v-for="(item,index) in arrsTest">
-                    <b-form-group label-cols="4" label-cols-lg="3" :label="$t('HOME.'+item.label) +':'">
+    <div class="box">
+        <b-card title="Form">
+            <b-container>
+                <b-row>
+                    <b-col cols="12" :key="index" v-for="(item,index) in arrsTest">
+                        <b-form-group label-cols="4" label-cols-lg="3" :label="$t('HOME.'+item.label) +':'">
 
-                        <b-form-input @change="changeFunc(item.customItem, index)" v-model="item.customItem"
-                                      v-if="item.type==='text' || item.type==='email' || item.type==='number' || item.type==='password'"
-                                      :type="item.type"></b-form-input>
+                            <b-form-input @change="changeFunc(item.customItem, index)" v-model="item.customItem"
+                                          v-if="item.type==='text' || item.type==='email' || item.type==='number' || item.type==='password'"
+                                          :type="item.type"></b-form-input>
 
-                        <b-form-radio-group v-if="item.type==='radio'" name="radio-sub-component">
-                            <input type="radio" id="one" value="male" @change="changeFunc(item.customItem, index)"
-                                   v-model="item.customItem">
-                            <label for="one" class="radio-label-sty">{{ $t('HOME.Male') }}</label>
-                            <input type="radio" id="two" value="female" @change="changeFunc(item.customItem, index)"
-                                   v-model="item.customItem">
-                            <label for="two" class="radio-label-sty">{{ $t('HOME.Female') }}</label>
-                        </b-form-radio-group>
+                            <b-form-radio-group v-if="item.type==='radio'" name="radio-sub-component">
+                                <input type="radio" id="one" value="male" @change="changeFunc(item.customItem, index)"
+                                       v-model="item.customItem">
+                                <label for="one" class="radio-label-sty">{{ $t('HOME.Male') }}</label>
+                                <input type="radio" id="two" value="female" @change="changeFunc(item.customItem, index)"
+                                       v-model="item.customItem">
+                                <label for="two" class="radio-label-sty">{{ $t('HOME.Female') }}</label>
+                            </b-form-radio-group>
 
-                        <b-form-datepicker @context="changeFunc(item.customItem, index)" v-model="item.customItem"
-                                           :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
-                                           v-if="item.type==='date'" :locale="$t('HOME.locale')"></b-form-datepicker>
+                            <b-form-datepicker @context="changeFunc(item.customItem, index)" v-model="item.customItem"
+                                               :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
+                                               v-if="item.type==='date'" :locale="$t('HOME.locale')"></b-form-datepicker>
 
-                        <b-form-select
-                            @change="changeFunc(item.customItem, index)"
-                            v-model="item.customItem"
-                            v-if="item.type==='select'"
-                            :options="topOption">
-                        </b-form-select>
+                            <b-form-select
+                                @change="changeFunc(item.customItem, index)"
+                                v-model="item.customItem"
+                                v-if="item.type==='select'"
+                                :options="topOption">
+                            </b-form-select>
 
-                    </b-form-group>
-                </b-col>
-            </b-row>
-            <b-row class="p-2">
-                <b-col cols="12" class="text-center">
-                    <input type="hidden" v-model="hidden_testTest" id="hidden1">
-                </b-col>
-            </b-row>
-            <b-row class="p-2">
-                <b-col cols="12" class="text-center">
-                    <b-button @click="newadd" type="submit" variant="success" class="mr-2">Submit</b-button>
-                </b-col>
-            </b-row>
-        </div>
+                        </b-form-group>
+                    </b-col>
+                </b-row>
+                <b-row class="p-2">
+                    <b-col cols="12" class="text-center">
+                        <input type="hidden" v-model="hidden_testTest" id="hidden1">
+                    </b-col>
+                </b-row>
+                <b-row class="p-2">
+                    <b-col cols="12" class="text-center">
+                        <b-button @click="newadd" type="submit" variant="success" class="mr-2">Submit</b-button>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </b-card>
     </div>
 </template>
 
