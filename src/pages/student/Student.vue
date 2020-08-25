@@ -1,5 +1,5 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <div id="content" class="app-content p-1" style="background-color: #f8f8f8">
+    <div id="content" class="app-content p-1 bg-f8">
         <div>
             <b-tabs card content-class="pt-2 pl-3 pr-3" ref="theTab"   v-model="tabIndex">
                 <b-tab title="Main"  active >
@@ -73,14 +73,17 @@
             },
         },
         mounted() {
+            this.$Loading.show({});
             this.$axios.get("./studentlist.json").then(response => {
                 this.topSearch = response.data.topSearch;
                 this.studentData = response.data.studentData;
                 this.columnDefs = response.data.columnDefs;
                 this.addStudentEmpty = response.data.addStudentEmpty;
+                this.$Loading.hide();
             });
             this.$axios.get("./standardOption.json").then(response => {
                 this.topOption = response.data.topOption;
+                this.$Loading.hide();
             });
         }
 

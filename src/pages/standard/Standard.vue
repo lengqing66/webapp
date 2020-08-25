@@ -1,5 +1,5 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <div id="content" class="app-content p-1 bg-white">
+    <div id="content" class="app-content p-1 bg-f8">
         <div>
             <b-tabs card content-class="pt-1" ref="theTab"   v-model="tabIndex">
                 <b-tab title="Main"  active >
@@ -18,9 +18,7 @@
                 </b-tab>
         </b-tabs>
         </div>
-
     </div>
-
 </template>
 
 <script>
@@ -32,7 +30,8 @@
             return {
                 tabs: [],
                 tabCounter: 0,
-                tabIndex:0
+                tabIndex:0,
+                fullPage:true
             }
         },
         components: {
@@ -64,7 +63,6 @@
                     }
                 }
             },
-
         }
 
     }

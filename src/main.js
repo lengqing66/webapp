@@ -34,14 +34,20 @@ import './scss/styles.scss'
 import axios from 'axios';
 Vue.prototype.$axios = axios ;//全局注册，使用方法为:this.$axios
 import Multiselect from 'vue-multiselect'  //select
-
-Vue.component('multiselect', Multiselect)
-
-Vue.config.productionTip = false
-
-//import iView from 'iview';
-//import 'iview/dist/styles/iview.css'
-//Vue.use(iView);
+Vue.component('multiselect', Multiselect);
+import Loading from 'vue-loading-overlay';    //loading
+import 'vue-loading-overlay/dist/vue-loading.css';
+Vue.use(Loading, {
+    color:'#007bff',
+    loader:'spinner',
+    //container:this.$refs.loadingContainer,
+    width: 40,
+    height: 40,
+    backgroundColor: '#ffffff',
+    opacity: 0.5,
+    zIndex: 999999,
+});
+Vue.config.productionTip = false;
 
 //axios拦截器
 //定义一个请求拦截器
@@ -89,7 +95,7 @@ Vue.component('vue-color-picker', VueColorPicker)
 Vue.component('vue-masked-input', VueMaskedInput)
 Vue.component(VueCountdown.name, VueCountdown);
 
-App.mpType = 'app'
+App.mpType = 'app';
 Vue.prototype._i18n = i18n;
 
 const router = new VueRouter({
