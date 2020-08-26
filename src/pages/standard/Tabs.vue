@@ -33,15 +33,13 @@
         methods:{
             openNewTab:function(title){
                 var isExists=false;
-
                 for (let i = 0; i < this.$store.state.tabs.length; i++) {
                     if (this.$store.state.tabs[i].title === title) {
-
                         isExists = true;
                         this.tabIndex = i;
                     }
                 }
-                if(isExists==false) {
+                if(isExists===false) {
                     this.$store.commit('add_tabs', {title: title, i: this.tabCounter++, index: this.tabIndex});
                 }
             },

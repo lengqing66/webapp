@@ -129,7 +129,7 @@
   ],
   "studentData": [
     {
-      "caseid": 1234,
+      "caseid": 1,
       "code": "010",
       "blm": "00154502",
       "surname": "Cheung",
@@ -142,7 +142,7 @@
       "bodypart": "Ankle"
     },
       {
-          "caseid": 1234,
+          "caseid": 2,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -151,11 +151,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "A",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 3,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -164,11 +164,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "B",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 4,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -177,11 +177,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "C",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 5,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -190,11 +190,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "D",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 6,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -203,11 +203,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "E",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 7,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -216,11 +216,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "F",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 8,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -229,11 +229,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "G",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 9,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -242,11 +242,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "H",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 10,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -255,11 +255,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "I",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 11,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -268,11 +268,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "J",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 12,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -281,11 +281,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "K",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 13,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -294,11 +294,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "L",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 14,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -307,11 +307,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "M",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 15,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -320,11 +320,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "N",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 16,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -333,11 +333,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "O",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 17,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -346,11 +346,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "P",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 18,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -359,11 +359,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "Q",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 19,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -372,11 +372,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "R",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 20,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -385,11 +385,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "S",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 21,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -398,11 +398,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "T",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 22,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -411,11 +411,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "U",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 23,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -424,11 +424,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "V",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 24,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -437,11 +437,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "W",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 25,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -450,11 +450,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "X",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 26,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -463,11 +463,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "Y",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 27,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -476,11 +476,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "Z",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 28,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -489,11 +489,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "WEWR",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 29,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -502,11 +502,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "EASF",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 30,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -515,11 +515,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "TYUF",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 31,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -528,11 +528,11 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "TYT",
           "bodypart": "Ankle"
       },
       {
-          "caseid": 1234,
+          "caseid": 32,
           "code": "010",
           "blm": "00154502",
           "surname": "Cheung",
@@ -541,7 +541,7 @@
           "doa": "2020-07-27",
           "dor": "2020-08-05",
           "diagnosis": "Right ankle injury",
-          "name": "Sau",
+          "name": "GHG",
           "bodypart": "Ankle"
       }
   ],
@@ -560,6 +560,13 @@
       "width": 150,
        "sortable": true
     },
+      {
+          "headerName": "Name",
+          "field": "name",
+          "filter": true,
+          "width": 150,
+          "sortable": true
+      },
     {
       "headerName": "Code",
       "field": "code",

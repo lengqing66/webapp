@@ -11,6 +11,7 @@
                                       :tabs="tabs"
                                       :tabCounter="tabCounter"
                                       @messageData="getData"
+                                      @tabIndex="tabIndexData"
                                       :columnDefs="columnDefs"
                                       :addStudentEmpty="addStudentEmpty"
                                       :studentData="studentData">
@@ -65,6 +66,9 @@
         methods:{
             getData(val) {  //点击单元格获取值
                 this.studentInfo = val;
+            },
+            tabIndexData(val) {  //获取下标的值
+                this.tabIndex = val;
             },
             tabClose:function(x){
                 for (let i = 0; i < this.tabs.length; i++) {

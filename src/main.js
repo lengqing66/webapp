@@ -47,8 +47,8 @@ Vue.use(Loading, {
     opacity: 0.75,
     zIndex: 999999,
 });
-// this.$Loading.show({});
-// this.$Loading.hide({});
+//let loader = this.$loading.show({});
+//loader.hide();
 Vue.config.productionTip = false;
 
 //axios拦截器

@@ -61,7 +61,7 @@
         },
         methods:{
             cellClicked(){
-                console.log("cell");
+                console.log(this.tabs);
                 this.tabs.push( {title: 'data', i: this.tabCounter++, index: this.tabIndex});
             },
             tabClose:function(x){

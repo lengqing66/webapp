@@ -195,7 +195,8 @@
             columnDefs:{},
             studentData:{},
             tabs:{},
-            addStudentEmpty:{}
+            addStudentEmpty:{},
+            //tabIndex:{}
         },
         components: {
             AgGridVue,
@@ -218,7 +219,9 @@
                 radios1: 'Current',
                 selectMainRecords:'0',
                 currentAndAll:{display:'none!important',},
-                curPageSize:''
+                curPageSize:'',
+                tabIndex:0,
+                tabIndex2:0
             }
         },
         beforeMount() {
@@ -256,9 +259,25 @@
                 var selectRow = this.gridApi.getSelectedRows();
                 this.studentInfo = selectRow[0];
                 this.$emit('messageData',this.studentInfo);
-                this.$emit('tabsData',this.tabs);
-                var studentName = selectRow[0].name;
-                this.tabs.push( {title: studentName, i: this.tabCounter++, index: this.tabIndex});
+                //this.$emit('tabsData',this.tabs);
+                var tabName = selectRow[0].name;
+                var tabId;
+                var isExists=false;
+                if (selectRow[0].id) {tabId = selectRow[0].id;}
+                if (selectRow[0].caseid) {tabId = selectRow[0].caseid;}
+                for (let i = 0; i < this.tabs.length; i++) {
+                    if (this.tabs[i].id === tabId) {
+                        isExists = true;
+                        this.tabIndex = this.tabs[i].i;
+                        //console.log(this.tabIndex);
+                        this.$emit('tabIndex',this.tabIndex+1);
+                    }
+                }
+                if(isExists===false) {
+                    this.$emit('tabIndex',this.tabIndex2);
+                    this.tabs.push( {title: tabName,id:tabId, i: this.tabCounter++, index: this.tabIndex2++});
+                }
+                console.log(this.tabs);
             },
             onPageSizeChanged(newPageSize) {
                 var value = document.getElementById('page-size').value;
@@ -312,7 +331,7 @@
             },
             onSelectionChanged() {  //selection  複選框
                 var selectedRows = this.gridApi.getSelectedRows();
-                console.log(selectedRows);
+                //console.log(selectedRows);
                 //remove按钮是否可操作，当没有选中leadId的时候不可用。
                 if (selectedRows.length === 0) {
                     this.showhideRemove=true;
