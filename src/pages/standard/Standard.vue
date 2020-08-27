@@ -8,7 +8,7 @@
                             <b-card>
                                 <ag-grid-vue style="height: 500px;"
                                              class="ag-theme-alpine"
-                                             :columnDefs="columnDefs"
+                                             :columnDefs="columnDefs" :gridOptions="gridOptions"
                                              :rowData="rowData" @cellClicked="cellClicked">
                                 </ag-grid-vue>
                             </b-card>
@@ -39,7 +39,8 @@
                 tabs: [],
                 tabCounter: 0,
                 tabIndex:0,
-                fullPage:true
+                fullPage:true,
+                gridOptions:{}
             }
         },
         components: {
@@ -71,6 +72,9 @@
                     }
                 }
             },
+        },
+        mounted(){
+            this.gridOptions.api.sizeColumnsToFit();//调整表格大小自适应
         }
 
     }

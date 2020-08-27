@@ -19,3 +19,12 @@
 .box{margin-top: 1.2rem}
 .box .card {margin-bottom: 1.2rem;border: 0;background: #fff;border-radius: .5rem;box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);-webkit-transition: all .3s ease-in-out;padding: 15px;}
 .box .card:focus,.card:focus,:focus{outline: none!important;}
+.keywordSearch{float: right}
+.setPagSize{border-radius:3px;border: 1px solid #c9d2e3;position: absolute}
+
+
+@media screen and (max-width: 767px) {
+    .keywordSearch{float: none;}
+    .keywordSearch form{width: 100%}
+    .setPagSize{bottom: 10px;position: relative;display: inline-block}
+}
