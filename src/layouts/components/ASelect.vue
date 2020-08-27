@@ -30,13 +30,14 @@
                                                      class="ag-theme-alpine"
                                                      :columnDefs="columnDefs"
                                                      :rowData="rowData" @cellClicked="cellClicked($event)"
-                                        >
+                                                     :rowSelection="rowSelection" >
+                                                     <!--:gridReady="onGridReady" :suppressAutoSize="suppressAutoSize">-->
                                         </ag-grid-vue>
                                         <ag-grid-vue v-else-if="count==='2'" style="height: 500px;"
                                                      class="ag-theme-alpine"
                                                      :columnDefs="columnDefs"
                                                      :rowData="rowData3" @cellClicked="cellClicked2($event)"
-                                        >
+                                                     :rowSelection="rowSelection">
                                         </ag-grid-vue>
                                         <b-row v-if="count==='2'" class="p-2">
                                             <b-col cols="12" class="text-center">
@@ -85,6 +86,8 @@
                 searchData: '',//搜索结果
                 hiddenData: [],//选择结果的id
 
+                suppressAutoSize:'true',
+                rowSelection:'single',
                 count: '',//计数
 
             }
@@ -106,16 +109,15 @@
                 {id: '1', number: '1', name: 'Celica1', detailed: 'detailed11'},
                 {id: '2', number: '1', name: 'Mondeo1', detailed: 'detailed12'},
                 {id: '3', number: '1', name: 'Boxter1', detailed: 'detailed13'},
-                {id: '1', number: '2', name: 'Celica2', detailed: 'detailed21'},
-                {id: '2', number: '2', name: 'Mondeo2', detailed: 'detailed22'},
-                {id: '3', number: '2', name: 'Boxter2', detailed: 'detailed23'},
-                {id: '1', number: '3', name: 'Celica3', detailed: 'detailed31'},
-                {id: '2', number: '3', name: 'Mondeo3', detailed: 'detailed32'},
-                {id: '3', number: '3', name: 'Boxter3', detailed: 'detailed33'},
+                {id: '4', number: '2', name: 'Celica2', detailed: 'detailed21'},
+                {id: '5', number: '2', name: 'Mondeo2', detailed: 'detailed22'},
+                {id: '6', number: '2', name: 'Boxter2', detailed: 'detailed23'},
+                {id: '7', number: '3', name: 'Celica3', detailed: 'detailed31'},
+                {id: '8', number: '3', name: 'Mondeo3', detailed: 'detailed32'},
+                {id: '9', number: '3', name: 'Boxter3', detailed: 'detailed33'},
             ];
             this.rowData3 = [];//筛选后的二级数据
             this.rowData4 = [];//查找数据
-
         },
         methods: {
             //第一次选择
@@ -160,6 +162,17 @@
                 this.items2.push(this.items[0]);
                 this.count = '1';
             },
+
+            // onGridReady (params) {
+            //     console.log("111");
+            //     console.log(params);
+            //     // 获取gridApi
+            //     this.gridApi = params.api;
+            //     this.columnApi = params.columnApi;
+            //     // 调整表格列宽大小自适应
+            //     this.gridApi.sizeColumnsToFit();
+            // }
+
         },
         mounted() {
             this.items2.push(this.items[0]);
