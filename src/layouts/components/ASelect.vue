@@ -8,7 +8,7 @@
                         <b-form-input v-b-modal.ASelect v-model="selectData"/>
                     </b-form-group>
 
-                    <b-modal ref="ASelect" id="ASelect" size = "lg" :title="$t('ASelect.select')" hide-footer >
+                    <b-modal ref="ASelect" id="ASelect" size="lg" :title="$t('ASelect.select')" hide-footer>
                         <template>
                             <div>
                                 <div>
@@ -21,7 +21,7 @@
                                 </div>
                                 <div>
                                     <b-nav-form>
-                                        <b-form-input v-model="selectData" @keydown="onSearch()"></b-form-input>
+                                        <b-form-input v-model="searchData" @keydown="onSearch()"></b-form-input>
                                     </b-nav-form>
                                 </div>
                                 <div>
@@ -30,13 +30,13 @@
                                                      class="ag-theme-alpine"
                                                      :columnDefs="columnDefs"
                                                      :rowData="rowData" @cellClicked="cellClicked($event)"
-                                                     >
+                                        >
                                         </ag-grid-vue>
                                         <ag-grid-vue v-else-if="count==='2'" style="height: 500px;"
                                                      class="ag-theme-alpine"
                                                      :columnDefs="columnDefs"
                                                      :rowData="rowData3" @cellClicked="cellClicked2($event)"
-                                                     >
+                                        >
                                         </ag-grid-vue>
                                         <b-row v-if="count==='2'" class="p-2">
                                             <b-col cols="12" class="text-center">
@@ -67,6 +67,7 @@
             return {
                 selectData: '',//选择结果
                 InterimData: '',//临时选择结果
+
                 //全部导航
                 items: [
                     {
@@ -85,6 +86,7 @@
                 hiddenData: [],//选择结果的id
 
                 count: '',//计数
+
             }
         },
         beforeMount() { //data
@@ -113,6 +115,7 @@
             ];
             this.rowData3 = [];//筛选后的二级数据
             this.rowData4 = [];//查找数据
+
         },
         methods: {
             //第一次选择
