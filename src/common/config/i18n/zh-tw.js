@@ -25,9 +25,11 @@ export const locale = {
         selectTwo: '第二選擇',
         email: '郵箱',
         birthday: '生日',
-        locale: 'tw',
+        locale: 'zh-tw',
         Male: '男',
         Female: '女',
+        Submit: '提交',
+        Form: '表單',
     },
     STUDENT: {
         Student: '學生',
@@ -40,6 +42,11 @@ export const locale = {
         Center: '中心',
         Telephone: '電話號碼',
         Age: '年齡',
+    },
+    ASelect: {
+        name: '姓名',
+        select: '請選擇',
+        Navigation: '導航',
     },
 
     FullName: '學生姓名',
@@ -54,11 +61,26 @@ export const locale = {
     Center: '中心',
     Telephone: '電話號碼',
     Age: '年齡',
+    Name: '姓名',
+    Male: '男',
+    Female: '女',
+    Birthday: '生日',
+    Email: '郵箱',
 
     Save: '保存',
     Search: '搜索',
     Reset: '重置',
     Select: '下拉',
     Add: '添加',
-    Remove: '刪除'
+    Remove: '刪除',
+    AddStudent: '添加學生',
+    Import: '導入',
+    Delete: '刪除',
+    Cancel: '取消',
+    AdvanceSearch: '高級搜索',
+    RemoveStudent: '移除學生',
+    SelectCurrent: '選擇當前記錄',
+    SelectAll: '選擇全部記錄',
+
+    Delete2: '確認要刪除嗎？',
 }

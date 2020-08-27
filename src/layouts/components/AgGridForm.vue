@@ -1,7 +1,7 @@
 <template >
     <div class="box">
         <!--top search-->
-        <b-card title="Search" v-show="myToggle">
+        <b-card :title="$t('Search')" v-show="myToggle">
             <b-form @submit="onSubmit" @reset="onReset">
                 <b-container>
                     <b-row >
@@ -55,9 +55,9 @@
         <b-card title="Case">
             <!--top button-->
             <div class="top-btn mb-3 p-1">
-                <b-button  v-b-modal.modalAddStud variant="outline-primary" size="sm" class="mr-2"><i class="fa fa-plus"></i> Add</b-button>
+                <b-button  v-b-modal.modalAddStud variant="outline-primary" size="sm" class="mr-2"><i class="fa fa-plus"></i> {{ $t('Add')}}</b-button>
                 <!--add student-->
-                <b-modal ref="modalAddStud" id="modalAddStud" size="lg" title="Add Student" hide-footer>
+                <b-modal ref="modalAddStud" id="modalAddStud" size="lg" :title="$t('AddStudent')" hide-footer>
                     <b-form @submit="onAddStudent" @reset="onResetAddForm">
                         <b-row>
                             <b-col cols="12" :key="index" v-for="(item,index) in addStudentEmpty">
@@ -66,11 +66,11 @@
                                     <b-form-input v-model="formAddStudent[item.label]" v-if="item.type==='text' || item.type==='email' || item.type==='number' || item.type==='password'" :type="item.type" ></b-form-input>
 
                                     <b-form-radio-group v-model="formAddStudent[item.label]" v-if="item.type==='radio'"   name="radio-sub-component">
-                                        <b-form-radio value="male">Male</b-form-radio>
-                                        <b-form-radio value="female">Female</b-form-radio>
+                                        <b-form-radio value="male">{{ $t('Male') }}</b-form-radio>
+                                        <b-form-radio value="female">{{ $t('Female') }}</b-form-radio>
                                     </b-form-radio-group>
 
-                                    <b-form-datepicker v-model="formAddStudent[item.label]" :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }" v-if="item.type==='date'" locale="en"></b-form-datepicker>
+                                    <b-form-datepicker v-model="formAddStudent[item.label]" :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }" v-if="item.type==='date'" :locale="$t('HOME.locale')"></b-form-datepicker>
 
                                     <b-form-select
                                         v-model="formAddStudent[item.label]"
@@ -100,15 +100,15 @@
                     </b-form>
                 </b-modal>
                 <!--remove end-->
-                <b-button v-b-modal.modalRemoveStud :disabled="showhideRemove" variant="outline-danger" size="sm" class="mr-2"><i class="fa fa-minus"></i> Remove</b-button>
-                <b-modal ref="modalRemoveStud" id="modalRemoveStud" title="Remove Student" hide-footer>
+                <b-button v-b-modal.modalRemoveStud :disabled="showhideRemove" variant="outline-danger" size="sm" class="mr-2"><i class="fa fa-minus"></i> {{ $t('Remove') }}</b-button>
+                <b-modal ref="modalRemoveStud" id="modalRemoveStud" :title="$t('RemoveStudent')" hide-footer>
                     <b-row>
                         <b-col cols="12">
-                            <p>Are you sure delete ?</p>
+                            <p>{{ $t('Delete2') }}</p>
                         </b-col>
                         <b-col cols="12" class="text-center">
-                            <b-button @click="handleDelete" variant="success" class="mr-2">Delete</b-button>
-                            <b-button @click="$refs['modalRemoveStud'].hide()" variant="danger">Cancel</b-button>
+                            <b-button @click="handleDelete" variant="success" class="mr-2">{{ $t('Delete') }}</b-button>
+                            <b-button @click="$refs['modalRemoveStud'].hide()" variant="danger">{{ $t('Cancel') }}</b-button>
                         </b-col>
                     </b-row>
                 </b-modal>
@@ -119,13 +119,13 @@
                 <ul class="check-all-currentPage" v-if="radioAllCurrent" @change="clickRadio" :style="currentAndAll"
                     style="position: absolute;left: 50%;transform: translateX(-50%);top: 3%;list-style: none">
                     <li class="mr-3">
-                        <b-form-radio name="currentAll" value="Current" v-model="radios1">{{$t('Select current records')}} (<span id="currentRecordNumber"></span>) </b-form-radio>
+                        <b-form-radio name="currentAll" value="Current" v-model="radios1">{{$t('SelectCurrent')}} (<span id="currentRecordNumber"></span>) </b-form-radio>
                     </li>
                     <li>
-                        <b-form-radio name="currentAll" value="All" v-model="radios1">{{$t('Select all records')}} (<span id="allRecordNumber"></span>)</b-form-radio>
+                        <b-form-radio name="currentAll" value="All" v-model="radios1">{{$t('SelectAll')}} (<span id="allRecordNumber"></span>)</b-form-radio>
                     </li>
                 </ul>
-                <b-button :pressed.sync="myToggle" variant="outline-success" size="sm" class="mr-2"><i class="fa fa-search"></i> Advance Search</b-button>
+                <b-button :pressed.sync="myToggle" variant="outline-success" size="sm" class="mr-2"><i class="fa fa-search"></i> {{$t('AdvanceSearch')}}</b-button>
                 <b-nav-form style="float:right">
                     <b-form-input v-model="searchQueryStudentKey" @keydown="updateSearchQueryStudent"  :placeholder="$t('Search')"></b-form-input>
                 </b-nav-form>
