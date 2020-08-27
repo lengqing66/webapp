@@ -45,8 +45,7 @@ export const locale = {
     },
     ASelect: {
         name: '姓名',
-        select: '請選擇',
-        Navigation: '導航',
+        select: '選擇一個項目',
     },
 
     FullName: '學生姓名',
@@ -70,7 +69,7 @@ export const locale = {
     Save: '保存',
     Search: '搜索',
     Reset: '重置',
-    Select: '下拉',
+    Select: '選擇',
     Add: '添加',
     Remove: '刪除',
     AddStudent: '添加學生',

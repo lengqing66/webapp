@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-        <b-card title="Form">
+        <b-card :title="$t('HOME.Form')">
             <b-container>
                 <b-row>
                     <b-col cols="12" :key="index" v-for="(item,index) in arrsTest">
@@ -40,7 +40,7 @@
                 </b-row>
                 <b-row class="p-2">
                     <b-col cols="12" class="text-center">
-                        <b-button @click="newadd" type="submit" variant="success" class="mr-2">Submit</b-button>
+                        <b-button @click="newadd" type="submit" variant="success" class="mr-2">{{$t('HOME.Submit')}}</b-button>
                     </b-col>
                 </b-row>
             </b-container>
