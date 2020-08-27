@@ -81,5 +81,5 @@ export const locale = {
     SelectCurrent: '选择当前记录',
     SelectAll: '选择全部记录',
 
-    Delete: '确认要删除吗？',
+    ConfirmDelete: '确认要删除吗？',
 }
