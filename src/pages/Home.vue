@@ -1,8 +1,8 @@
 <template>
     <div id="content" class="app-content">
         <!--content-->
-        <!--<hiddenChange></hiddenChange>-->
-        <ASelect></ASelect>
+        <hiddenChange></hiddenChange>
+        <!--<ASelect></ASelect>-->
     </div>
 
 </template>

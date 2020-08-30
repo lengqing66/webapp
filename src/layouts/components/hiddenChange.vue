@@ -33,11 +33,12 @@
                         </b-form-group>
                     </b-col>
                 </b-row>
-                <b-row class="p-2">
-                    <b-col cols="12" class="text-center">
-                        <input type="hidden" v-model="hidden_testTest" id="hidden1">
-                    </b-col>
-                </b-row>
+                <test></test>
+                <!--<b-row class="p-2">-->
+                    <!--<b-col cols="12" class="text-center">-->
+                        <!--<input type="hidden" v-model="hidden_testTest" id="hidden1">-->
+                    <!--</b-col>-->
+                <!--</b-row>-->
                 <b-row class="p-2">
                     <b-col cols="12" class="text-center">
                         <b-button @click="newadd" type="submit" variant="success" class="mr-2">{{$t('HOME.Submit')}}</b-button>
@@ -49,8 +50,12 @@
 </template>
 
 <script>
+    import test from './test';
     export default {
         name: 'hiddenChange',
+        components: {
+            test
+        },
         data() {
             return {
                 arrayTest: [],
@@ -75,9 +80,9 @@
             }
         },
         methods: {
-            getDefaultData() {  //先將默認的值保存起來
-                this.defaultData0 = JSON.parse(JSON.stringify(this.arrsTest));
-            },
+            // getDefaultData() {  //先將默認的值保存起來
+            //     this.defaultData0 = JSON.parse(JSON.stringify(this.arrsTest));
+            // },
             newadd() {
                 console.log(this.hidden_testTest);  //改變了的值
             },
@@ -101,9 +106,9 @@
                 this.hidden_testTest.push(this.arrayTest);
             },
         },
-        mounted() {
-            this.getDefaultData();
-        },
+        // mounted() {
+        //     this.getDefaultData();
+        // },
     }
 </script>
 
