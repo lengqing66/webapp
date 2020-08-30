@@ -1,7 +1,7 @@
 <template >
     <div class="box">
         <!--top search-->
-        <b-card :title="$t('Search')" v-show="myToggle">
+        <b-card title="Search" v-show="myToggle">
             <b-form @submit="onSubmit" @reset="onReset">
                 <b-container>
                     <b-row >
@@ -10,7 +10,7 @@
 
                                 <b-form-input v-if="item.type==='text' || item.type==='emial' || item.type==='number' || item.type==='password'" :type="item.type" v-model="formData[item.name]"></b-form-input>
 
-                                <div v-if="item.type==='date'" class="d-flex align-items-center">
+                                <div v-if="item.type==='date'" class="d-md-flex align-items-center">
                                     <b-form-datepicker
                                         v-model="formData[item.name]"
                                         :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
@@ -54,8 +54,8 @@
         </b-card>
         <b-card title="Case">
             <!--top button-->
-            <div class="top-btn mb-3 p-1">
-                <b-button  v-b-modal.modalAddStud variant="outline-primary" size="sm" class="mr-2"><i class="fa fa-plus"></i> {{ $t('Add')}}</b-button>
+            <div class="top-btn mb-2 p-1">
+                <b-button  v-b-modal.modalAddStud variant="outline-primary" size="sm" class="mr-2 mb-2"><i class="fa fa-plus"></i> Add</b-button>
                 <!--add student-->
                 <b-modal ref="modalAddStud" id="modalAddStud" size="lg" :title="$t('AddStudent')" hide-footer>
                     <b-form @submit="onAddStudent" @reset="onResetAddForm">
@@ -66,11 +66,11 @@
                                     <b-form-input v-model="formAddStudent[item.label]" v-if="item.type==='text' || item.type==='email' || item.type==='number' || item.type==='password'" :type="item.type" ></b-form-input>
 
                                     <b-form-radio-group v-model="formAddStudent[item.label]" v-if="item.type==='radio'"   name="radio-sub-component">
-                                        <b-form-radio value="male">{{ $t('Male') }}</b-form-radio>
-                                        <b-form-radio value="female">{{ $t('Female') }}</b-form-radio>
+                                        <b-form-radio value="male">Male</b-form-radio>
+                                        <b-form-radio value="female">Female</b-form-radio>
                                     </b-form-radio-group>
 
-                                    <b-form-datepicker v-model="formAddStudent[item.label]" :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }" v-if="item.type==='date'" :locale="$t('HOME.locale')"></b-form-datepicker>
+                                    <b-form-datepicker v-model="formAddStudent[item.label]" :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }" v-if="item.type==='date'" locale="en"></b-form-datepicker>
 
                                     <b-form-select
                                         v-model="formAddStudent[item.label]"
@@ -100,7 +100,7 @@
                     </b-form>
                 </b-modal>
                 <!--remove end-->
-                <b-button v-b-modal.modalRemoveStud :disabled="showhideRemove" variant="outline-danger" size="sm" class="mr-2"><i class="fa fa-minus"></i> {{ $t('Remove') }}</b-button>
+                <b-button v-b-modal.modalRemoveStud :disabled="showhideRemove" variant="outline-danger" size="sm" class="mr-2 mb-2"><i class="fa fa-minus"></i> {{ $t('Remove') }}</b-button>
                 <b-modal ref="modalRemoveStud" id="modalRemoveStud" :title="$t('RemoveStudent')" hide-footer>
                     <b-row>
                         <b-col cols="12">
@@ -114,7 +114,7 @@
                 </b-modal>
                 <!--import-->
                 <input type="file" id="importExcelDataFile" class="d-none" ref="uploadFileInput" @change="importTable" accept="file/*">
-                <b-button variant="outline-info" size="sm" class="mr-2"  @click="$refs.uploadFileInput.click()"><i class="fa fa-upload"></i> {{$t('Import')}}</b-button>
+                <b-button variant="outline-info" size="sm" class="mr-2 mb-2"  @click="$refs.uploadFileInput.click()"><i class="fa fa-upload"></i> {{$t('Import')}}</b-button>
                 <!--点击复选框显示选择全部页面还是当前页面radio--进行删除-->
                 <ul class="check-all-currentPage" v-if="radioAllCurrent" @change="clickRadio" :style="currentAndAll"
                     style="position: absolute;left: 50%;transform: translateX(-50%);top: 3%;list-style: none">
@@ -125,7 +125,7 @@
                         <b-form-radio name="currentAll" value="All" v-model="radios1">{{$t('SelectAll')}} (<span id="allRecordNumber"></span>)</b-form-radio>
                     </li>
                 </ul>
-                <b-button :pressed.sync="myToggle" variant="outline-success" size="sm" class="mr-2"><i class="fa fa-search"></i> {{$t('AdvanceSearch')}}</b-button>
+                <b-button :pressed.sync="myToggle" variant="outline-success" size="sm" class="mr-2 mb-2"><i class="fa fa-search"></i> {{$t('AdvanceSearch')}}</b-button>
                 <b-nav-form style="float:right">
                     <b-form-input v-model="searchQueryStudentKey" @keydown="updateSearchQueryStudent"  :placeholder="$t('Search')"></b-form-input>
                 </b-nav-form>
@@ -133,7 +133,7 @@
             <!--form Data-->
             <ag-grid-vue class="ag-theme-alpine" :gridOptions="gridOptions"
                          :rowSelection="rowSelection" :columnDefs="columnDefs" :rowData="studentData"
-                         @cellClicked="cellClicked"
+                         @cellClicked="cellClicked" :defaultColDef="defaultColDef"
                          :animateRows="true" :pagination="true"
                          :frameworkComponents="frameworkComponents"
                          @selection-changed="onSelectionChanged"
@@ -156,7 +156,7 @@
             <!--</div>-->
 
             <div class="mt-3" style="position: relative;">
-                <div class="d-flex align-items-center" style="border-radius:3px;border: 1px solid #c9d2e3;position: absolute">
+                <div class="d-md-flex align-items-center setPagSize">
                     <span class="ml-2 mr-2">{{ currentPage * paginationPageSize - (paginationPageSize - 1) }} - {{ studentData.length - currentPage * paginationPageSize > 0 ? currentPage * paginationPageSize : studentData.length }} of {{studentData.length}} </span>
                     <b-dropdown size="sm" class="drown-page-size">
                         <b-dropdown-item @click="gridApi.paginationSetPageSize(5)">
@@ -221,7 +221,16 @@
                 currentAndAll:{display:'none!important',},
                 curPageSize:'',
                 tabIndex:0,
-                tabIndex2:0
+                tabIndex2:0,
+                defaultColDef: {
+                    editable: true,//单元表格是否可编辑
+                    enableRowGroup: true,
+                    enablePivot: true,
+                    enableValue: true,
+                    sortable: true, //开启排序
+                    resizable: true,//是否可以调整列大小，就是拖动改变列大小
+                    filter: true  //开启刷选
+                },
             }
         },
         beforeMount() {
@@ -393,6 +402,7 @@
         },
         mounted() {
             this.gridApi = this.gridOptions.api;
+            //this.gridApi.sizeColumnsToFit();//调整表格大小自适应
             this.generateFormData();
         }
     }
