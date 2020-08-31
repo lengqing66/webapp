@@ -18,7 +18,7 @@
             "headerName": "Detailed",
             "field": "detailed",
             "filter": true,
-            "width": 300
+            "width": 350
         }
     ],
     "ContactsData": [
