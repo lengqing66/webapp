@@ -1,0 +1,41 @@
+<template>
+    <div>
+        <!--<b-breadcrumb>-->
+            <!--<b-breadcrumb-item href="#home">-->
+                <!--<b-icon icon="house-fill" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>-->
+                <!--Home-->
+            <!--</b-breadcrumb-item>-->
+            <!--<b-breadcrumb-item href="#foo">Foo</b-breadcrumb-item>-->
+            <!--<b-breadcrumb-item href="#bar">Bar</b-breadcrumb-item>-->
+            <!--<b-breadcrumb-item active>Baz</b-breadcrumb-item>-->
+        <!--</b-breadcrumb>-->
+        <b-breadcrumb :items="items" class="p-2 pl-4"></b-breadcrumb>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "Compose",
+        data() {
+            return {
+                items: [
+                    {
+                        text: 'Email',
+                    },
+                    {
+                        text: 'Compose',
+                        href: '#'
+                    },
+                    {
+                        text: 'Library',
+                        active: true
+                    }
+                ]
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>

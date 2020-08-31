@@ -223,12 +223,11 @@
                 tabIndex:0,
                 tabIndex2:0,
                 defaultColDef: {
-                    editable: true,//单元表格是否可编辑
-                    enableRowGroup: true,
-                    enablePivot: true,
-                    enableValue: true,
+                    //enableRowGroup: true,
+                    //enablePivot: true,
+                    //enableValue: true,
                     sortable: true, //开启排序
-                    resizable: true,//是否可以调整列大小，就是拖动改变列大小
+                    //resizable: true,//是否可以调整列大小，就是拖动改变列大小
                     filter: true  //开启刷选
                 },
             }
@@ -278,7 +277,6 @@
                     if (this.tabs[i].id === tabId) {
                         isExists = true;
                         this.tabIndex = this.tabs[i].i;
-                        //console.log(this.tabIndex);
                         this.$emit('tabIndex',this.tabIndex+1);
                     }
                 }

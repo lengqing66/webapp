@@ -31,7 +31,7 @@
                                 class="mb-3" @keyup.enter="login"></b-form-input>
                             <span style="display: none"></span>
                             <div class=" text-center mb-2">
-                                <b-button type="submit" variant="success" @click="signIn">Login</b-button>
+                                <b-button variant="success" @click="signIn">Login</b-button>
                             </div>
                         </div>
 
@@ -56,8 +56,10 @@
         },
         methods: {
             signIn() {
-                console.log(this.loginForm);
-                this.$router.push({path: '/home'})
+                let _this = this;
+                //console.log(this.$router);
+                //console.log(this.loginForm);
+                _this.$router.push({path: '/'})
             },
         },
         mounted() {

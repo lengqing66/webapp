@@ -1,0 +1,660 @@
+{
+  "topSearch": [
+      {
+          "name": "Student",
+          "label": "Student",
+          "type": "text"
+      },
+      {
+          "name": "StudentNo",
+          "label": "StudentNo",
+          "type": "text"
+      },
+      {
+          "name": "Center",
+          "label": "Center",
+          "type": "select"
+      },
+      {
+          "name": "Telephone",
+          "label": "Telephone",
+          "type": "number"
+      }
+  ],
+    "addStudentEmpty": [
+        {
+            "label": "Name",
+            "type": "text",
+            "value": ""
+        },
+        {
+            "label": "Age",
+            "type": "text",
+            "value": ""
+        },
+        {
+            "label": "Gender",
+            "type": "radio",
+            "value": ""
+        },
+        {
+            "label": "Birthday",
+            "type": "date",
+            "value": ""
+        },
+        {
+            "label": "Telephone",
+            "type": "number",
+            "value": ""
+        },
+        {
+            "label": "Email",
+            "type": "email",
+            "value": ""
+        },
+        {
+            "label": "Center",
+            "type": "select",
+            "value": ""
+        }
+  ],
+  "studentData": [
+    {
+      "id": 1,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 2,
+      "studentNo": "Leanne Graham",
+      "name": "Ly",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "12",
+      "centerName": "Lei King Wan",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 3,
+      "studentNo": "Leanne Graham",
+      "name": "Ale",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tuen Mun",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 4,
+      "studentNo": "Leanne Graham",
+      "name": "LiLy",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Hang Hau",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 5,
+      "studentNo": "Leanne Graham",
+      "name": "Hod",
+      "gender": "female",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Prince Edward",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 6,
+      "studentNo": "Leanne Graham",
+      "name": "Hebe",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 7,
+      "studentNo": "Leanne Graham",
+      "name": "Chi",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 8,
+      "studentNo": "Leanne Graham",
+      "name": "Chair",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 9,
+      "studentNo": "Leanne Graham",
+      "name": "NaNe",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "12",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 10,
+      "studentNo": "Leanne Graham",
+      "name": "Eve",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 11,
+      "studentNo": "Leanne Graham",
+      "name": "Lulu",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 1,
+      "studentNo": "Leanne Graham",
+      "name": "Alle",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 2,
+      "studentNo": "Leanne Graham",
+      "name": "Kepo",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "12",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 3,
+      "studentNo": "Leanne Graham",
+      "name": "Ler",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 4,
+      "studentNo": "Leanne Graham",
+      "name": "Arri",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 5,
+      "studentNo": "Leanne Graham",
+      "name": "TiBi",
+      "gender": "female",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 6,
+      "studentNo": "Leanne Graham",
+      "name": "Li",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 7,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 8,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 9,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "12",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 10,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 11,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    }, {
+      "id": 1,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 2,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "12",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 3,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 4,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 5,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 6,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 7,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 8,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 9,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "12",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 10,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 11,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 1,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 2,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "12",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 3,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 4,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 5,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 6,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 7,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 8,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 9,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "12",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 10,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "female",
+      "genderColor": "success",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    },
+    {
+      "id": 11,
+      "studentNo": "Leanne Graham",
+      "name": "Bret",
+      "gender": "male",
+      "genderColor": "danger",
+      "age": "11",
+      "centerName": "Tai Po",
+      "phoneHome": "92092494",
+      "mobile": "92092494"
+    }
+  ],
+  "columnDefs": [
+    {
+        "headerName": "StudentNo",
+      "field": "studentNo",
+      "filter": true,
+      "width": 150,
+        "sortable": true
+    },
+    {
+        "headerName": "LastName",
+      "field": "name",
+      "filter": true,
+      "width": 150,
+        "sortable": true
+    },
+    {
+      "headerName": "Gender",
+      "field": "gender",
+      "filter": true,
+      "width": 120
+    },
+    {
+      "headerName": "Age",
+      "field": "age",
+      "filter": true,
+      "width": 120,
+        "sortable": true
+    },
+    {
+      "headerName": "CenterName",
+      "field": "centerName",
+      "filter": true
+    },
+    {
+        "headerName": "Phone",
+      "field": "phoneHome",
+      "filter": true,
+      "width": 150
+    },
+    {
+      "headerName": "Mobile",
+      "field": "mobile",
+      "filter": true,
+      "width": 150
+    }
+  ],
+  "studentInfo": [
+    {
+      "label1":"Student No",
+      "type1":"text",
+      "value1": "",
+      "label2":"Chinese Name",
+      "type2":"text",
+      "value2": ""
+    },
+    {
+      "label1":"Last Name",
+      "type1":"text",
+      "value1": "",
+      "label2":"First Name",
+      "type2":"text",
+      "value2": ""
+    },
+    {
+      "label1":"CenterName",
+      "type1":"text",
+      "value1": "",
+      "label2":"",
+      "type2":"text",
+      "value2": ""
+    },
+    {
+      "label1":"",
+      "type1":"text",
+      "value1": "",
+      "label2":"",
+      "type2":"text",
+      "value2": ""
+    },
+    {
+      "label1":"",
+      "type1":"text",
+      "value1": "",
+      "label2":"",
+      "type2":"text",
+      "value2": ""
+    },
+    {
+      "label1":"",
+      "type1":"text",
+      "value1": "",
+      "label2":"",
+      "type2":"text",
+      "value2": ""
+    },
+    {
+      "label1":"",
+      "type1":"text",
+      "value1": "",
+      "label2":"",
+      "type2":"text",
+      "value2": ""
+    },
+    {
+      "label1":"",
+      "type1":"text",
+      "value1": "",
+      "label2":"",
+      "type2":"text",
+      "value2": ""
+    }
+
+
+  ]
+}

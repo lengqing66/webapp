@@ -4,7 +4,14 @@ import i18n from './common/plugins/vue-i18n';
 import routes from './config/AppRoutes'
 import store from './components/store/index';
 // plugins
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
+
+//import router from './router';
+const routerPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+    return routerPush.call(this, location).catch(error=> error)
+}
+
 import VueBootstrap from 'bootstrap-vue'
 import VueInsProgressBar from 'vue-ins-progress-bar'
 import VueCustomScrollbar from 'vue-custom-scrollbar'

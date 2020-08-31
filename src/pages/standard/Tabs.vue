@@ -32,15 +32,21 @@
         },
         methods:{
             openNewTab:function(title){
+                var titleName;
+                if(typeof title=="string"){   //一级菜单name
+                    titleName = title;
+                }else{                        //二级菜单name
+                    titleName = title.name
+                }
                 var isExists=false;
                 for (let i = 0; i < this.$store.state.tabs.length; i++) {
-                    if (this.$store.state.tabs[i].title === title) {
+                    if (this.$store.state.tabs[i].title === titleName) {
                         isExists = true;
                         this.tabIndex = i;
                     }
                 }
                 if(isExists===false) {
-                    this.$store.commit('add_tabs', {title: title, i: this.tabCounter++, index: this.tabIndex});
+                    this.$store.commit('add_tabs', {title: titleName, i: this.tabCounter++, index: this.tabIndex});
                 }
             },
             tabChanged:function(currentTabs, previousTabs ){

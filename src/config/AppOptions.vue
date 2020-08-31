@@ -8,7 +8,8 @@ const appOptions = {
   appContentFullHeight: false,
   appWithFooter: false,
   appWithoutSidebar: false,
-  appWithoutHeader: false
+  appWithoutHeader: false,
+  appTabs:false
 }
 
 export default appOptions;
