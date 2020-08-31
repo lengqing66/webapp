@@ -1,19 +1,19 @@
 <template>
     <div id="content" class="app-content">
         <!--content-->
-        <hiddenChange></hiddenChange>
+        <formtest></formtest>
         <!--<ASelect></ASelect>-->
     </div>
 
 </template>
 
 <script>
-    import hiddenChange from '../layouts/components/hiddenChange';
+    import formtest from '../layouts/components/formtest';
     import ASelect from '../layouts/components/ASelect';
 
     export default {
         components: {
-            hiddenChange,
+            formtest,
             ASelect,
         }
     }
