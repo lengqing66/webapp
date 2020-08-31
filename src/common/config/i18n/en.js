@@ -46,8 +46,7 @@ export const locale = {
     },
     ASelect: {
         name: 'name',
-        select: 'select',
-        Navigation: 'Navigation',
+        select: 'Select an item',
     },
 
     FullName: 'Full Name',

@@ -236,7 +236,7 @@
             this.rowSelection = "multiple";
         },
         computed: {
-            paginationPageSize() {    //每页显示多少条数据
+                paginationPageSize() {    //每页显示多少条数据
                 if(this.gridApi){return this.gridApi.paginationGetPageSize();}
                 else {return 10;}
             },
