@@ -13,8 +13,8 @@
                             <div style="height:50px">
                                 <div style="float: left;margin-top:10px;margin-left:20px">
                                     <b-breadcrumb>
-                                        <b-breadcrumb-item v-for="item of items2" :key="item.key"
-                                                           @click="click(item.key)">
+                                        <b-breadcrumb-item v-for="item of items" :key="item.key"
+                                                           @click="click(item.key,item.floor)">
                                             {{item.name}}
                                         </b-breadcrumb-item>
                                     </b-breadcrumb>
@@ -27,19 +27,42 @@
                             </div>
                             <div>
                                 <b-form @submit="submit">
-                                    <ag-grid-vue v-if="count==='1'" style="height: 600px;margin-top:20px;"
-                                                 class="ag-theme-alpine"
+                                    <ag-grid-vue style="height: 517px;margin-top:20px;"
+                                                 class="ag-theme-alpine" :gridOptions="gridOptions"
                                                  :columnDefs="ContactsDefs"
-                                                 :rowData="ContactsData" @cellClicked="cellClicked($event)"
-                                                 :rowSelection="rowSelection">
+                                                 :rowData="CurrentData" @cellClicked="cellClicked($event)"
+                                                 :defaultColDef="defaultColDef" :animateRows="true"
+                                                 :frameworkComponents="frameworkComponents" :rowSelection="rowSelection"
+                                                 :pagination="true" :suppressPaginationPanel="true"
+                                                 :paginationPageSize="paginationPageSize">
                                     </ag-grid-vue>
-                                    <ag-grid-vue v-else-if="count==='2'" style="height: 550px;margin-top:20px;"
-                                                 class="ag-theme-alpine"
-                                                 :columnDefs="ContactsDefs"
-                                                 :rowData="ContactsData3" @cellClicked="cellClicked2($event)"
-                                                 :rowSelection="rowSelection">
-                                    </ag-grid-vue>
-                                    <b-row v-if="count==='2'" class="p-2" style="height: 50px;">
+                                    <div class="mt-3" style="position: relative;">
+                                        <div class="d-md-flex align-items-center setPagSize">
+                                            <span class="ml-2 mr-2">{{ currentPage * paginationPageSize - (paginationPageSize - 1) }} - {{ CurrentData.length - currentPage * paginationPageSize > 0 ? currentPage * paginationPageSize : CurrentData.length }} of {{CurrentData.length}} </span>
+                                            <b-dropdown size="sm" class="drown-page-size">
+                                                <b-dropdown-item @click="gridApi.paginationSetPageSize(5)">
+                                                    <span>5</span>
+                                                </b-dropdown-item>
+                                                <b-dropdown-item @click="gridApi.paginationSetPageSize(10)">
+                                                    <span>10</span>
+                                                </b-dropdown-item>
+                                                <b-dropdown-item @click="gridApi.paginationSetPageSize(20)">
+                                                    <span>20</span>
+                                                </b-dropdown-item>
+                                                <b-dropdown-item @click="gridApi.paginationSetPageSize(50)">
+                                                    <span>50</span>
+                                                </b-dropdown-item>
+                                                <b-dropdown-item @click="gridApi.paginationSetPageSize(100)">
+                                                    <span>100</span>
+                                                </b-dropdown-item>
+                                            </b-dropdown>
+                                        </div>
+                                        <b-pagination class="mb-0" align="center" v-model="currentPage"
+                                                      :total-rows="totalPages"
+                                                      :per-page="paginationPageSize"></b-pagination>
+                                    </div>
+
+                                    <b-row class="p-2" style="height: 50px;">
                                         <b-col cols="12" class="text-center">
                                             <b-button type="submit" variant="success" class="mr-2">{{$t('Select')}}
                                             </b-button>
@@ -57,94 +80,105 @@
 
 <script>
     import {AgGridVue} from "ag-grid-vue";
+    import AgGridForm01 from "../../layouts/components/AgGridForm"
+    import TranslationCellRenderer from '../../common/plugins/TranslationCellRenderer'
 
     export default {
         name: "ASelect",
         components: {
-            AgGridVue
+            AgGridVue,
+            AgGridForm01
         },
         data() {
             return {
                 selectData: '',//选择结果
-                InterimData: '',//临时选择结果
+                InterimData: [],//临时选择结果
                 hiddenData: [],//选择结果的id
-                //全部导航
-                items: [
-                    {
-                        key: '1',
-                        name: 'home'
-                    },
-                    {
-                        key: '2',
-                        name: 'home2',
-                        disabled: true,
-                    },
-                ],
-                items2: [],//当前导航
+                items: [],//全部导航
                 searchData: '',//搜索结果
-                count: '',//计数
                 ContactsDefs: [],//表头
-                ContactsData: [],//一级数据
-                ContactsData2: [],//二级数据
-                ContactsData3: [],//筛选后的二级数据
-                gridApi:null,
-                currentPageSelect:'',
-                rowSelection: 'single',
+                ContactsData: [],//全部数据
+                CurrentData: [],//当前数据
+                rowSelection: 'single',//单选
+                floor: '1',//层数
+
+                gridApi: null,
+                currentPageStudent: '',
+                gridOptions: {},
+                frameworkComponents: {agColumnHeader: TranslationCellRenderer},
+                defaultColDef: {
+                    editable: true,//单元表格是否可编辑
+                    enableRowGroup: true,
+                    enablePivot: true,
+                    enableValue: true,
+                    sortable: true, //开启排序
+                    resizable: true,//是否可以调整列大小，就是拖动改变列大小
+                    filter: true  //开启刷选
+                },
             }
         },
         computed: {
             paginationPageSize() {    //每页显示多少条数据
-                if(this.gridApi){return this.gridApi.paginationGetPageSize();}
-                else {return 10;}
+                if (this.gridApi) {
+                    return this.gridApi.paginationGetPageSize();
+                }
+                else {
+                    return 10;
+                }
             },
             totalPages() {   //总页数
-                if(this.gridApi)
-                {
-                    let paginationGetTotalPages = this.studentData.length;
+                if (this.gridApi) {
+                    let paginationGetTotalPages = this.CurrentData.length
+                    //% this.gridApi.paginationGetPageSize() === 0 ? this.studentData.length / this.gridApi.paginationGetPageSize() : Math.ceil(this.studentData.length / this.gridApi.paginationGetPageSize()) ;
                     return paginationGetTotalPages
                 }
                 else return 0
+                // if(this.gridApi) return this.gridApi.paginationGetTotalPages()
+                // else return 0
             },
             currentPage: {   //当前页数
                 get() {
-                    if(this.gridApi) return this.gridApi.paginationGetCurrentPage() + 1;
+                    if (this.gridApi) return this.gridApi.paginationGetCurrentPage() + 1
                     else return 1
                 },
                 set(val) {   //点击页的时候，请求后台数据，返回相应数据
                     this.gridApi.paginationGoToPage(val - 1);
-                    this.currentPageSelect = val;
+                    this.currentPageStudent = val;
                 }
             },
         },
         methods: {
-            //第一次选择
+            //点击表格
             cellClicked(e) {
-                for (let i = 0; i < this.ContactsData2.length; i++) {
-                    if (e.data.number === this.ContactsData2[i].number) {
-                        this.ContactsData3.push(this.ContactsData2[i]);
-                    }
+                this.InterimData.length = this.floor - 1;
+                this.hiddenData.length = this.floor - 1;
+                if (e.data.child) {
+                    this.floor++;
+                    this.items.push({key: e.data.id, floor: this.floor, name: e.data.name});
+                    this.InterimData.push(e.data.name);
+                    this.hiddenData.push(e.data.id);
+                    this.CurrentData = e.data.child;
+                } else {
+                    this.InterimData.push(e.data.name);
+                    this.hiddenData.push(e.data.id);
                 }
-                this.items2.push(this.items[1]);
-                this.hiddenData.length = 0;
-                this.hiddenData.push(e.data.id);
-                this.items2[1].name = e.data.name;
-                this.count = '2';
-            },
-            //第二次选择
-            cellClicked2(e) {
-                this.InterimData = this.items2[1].name + '/' + e.data.name;
-                this.hiddenData.splice(1, 1);
-                this.hiddenData.push(e.data.id);
-                alert(this.InterimData);
             },
             //提交
             submit(evt) {
                 evt.preventDefault();
-                this.selectData = this.InterimData;
+                this.selectData = '';
+                for (let i = 0; i < this.InterimData.length; i++) {
+                    if (i === this.InterimData.length - 1) {
+                        this.selectData = this.selectData + this.InterimData[i];
+                    }
+                    else {
+                        this.selectData = this.selectData + this.InterimData[i] + '/';
+                    }
+                }
                 console.log(this.hiddenData);
                 this.$refs['ASelect'].hide();
             },
-            //查找
+            // //查找
             onSearch(e) {
                 var evt = window.event || e;
                 if (evt.keyCode == 13) {
@@ -153,34 +187,39 @@
                 }
             },
             //点击导航
-            click(a) {
-                this.ContactsData3 = [];
-                this.items2 = [];
-                this.items2.push(this.items[0]);
-                this.count = '1';
+            click(key, floor) {
+                if (floor === '1') {
+                    this.CurrentData = this.ContactsData;
+                    this.items.length = floor;
+                    this.floor = floor;
+                } else if (this.floor === floor) {
+                } else {
+                    let result = [];
+                    result = this.ContactsData.filter(item => {
+                        return item.id === key;
+                    })
+                    if (result !== []) {
+                        this.CurrentData = result[0].child;
+                        this.items.length = floor;
+                        this.floor = floor;
+                    }
+                }
             },
-
-            // onGridReady (params) {
-            //     console.log("111");
-            //     console.log(params);
-            //     // 获取gridApi
-            //     this.gridApi = params.api;
-            //     this.columnApi = params.columnApi;
-            //     // 调整表格列宽大小自适应
-            //     this.gridApi.sizeColumnsToFit();
-            // }
-
+            onPageSizeChanged(newPageSize) {
+                var value = document.getElementById('page-size').value;
+                this.gridApi.paginationSetPageSize(Number(value));
+            },
         },
         mounted() {
             let loader = this.$loading.show({});
             this.$axios.get("./selectlist.json").then(response => {
                 this.ContactsDefs = response.data.ContactsDefs;
                 this.ContactsData = response.data.ContactsData;
-                this.ContactsData2 = response.data.ContactsData2;
+                this.CurrentData = this.ContactsData;
                 loader.hide();
             });
-            this.items2.push(this.items[0]);
-            this.count = '1';
+            this.items.push({key: '0', floor: this.floor, name: 'home'});
+            this.gridApi = this.gridOptions.api;
         },
     }
 </script>

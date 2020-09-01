@@ -80,37 +80,15 @@
             }
         },
         methods: {
-            // getDefaultData() {  //先將默認的值保存起來
-            //     this.defaultData0 = JSON.parse(JSON.stringify(this.arrsTest));
-            // },
             newadd() {
-                console.log("保存成功"+this.$refs.myHiddenChange.hidden_testTest);  //改變了的值
+                console.log("保存成功" + this.$refs.myHiddenChange.hidden_testTest);  //改變了的值
             },
             changeFunc(item, index) {
                 if (this.$refs.myHiddenChange.defaultData0[index].customItem !== item) {
-                    // this.watchVal(this.defaultData0[index].customItem, item, this.defaultData0[index].label);
                     this.$refs.myHiddenChange.watchVal(this.$refs.myHiddenChange.defaultData0[index].customItem, item, this.$refs.myHiddenChange.defaultData0[index].label);
                 }
             },
-            // 监听值的变化
-            // watchVal(oldValue, newValue, name) {
-            //     let json_obj = {};
-            //     json_obj.label = name;
-            //     json_obj.oldValue = oldValue;
-            //     json_obj.newValue = newValue;
-            //     this.arrayTest = JSON.stringify(json_obj);
-            //     for (let i = 0; i < this.hidden_testTest.length; i++) {
-            //         if (this.hidden_testTest[i].indexOf(name) !== -1) {
-            //             this.hidden_testTest.splice(i, 1);
-            //         }
-            //     }
-            //     this.hidden_testTest.push(this.arrayTest);
-            //     console.log(this.hidden_testTest);
-            // },
-        },
-        // mounted() {
-        //     this.getDefaultData();
-        // },
+        }
     }
 </script>
 
