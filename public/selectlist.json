@@ -18,7 +18,7 @@
             "headerName": "Detailed",
             "field": "detailed",
             "filter": true,
-            "width": 300
+            "width": 325
         }
     ],
     "ContactsData": [
@@ -26,85 +26,127 @@
             "id": "1",
             "number": "1",
             "name": "Celica",
-            "detailed": "detailed1"
+            "detailed": "detailed1",
+            "child":[
+                {
+                    "id": "11",
+                    "number": "11",
+                    "name": "Celica",
+                    "detailed": "detailed11"
+                },
+                {
+                    "id": "12",
+                    "number": "12",
+                    "name": "Mondeo",
+                    "detailed": "detailed12",
+                    "child":[
+                        {
+                            "id": "121",
+                            "number": "121",
+                            "name": "Celica",
+                            "detailed": "detailed121"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "2",
             "number": "2",
             "name": "Mondeo",
-            "detailed": "detailed2"
+            "detailed": "detailed2",
+            "child":[
+                {
+                    "id": "21",
+                    "number": "21",
+                    "name": "Celica",
+                    "detailed": "detailed21"
+                }
+            ]
         },
         {
             "id": "3",
             "number": "3",
             "name": "Boxter",
             "detailed": "detailed3"
-        }
-    ],
-    "ContactsData2": [
-        {
-            "id": "1",
-            "number": "1",
-            "name": "Celica1",
-            "detailed": "detailed11"
-        },
-        {
-            "id": "2",
-            "number": "1",
-            "name": "Mondeo1",
-            "detailed": "detailed12"
         },
         {
             "id": "3",
-            "number": "1",
-            "name": "Boxter1",
-            "detailed": "detailed13"
-        },
-        {
-            "id": "4",
-            "number": "2",
-            "name": "Celica2",
-            "detailed": "detailed21"
-        },
-        {
-            "id": "5",
-            "number": "2",
-            "name": "Mondeo2",
-            "detailed": "detailed22"
-        },
-        {
-            "id": "6",
-            "number": "2",
-            "name": "Boxter2",
-            "detailed": "detailed23"
-        },
-        {
-            "id": "7",
             "number": "3",
-            "name": "Celica3",
-            "detailed": "detailed31"
+            "name": "Boxter",
+            "detailed": "detailed3"
         },
         {
-            "id": "8",
+            "id": "3",
             "number": "3",
-            "name": "Mondeo3",
-            "detailed": "detailed32"
+            "name": "Boxter",
+            "detailed": "detailed3"
         },
         {
-            "id": "9",
+            "id": "3",
             "number": "3",
-            "name": "Boxter3",
-            "detailed": "detailed33"
-        }
-    ],
-    "hidden_testTest": [
-        {
-            "aa":"23",
-            "ss":"32"
+            "name": "Boxter",
+            "detailed": "detailed3"
         },
         {
-            "bb":"32",
-            "ss":"32"
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
+        },
+        {
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
+        },
+        {
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
+        },
+        {
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
+        },
+        {
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
+        },
+        {
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
+        },
+        {
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
+        },
+        {
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
+        },
+        {
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
+        },
+        {
+            "id": "3",
+            "number": "3",
+            "name": "Boxter",
+            "detailed": "detailed3"
         }
     ]
 }

@@ -1,38 +1,60 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <div class="box">
 
-        <b-card title="Info" class="info">
-            <!--<b-container>-->
-                <!--<b-row class="border border-bottom-0 border-right-0">-->
-                    <!--<b-col cols="12"  md="6" class="border-bottom border-right" v-for="(value,name) in studentInfo" :key="name">-->
-                        <!--<b-row>-->
-                            <!--<b-col cols="6" md="3" class="border-right"><label class="col-form-label">{{name}} :</label></b-col>-->
-                            <!--<b-col cols="6" md="9"><p class="col-form-label">{{value}}</p></b-col>-->
-                        <!--</b-row>-->
-                    <!--</b-col>-->
-                <!--</b-row>-->
-            <!--</b-container>-->
+        <b-card title="Info" class="info" v-if="caseInfo">
             <b-container class="mt-3">
-                <b-row class="border border-bottom-0 border-right-0">
-                    <b-col cols="12"  md="6" class="border-bottom border-right" v-for="(item,name) in studentInfo" :key="name">
-                        <b-row v-if="name==='name'">
-                            <b-col cols="6" md="3" class="border-right"><label class="col-form-label">{{name.slice(0,1).toUpperCase() +name.slice(1).toLowerCase()}} :</label></b-col>
-                            <b-col cols="6" md="9">
-                                <b-button style="background-color: transparent;border: 0;outline: none;padding-left: 0" :pressed.sync="myToggle" class="col-form-label">{{item}}</b-button>
-                                <b-form-input v-show="myToggle" class="col-form-label" v-model="studentInfo.name"></b-form-input>
-                            </b-col>
-                        </b-row>
-                        <b-row v-else>
-                            <b-col cols="6" md="3" class="border-right"><label class="col-form-label">{{name.slice(0,1).toUpperCase() +name.slice(1).toLowerCase()}} :</label></b-col>
-                            <b-col cols="6" md="9"><p class="col-form-label">{{item}}</p></b-col>
-                        </b-row>
-                    </b-col>
-                </b-row>
-                <b-row v-if="myToggle"><b-col cols="12" class="text-md-right text-center">
-                    <b-button variant="success" class="mr-2">Save</b-button>
-                    <b-button @click="myToggle=false">cancel</b-button>
-                </b-col></b-row>
+                <b-form @submit="infoSave">
+                    <b-row >
+                        <b-col cols="12" md="6" :key="index" v-for="(item,index) in caseInfo">
+                            <b-form-group label-cols="4" label-cols-lg="3" :label="item.label+':'" >
+                                <b-form-input
+                                    :@change="changeFunc(item.value, index)"
+                                    :disabled="item.disabled"
+                                    v-if="item.type==='text' || item.type==='emial' || item.type==='number' || item.type==='password'"
+                                    :type="item.type" v-model="item.value">
+                                </b-form-input>
+                                <div v-if="item.type==='date'" class="d-md-flex align-items-center">
+                                    <b-form-datepicker
+                                        :@context="changeFunc(item.value, index)"
+                                        v-model="item.value" :disabled="item.disabled"
+                                        :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
+                                        locale="en-US">
+                                    </b-form-datepicker>
+                                    <!--<span>to</span>-->
+                                    <!--<b-form-datepicker-->
+                                    <!--v-model="item.value"-->
+                                    <!--:date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"-->
+                                    <!--locale="en-US">-->
+                                    <!--</b-form-datepicker>-->
+                                </div>
+                                <b-form-select
+                                    v-if="item.type==='select'" :disabled="item.disabled"
+                                    v-model="item.value"
+                                    :options="topOption"
+                                    placeholder="Please select">
+                                </b-form-select>
+                                <multiselect v-if="item.type==='multiselect'" :disabled="item.disabled"
+                                             v-model="item.value"
+                                             label="text"
+                                             track-by="value"
+                                             :options="topOption"
+                                             :multiple="true"
+                                             :taggable="true" placeholder="Multiple select" >
+                                </multiselect>
+                            </b-form-group>
+                        </b-col>
+                    </b-row>
+                    <b-row>
+                        <b-col cols="12" class="text-center mt-2">
+                            <b-button type="submit" variant="success" class="mr-2">{{$t('Save')}}</b-button>
+                            <!--<b-button type="reset" variant="secondary">{{$t('Cancel')}}</b-button>-->
+                        </b-col>
+                    </b-row>
+                </b-form>
+
+
             </b-container>
+
         </b-card>
 
         <b-card title="Job" class="job" v-if="fieldsJob">
@@ -57,7 +79,6 @@
         <b-card title="Table" v-if="filesRC">
             <b-container>
                 <b-table
-
                     multi
                     ref="selectableTable"
                     selectable
@@ -127,10 +148,16 @@
 </template>
 
 <script>
+    import hiddenChange from './hiddenChange';
     export default {
+        components: {
+            hiddenChange
+        },
         name: "formInputInfo",
         props:{
             studentInfo:{},
+            caseInfo:{},
+            topOption:{},
             fieldsJob:{},
             jobData:{},
             filesRC:{},
@@ -153,19 +180,9 @@
                   content: ''
               },
               myToggle:false
-
           }
         },
-        computed: {
-            // sortOptions() {
-            //     // Create an options list from our fields
-            //     return this.fields
-            //         .filter(f => f.sortable)
-            //         .map(f => {
-            //             return { text: f.label, value: f.key }
-            //         })
-            // },
-        },
+        computed: {},
         watch:{
             currentPage: {
                 handler: function(value) {
@@ -189,11 +206,20 @@
             }
         },
         mounted() {
-            if (this.RCAction){
-                this.totalRows = this.RCAction.length;
-            }
+            if (this.RCAction){this.totalRows = this.RCAction.length;}
         },
         methods: {
+            infoSave(){
+                alert("success")
+            },
+            changeFunc(item, index) {
+
+                // if (this.$refs.myHiddenChange.defaultData0[index].value !== item) {
+                //     this.$refs.myHiddenChange.watchVal(
+                //         this.$refs.myHiddenChange.defaultData0[index].value,
+                //         item, this.$refs.myHiddenChange.defaultData0[index].label);
+                // }
+            },
             info(item, index, button) {
                 this.infoModal.title = `Row index: ${index}`
                 this.infoModal.content = JSON.stringify(item, null, 2)
@@ -203,14 +229,10 @@
                 this.infoModal.title = '';
                 this.infoModal.content = '';
             },
-            // onFiltered(filteredItems) {
-            //     // Trigger pagination to update the number of buttons/pages due to filtering
-            //     this.totalRows = filteredItems.length
-            //     this.currentPage = 1
-            // },
             deleteRow(item){
                 alert(item)
-            }
+            },
+
         }
     }
 </script>

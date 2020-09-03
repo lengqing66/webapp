@@ -615,6 +615,107 @@
             "width": 100
         }
     ],
+    "caseInfo": [
+        {
+            "name": "chineseName",
+            "label": "Chinese Name",
+            "type": "text",
+            "value": "張鑫",
+            "disabled": "disabled"
+        },
+        {
+            "name": "doa",
+            "label": "DOA",
+            "type": "date",
+            "value": "2020-07-27",
+            "disabled": "disabled"
+        },
+        {
+            "name": "phoneMobile",
+            "label": "Phone/Mobile",
+            "type": "text",
+            "value": "/96087019",
+            "disabled": ""
+        },
+        {
+            "name": "hlmDate",
+            "label": "HLM Date",
+            "type": "date",
+            "value": "",
+            "disabled": "disabled"
+        },
+        {
+            "name": "sexAge",
+            "label": "Sex/Age",
+            "type": "text",
+            "value": "Female/47",
+            "disabled": ""
+        },
+        {
+            "name": "hkid",
+            "label": "HKID",
+            "type": "text",
+            "value": "R123456(A)",
+            "disabled": "disabled"
+        },
+        {
+            "name": "rcClaimsHandler",
+            "label": "RC / Claims Handler",
+            "type": "text",
+            "value": "Valerie Law / Fanny Chan",
+            "disabled": ""
+        },
+        {
+            "name": "diagnosis",
+            "label": "Diagnosis",
+            "type": "text",
+            "value": "Right ankle injury"
+        },
+        {
+            "name": "trmref",
+            "label": "TRM Ref",
+            "type": "text",
+            "value": "rery"
+        },
+        {
+            "name": "caseid",
+            "label": "Case ID",
+            "type": "number",
+            "value": "13244",
+            "disabled": "disabled"
+        },
+        {
+            "name": "insurer",
+            "label": "Insurer",
+            "type": "select",
+            "value": "1"
+        },
+        {
+            "name": "company",
+            "label": "Company",
+            "type": "select",
+            "value": "4"
+        },
+        {
+            "name": "entity",
+            "label": "Entity",
+            "type": "select",
+            "value": "2",
+            "disabled": "disabled"
+        },
+        {
+            "name": "patientname",
+            "label": "Patient Name",
+            "type": "select",
+            "value": "3"
+        },
+        {
+            "name": "lastmodifyday",
+            "label": "Last Modify day",
+            "type": "text",
+            "value": "35sfdf"
+        }
+    ],
     "studentInfo": [
         {
             "label1": "Student No",

@@ -21,7 +21,7 @@
 .box .card:focus,.card:focus,:focus{outline: none!important;}
 .keywordSearch{float: right}
 .setPagSize{border-radius:3px;border: 1px solid #c9d2e3;position: absolute}
-
+.custom-select:disabled {color: #3c4e71!important;background-color: #dae0ec!important;opacity: 1;}
 
 @media screen and (max-width: 767px) {
     .keywordSearch{float: none;}

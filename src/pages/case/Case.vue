@@ -24,6 +24,8 @@
                     <template>
                         <formInputInfo
                             :studentInfo="studentInfo"
+                            :caseInfo="caseInfo"
+                            :topOption="topOption"
                             :fieldsJob="fieldsJob"
                             :jobData="jobData"
                             :filesRC="filesRC"
@@ -60,6 +62,7 @@
                 gridApi: null,
                 currentPageStudent: '',
                 studentInfo: '',
+                caseInfo:'',
                 addStudentEmpty: '',
 
                 fieldsJob:'',
@@ -96,6 +99,7 @@
             this.$axios.get("./caselist.json").then(response => {
                 this.topSearch = response.data.topSearch;
                 this.studentData = response.data.studentData;
+                this.caseInfo = response.data.caseInfo;
                 this.columnDefs = response.data.columnDefs;
                 this.addStudentEmpty = response.data.addStudentEmpty;
                 this.fieldsJob = response.data.fieldsJob;

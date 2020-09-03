@@ -8,7 +8,12 @@
                         <b-col cols="12" md="6" :key="index" v-for="(item,index) in topSearch">
                             <b-form-group label-cols="4" label-cols-lg="3" :label="item.label+':'" >
 
-                                <b-form-input v-if="item.type==='text' || item.type==='emial' || item.type==='number' || item.type==='password'" :type="item.type" v-model="formData[item.name]"></b-form-input>
+                                <b-form-input
+                                    v-if="item.type==='text' || item.type==='emial' || item.type==='number' || item.type==='password'"
+                                    :type="item.type" v-model="formData[item.name]"
+                                    disabled="disabled"
+                                >
+                                </b-form-input>
 
                                 <div v-if="item.type==='date'" class="d-md-flex align-items-center">
                                     <b-form-datepicker
@@ -284,12 +289,12 @@
                     this.$emit('tabIndex',this.tabIndex2);
                     this.tabs.push( {title: tabName,id:tabId, i: this.tabCounter++, index: this.tabIndex2++});
                 }
-                console.log(this.tabs);
+                //console.log(this.tabs);
             },
-            onPageSizeChanged(newPageSize) {
-                var value = document.getElementById('page-size').value;
-                this.gridApi.paginationSetPageSize(Number(value));
-            },
+            // onPageSizeChanged(newPageSize) {
+            //     var value = document.getElementById('page-size').value;
+            //     this.gridApi.paginationSetPageSize(Number(value));
+            // },
             onAddStudent(evt) {  //add Save
                 evt.preventDefault();
                 alert(JSON.stringify(this.formAddStudent));
@@ -401,7 +406,13 @@
         mounted() {
             this.gridApi = this.gridOptions.api;
             //this.gridApi.sizeColumnsToFit();//调整表格大小自适应
+            var allColumnIds = [];
+            this.gridOptions.columnApi.getAllColumns().forEach(function(column) {
+                allColumnIds.push(column.colId);
+            });
+            this.gridOptions.columnApi.autoSizeColumns(allColumnIds, false);
             this.generateFormData();
+
         }
     }
 </script>

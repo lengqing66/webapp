@@ -2,7 +2,7 @@
     <div id="content" class="app-content">
         <!--content-->
         <formtest></formtest>
-        <!--<ASelect></ASelect>-->
+        <ASelect></ASelect>
     </div>
 
 </template>
