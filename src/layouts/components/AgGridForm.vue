@@ -8,7 +8,12 @@
                         <b-col cols="12" md="6" :key="index" v-for="(item,index) in topSearch">
                             <b-form-group label-cols="4" label-cols-lg="3" :label="item.label+':'" >
 
-                                <b-form-input v-if="item.type==='text' || item.type==='emial' || item.type==='number' || item.type==='password'" :type="item.type" v-model="formData[item.name]"></b-form-input>
+                                <b-form-input
+                                    v-if="item.type==='text' || item.type==='emial' || item.type==='number' || item.type==='password'"
+                                    :type="item.type" v-model="formData[item.name]"
+                                    disabled="disabled"
+                                >
+                                </b-form-input>
 
                                 <div v-if="item.type==='date'" class="d-md-flex align-items-center">
                                     <b-form-datepicker
@@ -223,12 +228,11 @@
                 tabIndex:0,
                 tabIndex2:0,
                 defaultColDef: {
-                    editable: true,//单元表格是否可编辑
-                    enableRowGroup: true,
-                    enablePivot: true,
-                    enableValue: true,
+                    //enableRowGroup: true,
+                    //enablePivot: true,
+                    //enableValue: true,
                     sortable: true, //开启排序
-                    resizable: true,//是否可以调整列大小，就是拖动改变列大小
+                    //resizable: true,//是否可以调整列大小，就是拖动改变列大小
                     filter: true  //开启刷选
                 },
             }
@@ -278,7 +282,6 @@
                     if (this.tabs[i].id === tabId) {
                         isExists = true;
                         this.tabIndex = this.tabs[i].i;
-                        //console.log(this.tabIndex);
                         this.$emit('tabIndex',this.tabIndex+1);
                     }
                 }
@@ -286,12 +289,12 @@
                     this.$emit('tabIndex',this.tabIndex2);
                     this.tabs.push( {title: tabName,id:tabId, i: this.tabCounter++, index: this.tabIndex2++});
                 }
-                console.log(this.tabs);
+                //console.log(this.tabs);
             },
-            onPageSizeChanged(newPageSize) {
-                var value = document.getElementById('page-size').value;
-                this.gridApi.paginationSetPageSize(Number(value));
-            },
+            // onPageSizeChanged(newPageSize) {
+            //     var value = document.getElementById('page-size').value;
+            //     this.gridApi.paginationSetPageSize(Number(value));
+            // },
             onAddStudent(evt) {  //add Save
                 evt.preventDefault();
                 alert(JSON.stringify(this.formAddStudent));
@@ -403,7 +406,13 @@
         mounted() {
             this.gridApi = this.gridOptions.api;
             //this.gridApi.sizeColumnsToFit();//调整表格大小自适应
+            var allColumnIds = [];
+            this.gridOptions.columnApi.getAllColumns().forEach(function(column) {
+                allColumnIds.push(column.colId);
+            });
+            this.gridOptions.columnApi.autoSizeColumns(allColumnIds, false);
             this.generateFormData();
+
         }
     }
 </script>

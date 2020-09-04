@@ -13,17 +13,24 @@
                                       @tabIndex="tabIndexData"
                                       :columnDefs="columnDefs"
                                       :addStudentEmpty="addStudentEmpty"
-                                      :studentData="studentData" :tabIndex="tabIndex">
+                                      :studentData="studentData">
                         </AgGridForm01>
                     </template>
                 </b-tab>
-                <b-tab title="Data" v-for="tab in this.tabs" :key=tab.length ref="'Tab' + tab.i" active>
+                <b-tab @click="tabTranslateId(tab.id)" title="Data" v-for="tab in this.tabs" :key=tab.length ref="'Tab' + tab.i" active>
                     <template v-slot:title>
-                        <strong>{{tab.title}}</strong> <a v-on:click="tabClose(tab.i)"><i
-                        class="fa fa-times-circle"></i></a>
+                        <strong style="display: inline-block;padding:0 2px" >{{tab.title}}</strong> <a v-on:click="tabClose(tab.i)"><i class="fa fa-times-circle"></i></a>
                     </template>
                     <template>
-                        <formInputInfo :studentInfo="studentInfo"></formInputInfo>
+                        <formInputInfo
+                            :studentInfo="studentInfo"
+                            :caseInfo="caseInfo"
+                            :topOption="topOption"
+                            :fieldsJob="fieldsJob"
+                            :jobData="jobData"
+                            :filesRC="filesRC"
+                            :RCAction="RCAction"
+                        ></formInputInfo>
                     </template>
                 </b-tab>
             </b-tabs>
@@ -55,7 +62,13 @@
                 gridApi: null,
                 currentPageStudent: '',
                 studentInfo: '',
-                addStudentEmpty: ''
+                caseInfo:'',
+                addStudentEmpty: '',
+
+                fieldsJob:'',
+                jobData:'',
+                filesRC:'',
+                RCAction:''
             }
         },
         beforeMount() {
@@ -77,14 +90,22 @@
                     }
                 }
             },
+            tabTranslateId(id){
+                console.log(id);
+            }
         },
         mounted() {
             let loader = this.$loading.show({});
             this.$axios.get("./caselist.json").then(response => {
                 this.topSearch = response.data.topSearch;
                 this.studentData = response.data.studentData;
+                this.caseInfo = response.data.caseInfo;
                 this.columnDefs = response.data.columnDefs;
                 this.addStudentEmpty = response.data.addStudentEmpty;
+                this.fieldsJob = response.data.fieldsJob;
+                this.jobData = response.data.jobData;
+                this.filesRC = response.data.filesRC;
+                this.RCAction = response.data.RCAction;
                 loader.hide();
             });
             this.$axios.get("./standardOption.json").then(response => {

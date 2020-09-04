@@ -5,6 +5,7 @@ import routes from './config/AppRoutes'
 import store from './components/store/index';
 // plugins
 import VueRouter from 'vue-router';
+Vue.prototype.GLOBAL='http://demo5.dodoerp.com/server';
 
 //import router from './router';
 const routerPush = VueRouter.prototype.push

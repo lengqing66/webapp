@@ -556,7 +556,7 @@
         {
             "headerName": "CaseID",
             "field": "caseid",
-            "sortable": true,
+            "sort": "asc",
             "width": 100
         },
         {
@@ -613,6 +613,107 @@
             "headerName": "Body Part",
             "field": "bodypart",
             "width": 100
+        }
+    ],
+    "caseInfo": [
+        {
+            "name": "chineseName",
+            "label": "Chinese Name",
+            "type": "text",
+            "value": "張鑫",
+            "disabled": "disabled"
+        },
+        {
+            "name": "doa",
+            "label": "DOA",
+            "type": "date",
+            "value": "2020-07-27",
+            "disabled": "disabled"
+        },
+        {
+            "name": "phoneMobile",
+            "label": "Phone/Mobile",
+            "type": "text",
+            "value": "/96087019",
+            "disabled": ""
+        },
+        {
+            "name": "hlmDate",
+            "label": "HLM Date",
+            "type": "date",
+            "value": "",
+            "disabled": "disabled"
+        },
+        {
+            "name": "sexAge",
+            "label": "Sex/Age",
+            "type": "text",
+            "value": "Female/47",
+            "disabled": ""
+        },
+        {
+            "name": "hkid",
+            "label": "HKID",
+            "type": "text",
+            "value": "R123456(A)",
+            "disabled": "disabled"
+        },
+        {
+            "name": "rcClaimsHandler",
+            "label": "RC / Claims Handler",
+            "type": "text",
+            "value": "Valerie Law / Fanny Chan",
+            "disabled": ""
+        },
+        {
+            "name": "diagnosis",
+            "label": "Diagnosis",
+            "type": "text",
+            "value": "Right ankle injury"
+        },
+        {
+            "name": "trmref",
+            "label": "TRM Ref",
+            "type": "text",
+            "value": "rery"
+        },
+        {
+            "name": "caseid",
+            "label": "Case ID",
+            "type": "number",
+            "value": "13244",
+            "disabled": "disabled"
+        },
+        {
+            "name": "insurer",
+            "label": "Insurer",
+            "type": "select",
+            "value": "1"
+        },
+        {
+            "name": "company",
+            "label": "Company",
+            "type": "select",
+            "value": "4"
+        },
+        {
+            "name": "entity",
+            "label": "Entity",
+            "type": "select",
+            "value": "2",
+            "disabled": "disabled"
+        },
+        {
+            "name": "patientname",
+            "label": "Patient Name",
+            "type": "select",
+            "value": "3"
+        },
+        {
+            "name": "lastmodifyday",
+            "label": "Last Modify day",
+            "type": "text",
+            "value": "35sfdf"
         }
     ],
     "studentInfo": [
@@ -680,5 +781,74 @@
             "type2": "text",
             "value2": ""
         }
+    ],
+    "fieldsJob": [
+        {"key":"jobId","label":"Job-id"},
+        {"key":"date","label":"Date", "sortable": true},
+        {"key":"type","label":"Type", "sortable": true},
+        {"key":"status","label":"Status", "sortable": true},
+        {"key":"endDate","label":"End Date", "sortable": true},
+        {"key":"team","label":"Team"},
+        {"key":"staff","label":"Staff"},
+        {"key":"rcFee","label":"RC Fee"},
+        {"key":"cmFee","label":"CM Fee"},
+        {"key":"treatment","label":"Treatment"},
+        {"key":"miscFee","label":"Misc.Fee"},
+        {"key": "actions", "label": "" }
+    ],
+    "jobData": [
+        {"jobId":1,"date":"2020-08-17","type":"P-File Review","status":"New","endDate":"2020-08-24","team":"RC","staff":"Valerie Law"},
+        {"jobId":2,"date":"2020-08-19","type":"P-File Review","status":"New","endDate":"2020-08-24","team":"RC","staff":"Valerie Law"},
+        {"jobId":3,"date":"2020-08-20","type":"P-File Review","status":"New","endDate":"2020-08-24","team":"RC","staff":"Valerie Law"},
+        {"jobId":4,"date":"2020-08-10","type":"P-File Review","status":"New","endDate":"2020-08-24","team":"RC","staff":"Valerie Law"},
+        {"jobId":5,"date":"2020-08-04","type":"P-File Review","status":"New","endDate":"2020-08-24","team":"RC","staff":"Valerie Law"},
+        {"jobId":6,"date":"2020-08-30","type":"P-File Review","status":"New","endDate":"2020-08-24","team":"RC","staff":"Valerie Law"},
+        {"jobId":7,"date":"2020-08-07","type":"P-File Review","status":"New","endDate":"2020-08-24","team":"RC","staff":"Valerie Law"}
+    ],
+    "filesRC":[
+        {"key":"selected","label":""},
+        {"key":"id","label":"ID"},
+        {"key":"date","label":"Date","sortable": true},
+        {"key":"jobId","label":"Job-ID"},
+        {"key":"rcAction","label":"RC Fee"},
+        {"key":"mType","label":"M-Type"},
+        {"key":"staff","label":"Staff"},
+        {"key":"fee","label":"Fee"},
+        {"key":"remark","label":"Remark"},
+        {"key":"actions","label":"Actions"}
+    ],
+    "RCAction":[
+        {"id":1234,"date":"2020-08-17","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1235,"date":"2020-08-27","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1236,"date":"2020-08-07","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1237,"date":"2020-08-10","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1238,"date":"2020-08-17","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1239,"date":"2020-08-14","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1240,"date":"2020-08-18","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1241,"date":"2020-08-15","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""},
+        {"id":1242,"date":"2020-08-10","jobId":1,"rcAction":"File Review Proposed","mType":"P-File Review","staff":"Valerie Law","fee":"","remark":""}
     ]
 }

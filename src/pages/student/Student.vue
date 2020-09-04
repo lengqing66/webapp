@@ -18,7 +18,7 @@
                         </AgGridForm01>
                     </template>
                 </b-tab>
-                <b-tab title="Data" v-for="tab in this.tabs" :key=tab.length  ref="'Tab' + tab.i"  active>
+                <b-tab @click="tabTranslateId(tab.id)" title="Data" v-for="tab in this.tabs" :key=tab.length  ref="'Tab' + tab.i"  active>
                     <template v-slot:title>
                         <strong>{{tab.title}}</strong> <a v-on:click="tabClose(tab.i)"><i class="fa fa-times-circle" ></i></a>
                     </template>
@@ -77,6 +77,9 @@
                     }
                 }
             },
+            tabTranslateId(id){
+                console.log(id);
+            }
         },
         mounted() {
             let loader = this.$loading.show({});

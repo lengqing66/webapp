@@ -1,0 +1,684 @@
+{
+    "topSearch": [
+        {
+            "name": "trmref",
+            "label": "TRM Ref",
+            "type": "text"
+        },
+        {
+            "name": "hlmno",
+            "label": "HLM NO",
+            "type": "text"
+        },
+        {
+            "name": "caseid",
+            "label": "Case ID",
+            "type": "number"
+        },
+        {
+            "name": "insurer",
+            "label": "Insurer",
+            "type": "select"
+        },
+        {
+            "name": "company",
+            "label": "Company",
+            "type": "select"
+        },
+        {
+            "name": "entity",
+            "label": "Entity",
+            "type": "select"
+        },
+        {
+            "name": "patientname",
+            "label": "Patient Name",
+            "type": "select"
+        },
+        {
+            "name": "doa",
+            "name2": "doa2",
+            "label": "DOA",
+            "type": "date"
+        },
+        {
+            "name": "HKID",
+            "label": "Patient Name",
+            "type": "text"
+        },
+        {
+            "name": "dor",
+            "name2": "dor2",
+            "label": "DOR",
+            "type": "date"
+        },
+        {
+            "name": "rc",
+            "label": "RC",
+            "type": "multiselect"
+        },
+        {
+            "name": "lastmodifyday",
+            "label": "Last Modify day",
+            "type": "text"
+        }
+    ],
+    "addStudentEmpty": [
+        {
+            "name": "trmref",
+            "label": "TRM Ref",
+            "type": "text"
+        },
+        {
+            "name": "hlmno",
+            "label": "HLM NO",
+            "type": "text"
+        },
+        {
+            "name": "caseid",
+            "label": "Case ID",
+            "type": "number"
+        },
+        {
+            "name": "insurer",
+            "label": "Insurer",
+            "type": "select"
+        },
+        {
+            "name": "company",
+            "label": "Company",
+            "type": "select"
+        },
+        {
+            "name": "entity",
+            "label": "Entity",
+            "type": "select"
+        },
+        {
+            "name": "patientname",
+            "label": "Patient Name",
+            "type": "select"
+        },
+        {
+            "name": "doa",
+            "name2": "doa2",
+            "label": "DOA",
+            "type": "date"
+        },
+        {
+            "name": "hkid",
+            "label": "HKID",
+            "type": "text"
+        },
+        {
+            "name": "dor",
+            "name2": "dor2",
+            "label": "DOR",
+            "type": "date"
+        },
+        {
+            "name": "rc",
+            "label": "RC",
+            "type": "multiselect"
+        },
+        {
+            "name": "lastmodifyday",
+            "label": "Last Modify day",
+            "type": "text"
+        }
+    ],
+    "studentData": [
+        {
+            "caseid": 1,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "Sau",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 2,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "A",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 3,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "B",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 4,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "C",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 5,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "D",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 6,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "E",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 7,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "F",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 8,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "G",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 9,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "H",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 10,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "I",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 11,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "J",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 12,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "K",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 13,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "L",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 14,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "M",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 15,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "N",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 16,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "O",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 17,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "P",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 18,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "Q",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 19,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "R",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 20,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "S",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 21,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "T",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 22,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "U",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 23,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "V",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 24,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "W",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 25,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "X",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 26,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "Y",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 27,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "Z",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 28,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "WEWR",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 29,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "EASF",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 30,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "TYUF",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 31,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "TYT",
+            "bodypart": "Ankle"
+        },
+        {
+            "caseid": 32,
+            "code": "010",
+            "blm": "00154502",
+            "surname": "Cheung",
+            "firstname": "Sau Fan",
+            "hkid": "R219927(A)",
+            "doa": "2020-07-27",
+            "dor": "2020-08-05",
+            "diagnosis": "Right ankle injury",
+            "name": "GHG",
+            "bodypart": "Ankle"
+        }
+    ],
+    "columnDefs": [
+        {
+            "headerName": "",
+            "width": 60,
+            "checkboxSelection": true,
+            "headerCheckboxSelectionFilteredOnly": true,
+            "headerCheckboxSelection": true
+        },
+        {
+            "headerName": "CaseID",
+            "field": "caseid",
+            "sort": "asc",
+            "width": 100
+        },
+        {
+            "headerName": "Name",
+            "field": "name",
+            "width": 100
+        },
+        {
+            "headerName": "Code",
+            "field": "code",
+            "width": 100
+        },
+        {
+            "headerName": "BLM",
+            "field": "blm",
+            "width": 100
+        },
+        {
+            "headerName": "HLM",
+            "field": "hlm",
+            "width": 100
+        },
+        {
+            "headerName": "SUR NAME",
+            "field": "surname",
+            "width": 100
+        },
+        {
+            "headerName": "First Name",
+            "field": "firstname",
+            "width": 100
+        },
+        {
+            "headerName": "HKID",
+            "field": "hkid",
+            "width": 150
+        },
+        {
+            "headerName": "DOA",
+            "field": "doa",
+            "width": 130
+        },
+        {
+            "headerName": "DOR",
+            "field": "dor",
+            "width": 130
+        },
+        {
+            "headerName": "Diagnosis",
+            "field": "diagnosis",
+            "width": 150
+        },
+        {
+            "headerName": "Body Part",
+            "field": "bodypart",
+            "width": 100
+        }
+    ],
+    "studentInfo": [
+        {
+            "label1": "Student No",
+            "type1": "text",
+            "value1": "",
+            "label2": "Chinese Name",
+            "type2": "text",
+            "value2": ""
+        },
+        {
+            "label1": "Last Name",
+            "type1": "text",
+            "value1": "",
+            "label2": "First Name",
+            "type2": "text",
+            "value2": ""
+        },
+        {
+            "label1": "CenterName",
+            "type1": "text",
+            "value1": "",
+            "label2": "",
+            "type2": "text",
+            "value2": ""
+        },
+        {
+            "label1": "",
+            "type1": "text",
+            "value1": "",
+            "label2": "",
+            "type2": "text",
+            "value2": ""
+        },
+        {
+            "label1": "",
+            "type1": "text",
+            "value1": "",
+            "label2": "",
+            "type2": "text",
+            "value2": ""
+        },
+        {
+            "label1": "",
+            "type1": "text",
+            "value1": "",
+            "label2": "",
+            "type2": "text",
+            "value2": ""
+        },
+        {
+            "label1": "",
+            "type1": "text",
+            "value1": "",
+            "label2": "",
+            "type2": "text",
+            "value2": ""
+        },
+        {
+            "label1": "",
+            "type1": "text",
+            "value1": "",
+            "label2": "",
+            "type2": "text",
+            "value2": ""
+        }
+    ]
+}

@@ -65,10 +65,9 @@
                 else{
                     this.$axios({
                         method:'post',
-                        url:'/server/user/login',
+                        url:this.GLOBAL+'/user/login?password=123456&userName=admin',
                         data:$.param(_this.loginForm),
                     }).then(res => {
-                        console.log('成功');
                         console.log(res.data);
                         if(res.data.success){
                             localStorage.setItem('token',res.data['token']);
@@ -77,7 +76,6 @@
                             alert('用户名或密码错误！');
                         }
                     }).catch(error => {
-                        console.log('失败');
                         console.log(error);
                     })
                 }

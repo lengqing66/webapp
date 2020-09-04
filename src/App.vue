@@ -13,7 +13,7 @@
 		<vue-ins-progress-bar></vue-ins-progress-bar>
 		<Header v-if="!appOptions.appWithoutHeader" />
 		<Sidebar v-if="!appOptions.appWithoutSidebar" />
-        <tabs></tabs>
+        <tabs v-if="!appOptions.appTabs"></tabs>
 		<Footer v-if="appOptions.appWithFooter" />
 	</div>
 </template>
@@ -28,6 +28,8 @@ import Tabs from './pages/standard/Tabs.vue'
 
 export default {
   name: 'App',
+  //rootPath: "http://localhost:8080/dodo40_monkeytree", //后台接口路径
+  //rootPath: "http://demo14.embraiz.com/dodo40_monkeytree", //后台接口路径
   data() {
 		return {
 			appOptions: AppOptions
