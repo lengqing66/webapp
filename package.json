@@ -26,9 +26,13 @@
     "bootstrap-vue": "^2.15.0",
     "chart.js": "^2.9.3",
     "core-js": "^3.6.5",
-      "iview": "^3.5.4",
+    "iview": "^3.5.4",
+    "jQuery": "^1.7.4",
     "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
+    "location": "0.0.1",
     "moment": "^2.26.0",
+    "navigator": "^1.0.1",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "v-photoswipe": "^1.0.3-1",
@@ -51,7 +55,8 @@
     "vue-wysiwyg": "^1.7.2",
     "vue2-daterange-picker": "^0.5.1",
     "vue2-google-maps": "^0.10.7",
-    "vuex": "^3.5.1"
+    "vuex": "^3.5.1",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
@@ -68,13 +73,13 @@
       "node": true
     },
     "extends": [
-        "plugin:vue/essential"
+      "plugin:vue/essential"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
     },
     "rules": {
-        "vue/no-unused-components": "off"
+      "vue/no-unused-components": "off"
     }
   },
   "browserslist": [

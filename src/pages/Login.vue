@@ -31,7 +31,7 @@
                                 class="mb-3" @keyup.enter="login"></b-form-input>
                             <span style="display: none"></span>
                             <div class=" text-center mb-2">
-                                <b-button type="submit" variant="success" @click="signIn">Login</b-button>
+                                <b-button variant="success" @click="signIn">Login</b-button>
                             </div>
                         </div>
 
@@ -43,8 +43,8 @@
 </template>
 
 <script>
-    import AppOptions from '../config/AppOptions.vue'
-
+    import AppOptions from '../config/AppOptions.vue';
+    import $ from 'jQuery';
     export default {
         data() {
             return {
@@ -56,8 +56,31 @@
         },
         methods: {
             signIn() {
-                console.log(this.loginForm);
-                this.$router.push({path: '/home'})
+                let _this = this;
+                //console.log(this.$router);
+                //console.log(this.loginForm);
+                if(this.loginForm.login===''||this.loginForm.password===''){
+                    alert('Account and password cannot be empty');
+                }
+                else{
+                    this.$axios({
+                        method:'post',
+                        url:'/server/user/login',
+                        data:$.param(_this.loginForm),
+                    }).then(res => {
+                        console.log('成功');
+                        console.log(res.data);
+                        if(res.data.success){
+                            localStorage.setItem('token',res.data['token']);
+                            _this.$router.push({path: '/'});
+                        }else{
+                            alert('用户名或密码错误！');
+                        }
+                    }).catch(error => {
+                        console.log('失败');
+                        console.log(error);
+                    })
+                }
             },
         },
         mounted() {

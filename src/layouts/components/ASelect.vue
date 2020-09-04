@@ -28,6 +28,7 @@
                             <div>
                                 <b-form @submit="submit">
                                     <ag-grid-vue style="height: 517px;margin-top:20px;"
+                                                 @grid-ready="onGridReady"
                                                  class="ag-theme-alpine" :gridOptions="gridOptions"
                                                  :columnDefs="ContactsDefs"
                                                  :rowData="CurrentData" @cellClicked="cellClicked($event)"
@@ -80,14 +81,12 @@
 
 <script>
     import {AgGridVue} from "ag-grid-vue";
-    import AgGridForm01 from "../../layouts/components/AgGridForm"
     import TranslationCellRenderer from '../../common/plugins/TranslationCellRenderer'
 
     export default {
         name: "ASelect",
         components: {
             AgGridVue,
-            AgGridForm01
         },
         data() {
             return {
@@ -102,9 +101,9 @@
                 rowSelection: 'single',//单选
                 floor: '1',//层数
 
+                gridOptions: {},
                 gridApi: null,
                 currentPageStudent: '',
-                gridOptions: {},
                 frameworkComponents: {agColumnHeader: TranslationCellRenderer},
                 defaultColDef: {
                     editable: true,//单元表格是否可编辑
@@ -112,8 +111,8 @@
                     enablePivot: true,
                     enableValue: true,
                     sortable: true, //开启排序
-                    resizable: true,//是否可以调整列大小，就是拖动改变列大小
-                    filter: true  //开启刷选
+                   resizable: true,//是否可以调整列大小，就是拖动改变列大小
+                   filter: true  //开启刷选
                 },
             }
         },
@@ -128,18 +127,15 @@
             },
             totalPages() {   //总页数
                 if (this.gridApi) {
-                    let paginationGetTotalPages = this.CurrentData.length
-                    //% this.gridApi.paginationGetPageSize() === 0 ? this.studentData.length / this.gridApi.paginationGetPageSize() : Math.ceil(this.studentData.length / this.gridApi.paginationGetPageSize()) ;
-                    return paginationGetTotalPages
+                    let paginationGetTotalPages = this.CurrentData.length;
+                    return paginationGetTotalPages;
                 }
-                else return 0
-                // if(this.gridApi) return this.gridApi.paginationGetTotalPages()
-                // else return 0
+                else return 0;
             },
             currentPage: {   //当前页数
                 get() {
-                    if (this.gridApi) return this.gridApi.paginationGetCurrentPage() + 1
-                    else return 1
+                    if (this.gridApi) return this.gridApi.paginationGetCurrentPage() + 1;
+                    else return 1;
                 },
                 set(val) {   //点击页的时候，请求后台数据，返回相应数据
                     this.gridApi.paginationGoToPage(val - 1);
@@ -209,6 +205,9 @@
                 var value = document.getElementById('page-size').value;
                 this.gridApi.paginationSetPageSize(Number(value));
             },
+            onGridReady(){
+                this.gridApi = this.gridOptions.api;
+            }
         },
         mounted() {
             let loader = this.$loading.show({});
@@ -219,7 +218,6 @@
                 loader.hide();
             });
             this.items.push({key: '0', floor: this.floor, name: 'home'});
-            this.gridApi = this.gridOptions.api;
         },
     }
 </script>
