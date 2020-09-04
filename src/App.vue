@@ -28,8 +28,8 @@ import Tabs from './pages/standard/Tabs.vue'
 
 export default {
   name: 'App',
-  //rootPath: "http://localhost:8080/dodo40_monkeytree", //后台接口路径
-  //rootPath: "http://demo14.embraiz.com/dodo40_monkeytree", //后台接口路径
+  rootPath: "http://demo5.dodoerp.com/server", //后台接口路径
+
   data() {
 		return {
 			appOptions: AppOptions
