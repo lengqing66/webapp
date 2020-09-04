@@ -2,10 +2,8 @@
     <div id="content" class="app-content">
         <b-row>
             <b-col cols="12">
-                <b-form-group label-cols="4" label-cols-lg="3" :label="$t('ASelect.name') +':'">
-                    <input type="hidden" v-model="hiddenData" id="hidden2">
-                    <b-form-input v-b-modal.ASelect v-model="selectData" id="myModal"/>
-                </b-form-group>
+                <input type="hidden" v-model="hiddenData" id="hidden2">
+                <b-form-input v-b-modal.ASelect v-model="selectData" id="myModal"/>
 
                 <b-modal ref="ASelect" id="ASelect" size="lg" :title="$t('ASelect.select')" hide-footer>
                     <template>

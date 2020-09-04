@@ -71,8 +71,8 @@
                         console.log(res.data);
                         if(res.data.success){
                             localStorage.setItem('token',res.data['token']);
-                            alert("success");
-                            _this.$router.push({path: '/'});
+                            // alert("success");
+                            _this.$router.push({path: '/home'});
                         }else{
                             alert('用户名或密码错误！');
                         }

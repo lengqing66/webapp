@@ -33,6 +33,10 @@
                                     :options="topOption"
                                     placeholder="Please select">
                                 </b-form-select>
+                                <!--<ASelect v-if="item.type==='select'" :disabled="item.disabled"-->
+                                              <!--v-model="item.value"-->
+                                              <!--:options="topOption"-->
+                                              <!--placeholder="Please select"></ASelect>-->
                                 <multiselect v-if="item.type==='multiselect'" :disabled="item.disabled"
                                              v-model="item.value"
                                              label="text"
@@ -44,6 +48,7 @@
                             </b-form-group>
                         </b-col>
                     </b-row>
+                    <hiddenChange ref="myHiddenChange" :defaultData="caseInfo"></hiddenChange>
                     <b-row>
                         <b-col cols="12" class="text-center mt-2">
                             <b-button type="submit" variant="success" class="mr-2">{{$t('Save')}}</b-button>
@@ -149,8 +154,10 @@
 
 <script>
     import hiddenChange from './hiddenChange';
+    import ASelect from "./ASelect";
     export default {
         components: {
+            ASelect,
             hiddenChange
         },
         name: "formInputInfo",
@@ -210,10 +217,11 @@
         },
         methods: {
             infoSave(){
-                alert("success")
+                // alert("success")
+                console.log("保存成功" + this.$refs.myHiddenChange.hidden_testTest);
             },
             changeFunc(item, index) {
-
+                this.$refs.myHiddenChange.watchVal(item,index);
                 // if (this.$refs.myHiddenChange.defaultData0[index].value !== item) {
                 //     this.$refs.myHiddenChange.watchVal(
                 //         this.$refs.myHiddenChange.defaultData0[index].value,

@@ -1,8 +1,8 @@
 <template>
     <div id="content" class="app-content">
         <!--content-->
-        <!--<formtest></formtest>-->
-        <ASelect></ASelect>
+        <formtest></formtest>
+        <!--<ASelect></ASelect>-->
     </div>
 
 </template>

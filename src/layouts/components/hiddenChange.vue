@@ -9,29 +9,34 @@
 <script>
     export default {
         name: "hiddenChange",
+        props:{
+            defaultData:[],
+        },
         data(){
             return{
                 defaultData0:[],//存默认的值
                 hidden_testTest: [],
+                newData:[],
+                a:'我是a',
             }
         },
         methods:{
             getDefaultData() {  //先將默認的值保存起來
-                this.defaultData0 = JSON.parse(JSON.stringify(this.$parent.arrsTest));
+                this.defaultData0 = JSON.parse(JSON.stringify(this.defaultData));
             },
-            watchVal(oldValue, newValue, name) {
+            watchVal(item,index) {
                 console.log("监听中");
                 let json_obj = {};
-                json_obj.label = name;
-                json_obj.oldValue = oldValue;
-                json_obj.newValue = newValue;
-                this.$parent.arrayTest = JSON.stringify(json_obj);
+                json_obj.label = this.defaultData[index],label;
+                json_obj.oldValue = this.defaultData[index],value;
+                json_obj.newValue = item;
+                this.newData = JSON.stringify(json_obj);
                 for (let i = 0; i < this.hidden_testTest.length; i++) {
                     if (this.hidden_testTest[i].indexOf(name) !== -1) {
                         this.hidden_testTest.splice(i, 1);
                     }
                 }
-                this.hidden_testTest.push(this.$parent.arrayTest);
+                this.hidden_testTest.push(this.newData);
                 console.log(this.hidden_testTest);
             },
         },

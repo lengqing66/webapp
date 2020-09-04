@@ -33,7 +33,7 @@
                         </b-form-group>
                     </b-col>
                 </b-row>
-                <hiddenChange ref="myHiddenChange"></hiddenChange>
+                <hiddenChange ref="myHiddenChange" :defaultData="arrsTest"></hiddenChange>
                 <!--<b-row class="p-2">-->
                     <!--<b-col cols="12" class="text-center">-->
                         <!--<input type="hidden" v-model="hidden_testTest" id="hidden1">-->
@@ -58,10 +58,7 @@
         },
         data() {
             return {
-                arrayTest: [],
                 hidden_testTest: [],   //改变的值
-                // defaultData0: [],  //存默认的值
-                defaultDataTest: [],   //输入的值
                 arrsTest: [           //原始的值
                     {customItem: 'test01', label: 'name', type: 'text'},
                     {customItem: 'test01', label: 'name2', type: 'text'},
