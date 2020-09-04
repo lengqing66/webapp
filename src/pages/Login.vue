@@ -20,7 +20,7 @@
                                 type="text"
                                 name="login"
                                 placeholder="Login"
-                                v-model="loginForm.login"
+                                v-model="loginForm.userName"
                                 class=" mb-3"></b-form-input>
                             <span class="text-danger text-sm" style="display: none"></span>
                             <b-form-input
@@ -28,7 +28,7 @@
                                 name="password"
                                 placeholder="Password"
                                 v-model="loginForm.password"
-                                class="mb-3" @keyup.enter="login"></b-form-input>
+                                class="mb-3" @keyup.enter="userName"></b-form-input>
                             <span style="display: none"></span>
                             <div class=" text-center mb-2">
                                 <b-button variant="success" @click="signIn">Login</b-button>
@@ -49,7 +49,7 @@
         data() {
             return {
                 loginForm: {
-                    login: "",
+                    userName: "",
                     password: ""
                 },
             }
@@ -59,18 +59,19 @@
                 let _this = this;
                 //console.log(this.$router);
                 //console.log(this.loginForm);
-                if(this.loginForm.login===''||this.loginForm.password===''){
+                if(this.loginForm.userName===''||this.loginForm.password===''){
                     alert('Account and password cannot be empty');
                 }
                 else{
                     this.$axios({
                         method:'post',
-                        url:this.GLOBAL+'/user/login?password=123456&userName=admin',
+                        url:this.GLOBAL.rootPath+'/user/login',
                         data:$.param(_this.loginForm),
                     }).then(res => {
                         console.log(res.data);
                         if(res.data.success){
                             localStorage.setItem('token',res.data['token']);
+                            alert("success");
                             _this.$router.push({path: '/'});
                         }else{
                             alert('用户名或密码错误！');

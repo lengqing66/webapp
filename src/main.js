@@ -5,7 +5,7 @@ import routes from './config/AppRoutes'
 import store from './components/store/index';
 // plugins
 import VueRouter from 'vue-router';
-Vue.prototype.GLOBAL='http://demo5.dodoerp.com/server';
+Vue.prototype.GLOBAL=App;
 
 //import router from './router';
 const routerPush = VueRouter.prototype.push
@@ -65,7 +65,7 @@ axios.interceptors.request.use(
     config =>{
         // store.state.isShow = true;
         if(localStorage.getItem('token')){
-            config.headers['Authorization']="Bearer"+""+localStorage.getItem('token');
+            config.headers['Authorization']="Bearer"+" "+localStorage.getItem('token');
         }
         return config;
     },
@@ -91,6 +91,8 @@ axios.interceptors.response.use(
         return Promise.reject(error);
     }
 );
+
+
 
 
 Vue.use(wysiwyg, { maxHeight: '300px'})
