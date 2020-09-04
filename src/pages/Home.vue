@@ -1,7 +1,7 @@
 <template>
     <div id="content" class="app-content">
         <!--content-->
-        <formtest></formtest>
+        <!--<formtest></formtest>-->
         <ASelect></ASelect>
     </div>
 

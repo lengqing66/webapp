@@ -5,6 +5,7 @@ import routes from './config/AppRoutes'
 import store from './components/store/index';
 // plugins
 import VueRouter from 'vue-router';
+Vue.prototype.GLOBAL='http://demo5.dodoerp.com/server';
 
 //import router from './router';
 const routerPush = VueRouter.prototype.push
@@ -60,24 +61,36 @@ Vue.config.productionTip = false;
 
 //axios拦截器
 //定义一个请求拦截器
-// axios.interceptors.request.use(
-//     config =>{
-//         store.state.isShow = true;
-//         return config
-//     },
-//     error => {
-//      return Promise.reject(error);
-//    }
-// );
-// //定义一个响应拦截器
-// axios.interceptors.response.use(
-//     config =>{
-//        store.state.isShow = false;
-//     },
-//     error => {
-//         return Promise.reject(error);
-//     }
-// );
+axios.interceptors.request.use(
+    config =>{
+        // store.state.isShow = true;
+        if(localStorage.getItem('token')){
+            config.headers['Authorization']="Bearer"+""+localStorage.getItem('token');
+        }
+        return config;
+    },
+    error => {
+     return Promise.reject(error);
+   }
+);
+//定义一个响应拦截器
+axios.interceptors.response.use(
+    response =>{
+       // store.state.isShow = false;
+        if(response.data.error==='401'){
+            router.push({path: '/login'});
+        }
+        return response;
+    },
+    error => {
+        if(error.response){
+            if(error.response.status===401){
+                router.push({path: '/login'});
+            }
+        }
+        return Promise.reject(error);
+    }
+);
 
 
 Vue.use(wysiwyg, { maxHeight: '300px'})

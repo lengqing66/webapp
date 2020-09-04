@@ -43,8 +43,8 @@
 </template>
 
 <script>
-    import AppOptions from '../config/AppOptions.vue'
-
+    import AppOptions from '../config/AppOptions.vue';
+    import $ from 'jQuery';
     export default {
         data() {
             return {
@@ -59,7 +59,26 @@
                 let _this = this;
                 //console.log(this.$router);
                 //console.log(this.loginForm);
-                _this.$router.push({path: '/'})
+                if(this.loginForm.login===''||this.loginForm.password===''){
+                    alert('Account and password cannot be empty');
+                }
+                else{
+                    this.$axios({
+                        method:'post',
+                        url:this.GLOBAL+'/user/login?password=123456&userName=admin',
+                        data:$.param(_this.loginForm),
+                    }).then(res => {
+                        console.log(res.data);
+                        if(res.data.success){
+                            localStorage.setItem('token',res.data['token']);
+                            _this.$router.push({path: '/'});
+                        }else{
+                            alert('用户名或密码错误！');
+                        }
+                    }).catch(error => {
+                        console.log(error);
+                    })
+                }
             },
         },
         mounted() {
