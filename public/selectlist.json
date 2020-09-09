@@ -148,5 +148,14 @@
             "name": "Boxter",
             "detailed": "detailed3"
         }
+    ],
+    "arrsTest": [
+        {"customItem": "test01", "label": "name", "type": "text"},
+        {"customItem": "test01", "label": "name2", "type": "text"},
+        {"customItem": "male", "label": "gender", "type": "radio"},
+        {"customItem": "", "label": "center", "type": "select"},
+        {"customItem": "", "label": "selectTwo", "type": "select"},
+        {"customItem": "343@qq.com", "label": "email", "type": "email"},
+        {"customItem": "2020-4-05", "label": "birthday", "type": "date"}
     ]
 }

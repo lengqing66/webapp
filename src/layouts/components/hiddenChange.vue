@@ -10,7 +10,7 @@
     export default {
         name: "hiddenChange",
         props:{
-            defaultData:[],
+            defaultData:{},
         },
         data(){
             return{
@@ -24,12 +24,12 @@
             getDefaultData() {  //先將默認的值保存起來
                 this.defaultData0 = JSON.parse(JSON.stringify(this.defaultData));
             },
-            watchVal(item,index) {
+            watchVal(oldValue,newValue,label) {
                 console.log("监听中");
                 let json_obj = {};
-                json_obj.label = this.defaultData[index],label;
-                json_obj.oldValue = this.defaultData[index],value;
-                json_obj.newValue = item;
+                json_obj.label = label;
+                json_obj.oldValue = oldValue;
+                json_obj.newValue = newValue;
                 this.newData = JSON.stringify(json_obj);
                 for (let i = 0; i < this.hidden_testTest.length; i++) {
                     if (this.hidden_testTest[i].indexOf(name) !== -1) {

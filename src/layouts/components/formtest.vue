@@ -82,9 +82,11 @@
             },
             changeFunc(item, index) {
                 if (this.$refs.myHiddenChange.defaultData0[index].customItem !== item) {
-                    this.$refs.myHiddenChange.watchVal(this.$refs.myHiddenChange.defaultData0[index].customItem, item, this.$refs.myHiddenChange.defaultData0[index].label);
+                    this.$refs.myHiddenChange.watchVal(this.$refs.myHiddenChange.defaultData0[index].customItem,item,this.$refs.myHiddenChange.defaultData0[index].label);
                 }
             },
+        },
+        mounted() {
         }
     }
 </script>

@@ -8,14 +8,13 @@
                         <b-col cols="12" md="6" :key="index" v-for="(item,index) in caseInfo">
                             <b-form-group label-cols="4" label-cols-lg="3" :label="item.label+':'" >
                                 <b-form-input
-                                    :@change="changeFunc(item.value, index)"
+                                    @change="changeFunc(item.value, index)"
                                     :disabled="item.disabled"
                                     v-if="item.type==='text' || item.type==='emial' || item.type==='number' || item.type==='password'"
                                     :type="item.type" v-model="item.value">
                                 </b-form-input>
                                 <div v-if="item.type==='date'" class="d-md-flex align-items-center">
                                     <b-form-datepicker
-                                        :@context="changeFunc(item.value, index)"
                                         v-model="item.value" :disabled="item.disabled"
                                         :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
                                         locale="en-US">
@@ -28,6 +27,7 @@
                                     <!--</b-form-datepicker>-->
                                 </div>
                                 <b-form-select
+                                    @change="changeFunc(item.customItem, index)"
                                     v-if="item.type==='select'" :disabled="item.disabled"
                                     v-model="item.value"
                                     :options="topOption"
@@ -221,7 +221,9 @@
                 console.log("保存成功" + this.$refs.myHiddenChange.hidden_testTest);
             },
             changeFunc(item, index) {
-                this.$refs.myHiddenChange.watchVal(item,index);
+                if (this.$refs.myHiddenChange.defaultData0[index].value !== item) {
+                    this.$refs.myHiddenChange.watchVal(item,index);
+                }
                 // if (this.$refs.myHiddenChange.defaultData0[index].value !== item) {
                 //     this.$refs.myHiddenChange.watchVal(
                 //         this.$refs.myHiddenChange.defaultData0[index].value,
